@@ -3,8 +3,8 @@ title: SWIFT SOC Backend
 emoji: 🛡️
 colorFrom: blue
 colorTo: red
-sdk: fastapi
-app_file: backend/main.py
+sdk: docker
+pinned: false
 ---
 # SWIFT: Smart Wazuh Intelligent Filtering Tool
 
