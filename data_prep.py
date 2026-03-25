@@ -35,9 +35,9 @@ def generate_data():
     ]
 
     blocklist_url = "https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/firehol_level2.netset"
-    ARTIFACT_DIR = r"C:\Users\glowi\.gemini\antigravity\brain\86f0ebe1-8e85-45e0-a76a-a3be76af5614"
-    blocklist_path = os.path.join(ARTIFACT_DIR, "firehol_level2.netset")
-    wazuh_logs_path = os.path.join(ARTIFACT_DIR, "wazuh_logs.csv")
+    PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+    blocklist_path = os.path.join(PROJECT_ROOT, "firehol_level2.netset")
+    wazuh_logs_path = os.path.join(PROJECT_ROOT, "wazuh_logs.csv")
     
     print("Downloading FireHOL blocklist...")
     try:

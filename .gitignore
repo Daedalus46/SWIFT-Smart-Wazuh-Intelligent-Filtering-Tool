@@ -14,3 +14,7 @@ build/
 # wazuh_logs.csv
 # firehol_level2.netset
 # *.pkl
+
+# Generated files
+Security_Report.pdf
+test_cases/

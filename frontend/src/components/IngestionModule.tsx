@@ -15,8 +15,6 @@ export default function IngestionModule({ onAnalyze, onAnalyzeCSV, isLoading }: 
       try {
         const parsed = JSON.parse(logInput);
         onAnalyze(parsed);
-        // Clean UI: Reset the text box naturally
-        setLogInput(defaultLog);
       } catch (e) {
         alert("Invalid JSON format.");
       }

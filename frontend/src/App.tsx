@@ -5,6 +5,8 @@ import IngestionModule from './components/IngestionModule';
 import IntelligenceReadout from './components/IntelligenceReadout';
 import TelemetryDashboard from './components/TelemetryDashboard';
 
+const API_BASE = 'http://127.0.0.1:8080';
+
 export default function App() {
   const [report, setReport] = useState<any>(null);
   const [isBatch, setIsBatch] = useState(false);
@@ -15,11 +17,15 @@ export default function App() {
     setReport(null);
     setIsBatch(false);
     try {
-      const response = await axios.post('http://127.0.0.1:8080/analyze', payload);
+      const response = await axios.post(`${API_BASE}/analyze`, payload);
       setReport(response.data);
-    } catch (e) {
+    } catch (e: any) {
       console.error(e);
-      alert("Analysis failed. Backend might be offline.");
+      if (e.response && e.response.status === 422) {
+        alert("Invalid JSON Schema! Require: timestamp, rule_level, decoder_name, rule_description, agent_ip.");
+      } else {
+        alert("Analysis failed. Backend might be offline or caching previous version. Restart Uvicorn.");
+      }
     } finally {
       setIsLoading(false);
     }
@@ -33,7 +39,7 @@ export default function App() {
       const formData = new FormData();
       formData.append('file', file);
       
-      const response = await axios.post('http://127.0.0.1:8080/analyze_csv', formData);
+      const response = await axios.post(`${API_BASE}/analyze_csv`, formData);
       setReport(response.data);
     } catch (e) {
       console.error(e);
@@ -58,7 +64,7 @@ export default function App() {
             <IntelligenceReadout report={report} isBatch={isBatch} />
           </div>
           
-          <div className="h-72 mt-6">
+          <div className="h-[500px] mt-6">
             <TelemetryDashboard batchReport={isBatch ? report : null} />
           </div>
         </div>

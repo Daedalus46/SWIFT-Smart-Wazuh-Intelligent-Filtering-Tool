@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, Tooltip as RechartsTooltip, ResponsiveContainer } from 'recharts';
-import { Activity } from 'lucide-react';
+import { Activity, Shield, Target } from 'lucide-react';
 
-const COLORS = ['#10b981', '#ef4444']; // emerald, neonRed
+const PIE_COLORS = ['#10b981', '#ef4444']; // emerald, neonRed
+const SEV_COLORS: Record<string, string> = { Low: '#3b82f6', Medium: '#f59e0b', High: '#f97316', Critical: '#ef4444' };
+const TACTIC_COLOR = '#8b5cf6'; // violet
 
 export default function TelemetryDashboard({ batchReport }: any) {
-  // If we have a live batch report, process its counts dynamically!
-  // Otherwise use the default static background baseline data
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
 
+  // Pie: Benign vs Malicious
   const pieData = batchReport 
     ? [
         { name: 'Benign Noise', value: batchReport.benign_count },
@@ -23,13 +24,13 @@ export default function TelemetryDashboard({ batchReport }: any) {
   const maliciousRatio = totalLogs > 0 ? Math.round((pieData[1].value / totalLogs) * 100) : 30;
   const ratioString = batchReport ? `${100 - maliciousRatio}/${maliciousRatio}` : `70/30`;
 
-  // Scale bars realistically depending on batch threats
-  const barData = batchReport
+  // Severity: Use real rule_level breakdown if available, otherwise static
+  const barData = batchReport?.severity_breakdown
     ? [
-        { severity: 'Low', count: Math.floor(batchReport.benign_count * 0.8) },
-        { severity: 'Medium', count: Math.floor(batchReport.benign_count * 0.2) + Math.floor(batchReport.malicious_count * 0.1) },
-        { severity: 'High', count: Math.floor(batchReport.malicious_count * 0.6) },
-        { severity: 'Critical', count: Math.floor(batchReport.malicious_count * 0.3) },
+        { severity: 'Low', count: batchReport.severity_breakdown.low },
+        { severity: 'Medium', count: batchReport.severity_breakdown.medium },
+        { severity: 'High', count: batchReport.severity_breakdown.high },
+        { severity: 'Critical', count: batchReport.severity_breakdown.critical },
       ]
     : [
         { severity: 'Low', count: 4000 },
@@ -37,6 +38,29 @@ export default function TelemetryDashboard({ batchReport }: any) {
         { severity: 'High', count: 1800 },
         { severity: 'Critical', count: 568 },
       ];
+
+  // MITRE Tactic Distribution (from threat_categories)
+  const tacticData = batchReport?.threat_categories
+    ? batchReport.threat_categories.map((cat: any) => ({
+        tactic: cat.tactic.length > 20 ? cat.tactic.slice(0, 18) + '...' : cat.tactic,
+        fullTactic: cat.tactic,
+        count: cat.total_occurrences,
+        types: cat.threat_count,
+      }))
+    : null;
+
+  // Top 5 Threats by Frequency
+  const topThreats = batchReport?.unique_threats
+    ? [...batchReport.unique_threats]
+        .sort((a: any, b: any) => b.occurrence_count - a.occurrence_count)
+        .slice(0, 5)
+        .map((t: any) => ({
+          name: t.rule_description.length > 25 ? t.rule_description.slice(0, 23) + '...' : t.rule_description,
+          fullName: t.rule_description,
+          count: t.occurrence_count,
+          confidence: t.ai_confidence_score,
+        }))
+    : null;
 
   return (
     <div className="flex flex-col h-full bg-slate-800 border border-slate-700 rounded-lg p-4 shadow-xl">
@@ -53,7 +77,9 @@ export default function TelemetryDashboard({ batchReport }: any) {
            </div>
         )}
       </div>
-      <div className="flex flex-col md:flex-row flex-grow min-h-0">
+
+      {/* Row 1: Pie + Severity Bar */}
+      <div className="flex flex-col md:flex-row flex-grow min-h-0" style={{ maxHeight: tacticData || topThreats ? '45%' : '100%' }}>
         <div className="flex-1 h-32 md:h-full min-h-0 relative cursor-pointer" onClick={() => setActiveFilter('PIE')}>
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
@@ -66,7 +92,7 @@ export default function TelemetryDashboard({ batchReport }: any) {
                 stroke="transparent"
               >
                 {pieData.map((_entry, index) => (
-                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                  <Cell key={`cell-${index}`} fill={PIE_COLORS[index % PIE_COLORS.length]} />
                 ))}
               </Pie>
               <RechartsTooltip 
@@ -80,8 +106,9 @@ export default function TelemetryDashboard({ batchReport }: any) {
           </div>
         </div>
         <div className="flex-[2] h-40 md:h-full min-h-0 pt-4 px-2">
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={barData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+          <div className="text-[10px] text-slate-400 font-mono tracking-widest uppercase mb-1">Severity Breakdown {batchReport?.severity_breakdown ? '(REAL)' : '(BASELINE)'}</div>
+          <ResponsiveContainer width="100%" height="90%">
+            <BarChart data={barData} margin={{ top: 5, right: 10, left: -20, bottom: 0 }}>
               <XAxis dataKey="severity" stroke="#475569" tick={{ fill: '#94a3b8', fontSize: 10 }} axisLine={false} tickLine={false} />
               <YAxis stroke="#475569" tick={{ fill: '#94a3b8', fontSize: 10 }} axisLine={false} tickLine={false} />
               <RechartsTooltip 
@@ -99,7 +126,7 @@ export default function TelemetryDashboard({ batchReport }: any) {
                   barData.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={
                         activeFilter && activeFilter !== entry.severity ? '#334155' :
-                        (entry.severity === 'Critical' || entry.severity === 'High' ? '#ef4444' : '#3b82f6')
+                        (SEV_COLORS[entry.severity] || '#3b82f6')
                     } />
                   ))
                 }
@@ -108,6 +135,55 @@ export default function TelemetryDashboard({ batchReport }: any) {
           </ResponsiveContainer>
         </div>
       </div>
+
+      {/* Row 2: MITRE Tactics + Top Threats (only when batch data available) */}
+      {(tacticData || topThreats) && (
+        <div className="flex flex-col md:flex-row min-h-0 mt-2 border-t border-slate-700 pt-2" style={{ height: '50%' }}>
+          {/* MITRE Tactic Distribution */}
+          {tacticData && tacticData.length > 0 && (
+            <div className="flex-1 min-h-0 pr-2">
+              <div className="flex items-center space-x-1 mb-1">
+                <Shield className="w-3 h-3 text-violet-400" />
+                <span className="text-[10px] text-slate-400 font-mono tracking-widest uppercase">MITRE ATT&CK Tactics</span>
+              </div>
+              <ResponsiveContainer width="100%" height="90%">
+                <BarChart data={tacticData} layout="vertical" margin={{ top: 0, right: 10, left: 0, bottom: 0 }}>
+                  <XAxis type="number" stroke="#475569" tick={{ fill: '#94a3b8', fontSize: 9 }} axisLine={false} tickLine={false} />
+                  <YAxis type="category" dataKey="tactic" stroke="#475569" tick={{ fill: '#c4b5fd', fontSize: 9 }} axisLine={false} tickLine={false} width={100} />
+                  <RechartsTooltip 
+                    cursor={{ fill: '#1e293b' }}
+                    contentStyle={{ backgroundColor: '#0f172a', border: '1px solid #334155', borderRadius: '4px', fontSize: '11px' }}
+                    formatter={(value: any, _name: any, props: any) => [`${value} occurrences (${props.payload.types} types)`, 'Tactic']}
+                  />
+                  <Bar dataKey="count" fill={TACTIC_COLOR} radius={[0, 4, 4, 0]} maxBarSize={20} />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+          )}
+
+          {/* Top Threats by Frequency */}
+          {topThreats && topThreats.length > 0 && (
+            <div className="flex-1 min-h-0 pl-2">
+              <div className="flex items-center space-x-1 mb-1">
+                <Target className="w-3 h-3 text-neonRed" />
+                <span className="text-[10px] text-slate-400 font-mono tracking-widest uppercase">Top Threats by Frequency</span>
+              </div>
+              <ResponsiveContainer width="100%" height="90%">
+                <BarChart data={topThreats} layout="vertical" margin={{ top: 0, right: 10, left: 0, bottom: 0 }}>
+                  <XAxis type="number" stroke="#475569" tick={{ fill: '#94a3b8', fontSize: 9 }} axisLine={false} tickLine={false} />
+                  <YAxis type="category" dataKey="name" stroke="#475569" tick={{ fill: '#fca5a5', fontSize: 9 }} axisLine={false} tickLine={false} width={120} />
+                  <RechartsTooltip 
+                    cursor={{ fill: '#1e293b' }}
+                    contentStyle={{ backgroundColor: '#0f172a', border: '1px solid #334155', borderRadius: '4px', fontSize: '11px' }}
+                    formatter={(value: any, _name: any, props: any) => [`${value} hits (${props.payload.confidence}% conf)`, 'Threat']}
+                  />
+                  <Bar dataKey="count" fill="#ef4444" radius={[0, 4, 4, 0]} maxBarSize={20} />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }

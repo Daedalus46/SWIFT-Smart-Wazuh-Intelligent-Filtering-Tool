@@ -1,7 +1,9 @@
 from fastapi import FastAPI, HTTPException, File, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
-from backend.schemas import LogPayload, AnalyzeResponse, BatchAnalyzeResponse, UniqueThreatReport, MaliciousLogEntry, PDFExportRequest
+from backend.schemas import (LogPayload, AnalyzeResponse, BatchAnalyzeResponse, UniqueThreatReport,
+    MaliciousLogEntry, PDFExportRequest, NLPReportRequest, NLPReportResponse,
+    SeverityBreakdown, ThreatCategory, RiskAssessment, TopThreatVector, NLPThreatCategory, NLPReportStats)
 from backend.expert_system import analyze_threat
 import io
 import os
@@ -10,7 +12,6 @@ from fpdf import FPDF
 import joblib
 import pandas as pd
 import hashlib
-import os
 import json
 
 app = FastAPI(title="SWIFT AI Core", description="Security Operations Center AI Engine")
@@ -23,11 +24,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-ARTIFACT_DIR = r"C:\Users\glowi\.gemini\antigravity\brain\86f0ebe1-8e85-45e0-a76a-a3be76af5614"
-xgb_model_path = os.path.join(ARTIFACT_DIR, "swift_xgboost.pkl")
-encoders_path = os.path.join(ARTIFACT_DIR, "label_encoders.pkl")
-blocklist_path = os.path.join(ARTIFACT_DIR, "firehol_level2.netset")
-training_cols_path = os.path.join(ARTIFACT_DIR, "training_columns.json")
+# Resolve project root (one level up from backend/)
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+xgb_model_path = os.path.join(PROJECT_ROOT, "swift_xgboost.pkl")
+encoders_path = os.path.join(PROJECT_ROOT, "label_encoders.pkl")
+blocklist_path = os.path.join(PROJECT_ROOT, "firehol_level2.netset")
+training_cols_path = os.path.join(PROJECT_ROOT, "training_columns.json")
 
 try:
     xgb_clf = joblib.load(xgb_model_path)
@@ -68,12 +70,11 @@ async def analyze_log(payload: LogPayload):
             raise HTTPException(status_code=503, detail="AI engine offline or models missing.")
             
         is_known_bad = 1 if payload.agent_ip in blocklist_ips else 0
-        agent_ip_hash = hashlib.sha256(payload.agent_ip.encode()).hexdigest()
         
         try:
             timestamp = pd.to_datetime(payload.timestamp)
             hour = timestamp.hour
-        except:
+        except Exception:
             hour = 0
             
         dec_freq = freq_decoders.get(payload.decoder_name, 0.0)
@@ -131,6 +132,12 @@ async def analyze_csv(file: UploadFile = File(...)):
         content = await file.read()
         df = pd.read_csv(io.BytesIO(content))
         
+        # Validate required columns before processing
+        required_cols = {'timestamp', 'rule_level', 'decoder_name', 'rule_description', 'agent_ip'}
+        if not required_cols.issubset(df.columns):
+            missing = required_cols - set(df.columns)
+            raise HTTPException(status_code=400, detail=f"CSV missing required columns: {missing}")
+        
         # We must align the csv dataframe with the expected features
         # First, engineer the exact same features as live logs
         processed_rows = []
@@ -140,7 +147,7 @@ async def analyze_csv(file: UploadFile = File(...)):
             
             try:
                 hour = pd.to_datetime(row.get('timestamp')).hour
-            except:
+            except Exception:
                 hour = 0
                 
             dec_freq = freq_decoders.get(row.get('decoder_name', ''), 0.0)
@@ -213,13 +220,40 @@ async def analyze_csv(file: UploadFile = File(...)):
                 
         # Format the unique threats map to a standard list for React
         unique_threats_list = [UniqueThreatReport(**data) for data in unique_threats_dict.values()]
+        
+        # Compute real severity breakdown from actual rule_level values
+        sev = {"low": 0, "medium": 0, "high": 0, "critical": 0}
+        for _, row in df.iterrows():
+            rl = int(row.get('rule_level', 0))
+            if rl <= 4:
+                sev["low"] += 1
+            elif rl <= 8:
+                sev["medium"] += 1
+            elif rl <= 12:
+                sev["high"] += 1
+            else:
+                sev["critical"] += 1
+        
+        # Compute threat categories grouped by MITRE tactic
+        tactic_map: dict = {}
+        for t in unique_threats_list:
+            tactic = t.mitre_tactic
+            if tactic not in tactic_map:
+                tactic_map[tactic] = {"tactic": tactic, "threat_count": 0, "total_occurrences": 0, "threats": []}
+            tactic_map[tactic]["threat_count"] += 1
+            tactic_map[tactic]["total_occurrences"] += t.occurrence_count
+            tactic_map[tactic]["threats"].append(t.rule_description)
+        
+        categories = [ThreatCategory(**v) for v in sorted(tactic_map.values(), key=lambda x: x["total_occurrences"], reverse=True)]
                 
         return BatchAnalyzeResponse(
             total_logs=len(df),
             benign_count=benign_cnt,
             malicious_count=malicious_cnt,
             unique_threats=unique_threats_list,
-            raw_malicious_logs=raw_malicious
+            raw_malicious_logs=raw_malicious,
+            severity_breakdown=SeverityBreakdown(**sev),
+            threat_categories=categories
         )
         
     except Exception as e:
@@ -283,3 +317,41 @@ async def generate_pdf(request: PDFExportRequest):
     pdf.output(output_path)
     
     return FileResponse(output_path, media_type="application/pdf", filename=filename)
+
+@app.post("/generate_nlp_report", response_model=NLPReportResponse)
+async def generate_nlp_report(request: NLPReportRequest):
+    """Generate an AI-powered structured incident report using NLP."""
+    try:
+        from backend.nlp_engine import generate_structured_report, _get_device
+
+        threat_dicts = [
+            {
+                "rule_description": t.rule_description,
+                "mitre_tactic": t.mitre_tactic,
+                "owasp_category": t.owasp_category,
+                "occurrence_count": t.occurrence_count,
+                "ai_confidence_score": t.ai_confidence_score,
+            }
+            for t in request.unique_threats
+        ]
+
+        report = generate_structured_report(
+            total_logs=request.total_logs,
+            benign_count=request.benign_count,
+            malicious_count=request.malicious_count,
+            threat_summaries=threat_dicts,
+        )
+
+        return NLPReportResponse(
+            risk_assessment=RiskAssessment(**report["risk_assessment"]),
+            executive_summary=report["executive_summary"],
+            threat_categories=[NLPThreatCategory(**c) for c in report["threat_categories"]],
+            top_threat_vectors=[TopThreatVector(**v) for v in report["top_threat_vectors"]],
+            priority_actions=report["priority_actions"],
+            stats=NLPReportStats(**report["stats"]),
+            model_used="google/flan-t5-small",
+            device=_get_device().upper(),
+        )
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"NLP Report Generation Error: {str(e)}")

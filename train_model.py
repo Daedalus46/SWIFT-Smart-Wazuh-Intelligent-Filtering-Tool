@@ -10,12 +10,12 @@ import os
 import json
 
 def train():
-    ARTIFACT_DIR = r"C:\Users\glowi\.gemini\antigravity\brain\86f0ebe1-8e85-45e0-a76a-a3be76af5614"
-    wazuh_logs_path = os.path.join(ARTIFACT_DIR, "wazuh_logs.csv")
-    blocklist_path = os.path.join(ARTIFACT_DIR, "firehol_level2.netset")
-    xgb_model_path = os.path.join(ARTIFACT_DIR, "swift_xgboost.pkl")
-    encoders_path = os.path.join(ARTIFACT_DIR, "label_encoders.pkl")
-    training_cols_path = os.path.join(ARTIFACT_DIR, "training_columns.json")
+    PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+    wazuh_logs_path = os.path.join(PROJECT_ROOT, "wazuh_logs.csv")
+    blocklist_path = os.path.join(PROJECT_ROOT, "firehol_level2.netset")
+    xgb_model_path = os.path.join(PROJECT_ROOT, "swift_xgboost.pkl")
+    encoders_path = os.path.join(PROJECT_ROOT, "label_encoders.pkl")
+    training_cols_path = os.path.join(PROJECT_ROOT, "training_columns.json")
 
     print("Loading datasets...")
     df = pd.read_csv(wazuh_logs_path)

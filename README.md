@@ -1,54 +1,109 @@
 # SWIFT: Smart Wazuh Intelligent Filtering Tool
 
-**SWIFT** is a localized, enterprise-grade Security Operations Center (SOC) dashboard. The system features a hardware-agnostic machine learning pipeline (XGBoost) for threat classification, active OSINT data enrichment (FireHOL), and an automated Expert System mapping telemetry logs to the **MITRE ATT&CK** and **OWASP Top 10** frameworks.
-
-![SWIFT Dashboard Visual](frontend/public/vite.svg)
-
-## 🌟 Core Features
-- **Zero Trust Cryptography**: IP addresses are instantly purged from system memory after SHA-256 hashing.
-- **AI Triage System**: XGBoost natively isolates anomalies dynamically, dropping noise from massive batch CSV ingestion.
-- **Native PDF Reporting**: Enterprise SOC operators can automatically export `fpdf2` logic PDFs directly from the React interface detailing raw telemetry metadata and Recommended Action plans.
-- **Hardware-Agnostic**: Dynamically shifts between CUDA GPU processing and standard CPU processing seamlessly.
+**SWIFT** is an enterprise-grade Security Operations Center (SOC) dashboard powered by AI, NLP, and automated threat intelligence. It combines a hardware-agnostic **XGBoost** ML pipeline for threat classification, **Natural Language Processing** (`google/flan-t5-small`) for structured incident reports, an automated **Expert System** mapping threats to **MITRE ATT&CK** and **OWASP Top 10**, and real-time OSINT enrichment via **FireHOL** blocklists.
 
 ---
 
-## 🚀 How To Run (Locally)
+## Core Features
 
-### 1. Generate Data & Train Model
+- **AI Threat Classification**: XGBoost classifier trained on frequency-encoded Wazuh log features, isolating malicious anomalies from benign noise in batch CSV ingestion.
+- **NLP Incident Reports**: HuggingFace Flan-T5 transformer generates multi-section structured reports including:
+  - Risk Assessment (Critical/High/Medium/Low scoring)
+  - Executive Summary (AI-generated narrative)
+  - Top Threat Vectors (ranked by confidence x frequency)
+  - Priority Actions (AI-recommended remediation steps)
+- **Threat Categorization**: Automatic grouping of threats by MITRE ATT&CK tactic (Initial Access, Execution, Lateral Movement, etc.) with occurrence counts.
+- **Real-Time Visualizations**: Recharts-powered dashboards showing:
+  - Benign/Malicious split (donut chart)
+  - Real severity breakdown from `rule_level` values
+  - MITRE ATT&CK tactic distribution
+  - Top threats by frequency
+- **Expert System**: Rule-based engine maps threats to MITRE ATT&CK tactics and OWASP Top 10 categories with automated mitigation strategies.
+- **OSINT Enrichment**: Correlates agent IPs against FireHOL Level 2 blocklist for known-bad-actor detection.
+- **PDF Reporting**: One-click `fpdf2` PDF export of raw malicious telemetry.
+- **Hardware-Agnostic**: GPU auto-detection with CPU fallback — runs on any machine.
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| **ML Pipeline** | XGBoost, scikit-learn, pandas |
+| **NLP Engine** | HuggingFace Transformers, google/flan-t5-small, PyTorch |
+| **Backend API** | FastAPI, Uvicorn |
+| **Frontend** | React 18, TypeScript, Vite, Tailwind CSS |
+| **Visualization** | Recharts (Pie, Bar, Horizontal Bar) |
+| **PDF Export** | fpdf2 |
+| **OSINT** | FireHOL Level 2 Blocklist |
+
+---
+
+## How To Run (Locally)
+
+### 1. Install Python Dependencies
 *Requires Python 3.9+*
 ```bash
-pip install pandas scikit-learn xgboost fastapi uvicorn python-multipart fpdf2
+pip install -r requirements.txt
+```
+
+### 2. Generate Data & Train Model
+```bash
 python data_prep.py
 python train_model.py
 ```
-*(This will generate the required `swift_xgboost.pkl` and dataset arrays).*
+This generates `wazuh_logs.csv`, `swift_xgboost.pkl`, `label_encoders.pkl`, and `training_columns.json`.
 
-### 2. Start the FastAPI Backend
+### 3. Start the FastAPI Backend
 ```bash
 uvicorn backend.main:app --reload --port 8080
 ```
 
-### 3. Start the React Frontend
-*Requires Node.js*
-Open a brand new terminal, navigate to the frontend folder, and boot Vite.
+### 4. Start the React Frontend
+Open a new terminal:
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
 
+Frontend runs on `http://localhost:3000`, backend on `http://localhost:8080`.
+
+> **Note:** The NLP model (~300MB) downloads automatically on first "Generate AI Report" click. Subsequent runs use the cached model.
+
 ---
 
-## 🌐 How to Deploy (Production)
+## Project Structure
 
-To share this project globally, you must split your deployment paths because Vercel handles frontend styling beautifully but struggles with heavy Machine Learning RAM requirements.
+```
+AIES Project/
+├── backend/
+│   ├── main.py              # FastAPI endpoints (analyze, batch CSV, NLP, PDF)
+│   ├── schemas.py           # Pydantic models (including threat categorization)
+│   ├── expert_system.py     # MITRE ATT&CK + OWASP mapping engine
+│   └── nlp_engine.py        # NLP report generation (Flan-T5, structured output)
+├── frontend/
+│   └── src/
+│       ├── App.tsx
+│       └── components/
+│           ├── Header.tsx
+│           ├── IngestionModule.tsx       # Log input + CSV upload
+│           ├── IntelligenceReadout.tsx   # Threat analysis + NLP report panel
+│           └── TelemetryDashboard.tsx    # Charts (severity, MITRE, top threats)
+├── data_prep.py             # Synthetic Wazuh log generator
+├── train_model.py           # XGBoost training pipeline
+├── requirements.txt
+└── README.md
+```
 
-1. **Deploy the FastAPI Backend to `Render.com` or `Railway.app`!**
-   - Connect your GitHub repository to Render/Railway.
-   - Set the Build Command: `pip install -r requirements.txt`.
-   - Set the Start Command: `uvicorn backend.main:app --host 0.0.0.0 --port $PORT`.
+---
 
-2. **Deploy the React Frontend to `Vercel.com`!**
-   - Connect your GitHub. Choose the `frontend` root folder!
-   - Vercel will automatically run `npm run build` and launch instantly.
-   - *CRITICAL:* Before deploying the frontend, update `App.tsx`! Change the API URL from `http://127.0.0.1:8080/analyze_csv` to whatever live Render/Railway URL step 1 gave you!
+## Deployment (Production)
+
+1. **Backend → [Render.com](https://render.com) or [Railway.app](https://railway.app)**
+   - Build: `pip install -r requirements.txt`
+   - Start: `uvicorn backend.main:app --host 0.0.0.0 --port $PORT`
+
+2. **Frontend → [Vercel.com](https://vercel.com)**
+   - Root directory: `frontend`
+   - Update `API_BASE` in `App.tsx` and `IntelligenceReadout.tsx` to your live backend URL
