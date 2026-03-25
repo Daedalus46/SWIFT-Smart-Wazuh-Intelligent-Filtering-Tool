@@ -67,6 +67,10 @@ def align_wazuh_logs(live_df: pd.DataFrame, expected_features: list) -> pd.DataF
     # Drop any unrecognized extra columns and enforce strict order
     return live_df[expected_features]
 
+@app.get("/")
+def health_check():
+    return {"status": "Healthy", "message": "SWIFT API is running!"}
+
 @app.post("/analyze", response_model=AnalyzeResponse)
 async def analyze_log(payload: LogPayload):
     try:
