@@ -1,3 +1,11 @@
+---
+title: SWIFT SOC Backend
+emoji: 🛡️
+colorFrom: blue
+colorTo: red
+sdk: fastapi
+app_file: backend/main.py
+---
 # SWIFT: Smart Wazuh Intelligent Filtering Tool
 
 **SWIFT** is an enterprise-grade Security Operations Center (SOC) dashboard powered by AI, NLP, and automated threat intelligence. It combines a hardware-agnostic **XGBoost** ML pipeline for threat classification, **Natural Language Processing** (`google/flan-t5-small`) for structured incident reports, an automated **Expert System** mapping threats to **MITRE ATT&CK** and **OWASP Top 10**, and real-time OSINT enrichment via **FireHOL** blocklists.
