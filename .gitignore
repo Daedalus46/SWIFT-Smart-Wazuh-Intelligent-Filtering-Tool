@@ -1,0 +1,16 @@
+# Python Artifacts
+__pycache__/
+*.pyc
+venv/
+.env
+
+# Node Artifacts
+node_modules/
+dist/
+build/
+.npm/
+
+# Data Files (Optional: remove these if you want to push the 3MB datasets publicly)
+# wazuh_logs.csv
+# firehol_level2.netset
+# *.pkl
