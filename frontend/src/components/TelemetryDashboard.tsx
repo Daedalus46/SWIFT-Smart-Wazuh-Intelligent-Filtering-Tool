@@ -64,15 +64,15 @@ export default function TelemetryDashboard({ batchReport }: any) {
 
   return (
     <div className="flex flex-col h-full bg-slate-800 border border-slate-700 rounded-lg p-4 shadow-xl">
-      <div className="flex items-center justify-between mb-2 border-b border-slate-700 pb-2">
+      <div className="flex items-center justify-between mb-4 border-b border-slate-700 pb-3">
         <div className="flex items-center space-x-2 text-slate-300">
            <Activity className="w-5 h-5 text-slate-400" />
-           <h2 className="text-sm font-bold tracking-widest uppercase">
+           <h2 className="text-base font-bold tracking-widest uppercase">
               {batchReport ? "Live Batch Telemetry" : "System Baseline Telemetry"}
            </h2>
         </div>
         {activeFilter && (
-           <div className="text-[10px] bg-slate-700 px-2 py-1 rounded text-slate-300 font-mono cursor-pointer" onClick={() => setActiveFilter(null)}>
+           <div className="text-xs bg-slate-700 px-3 py-1 rounded text-slate-300 font-mono cursor-pointer" onClick={() => setActiveFilter(null)}>
              CLEAR FILTER: {activeFilter}
            </div>
         )}
@@ -106,11 +106,11 @@ export default function TelemetryDashboard({ batchReport }: any) {
           </div>
         </div>
         <div className="flex-[2] h-40 md:h-full min-h-0 pt-4 px-2">
-          <div className="text-[10px] text-slate-400 font-mono tracking-widest uppercase mb-1">Severity Breakdown {batchReport?.severity_breakdown ? '(REAL)' : '(BASELINE)'}</div>
+          <div className="text-xs text-slate-400 font-mono tracking-widest uppercase mb-2">Severity Breakdown {batchReport?.severity_breakdown ? '(REAL)' : '(BASELINE)'}</div>
           <ResponsiveContainer width="100%" height="90%">
             <BarChart data={barData} margin={{ top: 5, right: 10, left: -20, bottom: 0 }}>
-              <XAxis dataKey="severity" stroke="#475569" tick={{ fill: '#94a3b8', fontSize: 10 }} axisLine={false} tickLine={false} />
-              <YAxis stroke="#475569" tick={{ fill: '#94a3b8', fontSize: 10 }} axisLine={false} tickLine={false} />
+              <XAxis dataKey="severity" stroke="#475569" tick={{ fill: '#94a3b8', fontSize: 12 }} axisLine={false} tickLine={false} />
+              <YAxis stroke="#475569" tick={{ fill: '#94a3b8', fontSize: 12 }} axisLine={false} tickLine={false} />
               <RechartsTooltip 
                 cursor={{ fill: '#1e293b' }}
                 contentStyle={{ backgroundColor: '#0f172a', border: '1px solid #334155', borderRadius: '4px', fontSize: '12px' }}
@@ -118,7 +118,7 @@ export default function TelemetryDashboard({ batchReport }: any) {
               <Bar 
                  dataKey="count" 
                  radius={[4, 4, 0, 0]} 
-                 maxBarSize={40} 
+                 maxBarSize={60} 
                  onClick={(data) => setActiveFilter(data.severity)}
                  style={{ cursor: 'pointer' }}
               >
@@ -141,21 +141,21 @@ export default function TelemetryDashboard({ batchReport }: any) {
         <div className="flex flex-col md:flex-row min-h-0 mt-2 border-t border-slate-700 pt-2" style={{ height: '50%' }}>
           {/* MITRE Tactic Distribution */}
           {tacticData && tacticData.length > 0 && (
-            <div className="flex-1 min-h-0 pr-2">
-              <div className="flex items-center space-x-1 mb-1">
-                <Shield className="w-3 h-3 text-violet-400" />
-                <span className="text-[10px] text-slate-400 font-mono tracking-widest uppercase">MITRE ATT&CK Tactics</span>
+            <div className="flex-1 min-h-0 pr-2 pt-2">
+              <div className="flex items-center space-x-1 mb-2">
+                <Shield className="w-4 h-4 text-violet-400" />
+                <span className="text-xs text-slate-400 font-mono tracking-widest uppercase">MITRE ATT&CK Tactics</span>
               </div>
               <ResponsiveContainer width="100%" height="90%">
-                <BarChart data={tacticData} layout="vertical" margin={{ top: 0, right: 10, left: 0, bottom: 0 }}>
-                  <XAxis type="number" stroke="#475569" tick={{ fill: '#94a3b8', fontSize: 9 }} axisLine={false} tickLine={false} />
-                  <YAxis type="category" dataKey="tactic" stroke="#475569" tick={{ fill: '#c4b5fd', fontSize: 9 }} axisLine={false} tickLine={false} width={100} />
+                <BarChart data={tacticData} layout="vertical" margin={{ top: 0, right: 10, left: 10, bottom: 0 }}>
+                  <XAxis type="number" stroke="#475569" tick={{ fill: '#94a3b8', fontSize: 11 }} axisLine={false} tickLine={false} />
+                  <YAxis type="category" dataKey="tactic" stroke="#475569" tick={{ fill: '#c4b5fd', fontSize: 11 }} axisLine={false} tickLine={false} width={130} />
                   <RechartsTooltip 
                     cursor={{ fill: '#1e293b' }}
-                    contentStyle={{ backgroundColor: '#0f172a', border: '1px solid #334155', borderRadius: '4px', fontSize: '11px' }}
+                    contentStyle={{ backgroundColor: '#0f172a', border: '1px solid #334155', borderRadius: '4px', fontSize: '12px' }}
                     formatter={(value: any, _name: any, props: any) => [`${value} occurrences (${props.payload.types} types)`, 'Tactic']}
                   />
-                  <Bar dataKey="count" fill={TACTIC_COLOR} radius={[0, 4, 4, 0]} maxBarSize={20} />
+                  <Bar dataKey="count" fill={TACTIC_COLOR} radius={[0, 4, 4, 0]} maxBarSize={30} />
                 </BarChart>
               </ResponsiveContainer>
             </div>
@@ -163,21 +163,21 @@ export default function TelemetryDashboard({ batchReport }: any) {
 
           {/* Top Threats by Frequency */}
           {topThreats && topThreats.length > 0 && (
-            <div className="flex-1 min-h-0 pl-2">
-              <div className="flex items-center space-x-1 mb-1">
-                <Target className="w-3 h-3 text-neonRed" />
-                <span className="text-[10px] text-slate-400 font-mono tracking-widest uppercase">Top Threats by Frequency</span>
+            <div className="flex-1 min-h-0 pl-2 pt-2">
+              <div className="flex items-center space-x-1 mb-2">
+                <Target className="w-4 h-4 text-neonRed" />
+                <span className="text-xs text-slate-400 font-mono tracking-widest uppercase">Top Threats by Frequency</span>
               </div>
               <ResponsiveContainer width="100%" height="90%">
                 <BarChart data={topThreats} layout="vertical" margin={{ top: 0, right: 10, left: 0, bottom: 0 }}>
-                  <XAxis type="number" stroke="#475569" tick={{ fill: '#94a3b8', fontSize: 9 }} axisLine={false} tickLine={false} />
-                  <YAxis type="category" dataKey="name" stroke="#475569" tick={{ fill: '#fca5a5', fontSize: 9 }} axisLine={false} tickLine={false} width={120} />
+                  <XAxis type="number" stroke="#475569" tick={{ fill: '#94a3b8', fontSize: 11 }} axisLine={false} tickLine={false} />
+                  <YAxis type="category" dataKey="name" stroke="#475569" tick={{ fill: '#fca5a5', fontSize: 11 }} axisLine={false} tickLine={false} width={150} />
                   <RechartsTooltip 
                     cursor={{ fill: '#1e293b' }}
-                    contentStyle={{ backgroundColor: '#0f172a', border: '1px solid #334155', borderRadius: '4px', fontSize: '11px' }}
+                    contentStyle={{ backgroundColor: '#0f172a', border: '1px solid #334155', borderRadius: '4px', fontSize: '12px' }}
                     formatter={(value: any, _name: any, props: any) => [`${value} hits (${props.payload.confidence}% conf)`, 'Threat']}
                   />
-                  <Bar dataKey="count" fill="#ef4444" radius={[0, 4, 4, 0]} maxBarSize={20} />
+                  <Bar dataKey="count" fill="#ef4444" radius={[0, 4, 4, 0]} maxBarSize={30} />
                 </BarChart>
               </ResponsiveContainer>
             </div>
