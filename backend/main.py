@@ -1,9 +1,12 @@
 from fastapi import FastAPI, HTTPException, File, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
-from backend.schemas import (LogPayload, AnalyzeResponse, BatchAnalyzeResponse, UniqueThreatReport,
+from backend.schemas import (
+    LogPayload, AnalyzeResponse, BatchAnalyzeResponse, UniqueThreatReport,
     MaliciousLogEntry, PDFExportRequest, NLPReportRequest, NLPReportResponse,
-    SeverityBreakdown, ThreatCategory, RiskAssessment, TopThreatVector, NLPThreatCategory, NLPReportStats)
+    SeverityBreakdown, ThreatCategory, RiskAssessment, TopThreatVector, 
+    NLPThreatCategory, NLPReportStats
+)
 from backend.expert_system import analyze_threat
 import io
 import os
@@ -26,6 +29,7 @@ app.add_middleware(
 
 # Resolve project root (one level up from backend/)
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+
 xgb_model_path = os.path.join(PROJECT_ROOT, "swift_xgboost.pkl")
 encoders_path = os.path.join(PROJECT_ROOT, "label_encoders.pkl")
 blocklist_path = os.path.join(PROJECT_ROOT, "firehol_level2.netset")
@@ -137,7 +141,7 @@ async def analyze_csv(file: UploadFile = File(...)):
         if not required_cols.issubset(df.columns):
             missing = required_cols - set(df.columns)
             raise HTTPException(status_code=400, detail=f"CSV missing required columns: {missing}")
-        
+            
         # We must align the csv dataframe with the expected features
         # First, engineer the exact same features as live logs
         processed_rows = []
@@ -160,7 +164,7 @@ async def analyze_csv(file: UploadFile = File(...)):
                 'hour': hour,
                 'is_known_bad_actor': is_known_bad,
                 'decoder_name_freq': dec_freq,
-                'rule_description_freq': rule_freq,
+                'rule_description_freq': rule_freq,                
                 'rule_group_freq': group_freq,
                 'mitre_id_freq': mitre_freq
             })
@@ -205,7 +209,7 @@ async def analyze_csv(file: UploadFile = File(...)):
                         "occurrence_count": 1,
                         "ai_confidence_score": round(confidence, 2)
                     }
-                
+                    
                 # Full fidelity raw logs for CSV/PDF export
                 raw_malicious.append(MaliciousLogEntry(
                     timestamp=str(df.iloc[i].get('timestamp', '')),
@@ -233,7 +237,7 @@ async def analyze_csv(file: UploadFile = File(...)):
                 sev["high"] += 1
             else:
                 sev["critical"] += 1
-        
+                
         # Compute threat categories grouped by MITRE tactic
         tactic_map: dict = {}
         for t in unique_threats_list:
@@ -243,9 +247,9 @@ async def analyze_csv(file: UploadFile = File(...)):
             tactic_map[tactic]["threat_count"] += 1
             tactic_map[tactic]["total_occurrences"] += t.occurrence_count
             tactic_map[tactic]["threats"].append(t.rule_description)
-        
+            
         categories = [ThreatCategory(**v) for v in sorted(tactic_map.values(), key=lambda x: x["total_occurrences"], reverse=True)]
-                
+        
         return BatchAnalyzeResponse(
             total_logs=len(df),
             benign_count=benign_cnt,
@@ -281,11 +285,12 @@ async def generate_pdf(request: PDFExportRequest):
     pdf.cell(0, 10, "Executive Summary", 0, 1)
     pdf.set_font("Helvetica", "", 11)
     pdf.cell(0, 8, f"Total Logs Analyzed: {request.total_logs}", 0, 1)
+    
     pdf.set_text_color(255, 0, 0) # Threat hue
     pdf.cell(0, 8, f"Malicious Threats Detected: {request.malicious_count}", 0, 1)
     pdf.set_text_color(0, 0, 0)
     pdf.ln(10)
-
+    
     # Detailed Threat Table
     pdf.set_font("Helvetica", "B", 12)
     pdf.cell(0, 10, "Detailed Malicious Activity Mapping", 0, 1)
@@ -311,7 +316,7 @@ async def generate_pdf(request: PDFExportRequest):
             # Draw first two mitigation steps explicitly
             mit_str = ". ".join(threat.mitigation_steps[:2])
             row_data.cell(mit_str)
-                
+            
     filename = "Security_Report.pdf"
     output_path = os.path.join(os.getcwd(), filename)
     pdf.output(output_path)
@@ -323,7 +328,6 @@ async def generate_nlp_report(request: NLPReportRequest):
     """Generate an AI-powered structured incident report using NLP."""
     try:
         from backend.nlp_engine import generate_structured_report, _get_device
-
         threat_dicts = [
             {
                 "rule_description": t.rule_description,
@@ -334,14 +338,14 @@ async def generate_nlp_report(request: NLPReportRequest):
             }
             for t in request.unique_threats
         ]
-
+        
         report = generate_structured_report(
             total_logs=request.total_logs,
             benign_count=request.benign_count,
             malicious_count=request.malicious_count,
             threat_summaries=threat_dicts,
         )
-
+        
         return NLPReportResponse(
             risk_assessment=RiskAssessment(**report["risk_assessment"]),
             executive_summary=report["executive_summary"],
@@ -352,6 +356,5 @@ async def generate_nlp_report(request: NLPReportRequest):
             model_used="google/flan-t5-small",
             device=_get_device().upper(),
         )
-
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"NLP Report Generation Error: {str(e)}")
