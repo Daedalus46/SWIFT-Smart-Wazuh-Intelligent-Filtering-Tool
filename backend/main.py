@@ -115,7 +115,7 @@ async def analyze_log(payload: LogPayload):
         tactic_response = expert_advice["tactic"] if expert_advice["tactic"] != "Unknown Threat" else (mitre_id if mitre_id != "None" else "Unknown Threat")
         
         return AnalyzeResponse(
-            ai_confidence_score=round(confidence, 2),
+            ai_confidence_score=float(round(float(confidence), 2)),
             threat_classification=classification,
             mitre_tactic=tactic_response,
             owasp_category=expert_advice.get("owasp", "None"),
@@ -176,16 +176,16 @@ async def analyze_csv(file: UploadFile = File(...)):
         pred_classes = xgb_clf.predict(X_infer)
         probs = xgb_clf.predict_proba(X_infer)
         
-        unique_threats_dict = {}
+        unique_threats_dict: dict = {}
         raw_malicious = []
-        benign_cnt = 0
-        malicious_cnt = 0
+        benign_cnt: int = 0
+        malicious_cnt: int = 0
         
         for i, pred_class in enumerate(pred_classes):
             confidence = float(max(probs[i])) * 100.0
             
             if pred_class == 1:
-                malicious_cnt += 1
+                malicious_cnt = malicious_cnt + 1
                 raw_desc = str(df.iloc[i].get('rule_description', ''))
                 mitre_val = str(df.iloc[i].get('mitre_id', 'None'))
                 owasp_val = str(df.iloc[i].get('rule_group', 'None'))
@@ -196,9 +196,11 @@ async def analyze_csv(file: UploadFile = File(...)):
                 
                 # Aggregation Engine
                 if raw_desc in unique_threats_dict:
-                    unique_threats_dict[raw_desc]["occurrence_count"] += 1
+                    current_count = int(unique_threats_dict[raw_desc]["occurrence_count"])
+                    unique_threats_dict[raw_desc]["occurrence_count"] = current_count + 1
                     # Keep the highest confidence for the aggregated card
-                    unique_threats_dict[raw_desc]["ai_confidence_score"] = max(unique_threats_dict[raw_desc]["ai_confidence_score"], round(confidence, 2))
+                    current_conf = float(unique_threats_dict[raw_desc]["ai_confidence_score"])
+                    unique_threats_dict[raw_desc]["ai_confidence_score"] = float(max(current_conf, round(float(confidence), 2)))
                 else:
                     unique_threats_dict[raw_desc] = {
                         "threat_classification": "Malicious Threat",
@@ -207,7 +209,7 @@ async def analyze_csv(file: UploadFile = File(...)):
                         "owasp_category": owasp_response,
                         "mitigation_steps": expert_advice["mitigation"],
                         "occurrence_count": 1,
-                        "ai_confidence_score": round(confidence, 2)
+                        "ai_confidence_score": float(round(float(confidence), 2))
                     }
                     
                 # Full fidelity raw logs for CSV/PDF export
@@ -220,7 +222,7 @@ async def analyze_csv(file: UploadFile = File(...)):
                     mitigation_steps=expert_advice["mitigation"]
                 ))
             else:
-                benign_cnt += 1
+                benign_cnt = benign_cnt + 1
                 
         # Format the unique threats map to a standard list for React
         unique_threats_list = [UniqueThreatReport(**data) for data in unique_threats_dict.values()]
@@ -244,8 +246,12 @@ async def analyze_csv(file: UploadFile = File(...)):
             tactic = t.mitre_tactic
             if tactic not in tactic_map:
                 tactic_map[tactic] = {"tactic": tactic, "threat_count": 0, "total_occurrences": 0, "threats": []}
-            tactic_map[tactic]["threat_count"] += 1
-            tactic_map[tactic]["total_occurrences"] += t.occurrence_count
+            curr_tc = int(tactic_map[tactic]["threat_count"])
+            tactic_map[tactic]["threat_count"] = curr_tc + 1
+            
+            curr_tot = int(tactic_map[tactic]["total_occurrences"])
+            tactic_map[tactic]["total_occurrences"] = curr_tot + t.occurrence_count
+            
             tactic_map[tactic]["threats"].append(t.rule_description)
             
         categories = [ThreatCategory(**v) for v in sorted(tactic_map.values(), key=lambda x: x["total_occurrences"], reverse=True)]
