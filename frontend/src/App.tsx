@@ -65,7 +65,7 @@ export default function App() {
             <IntelligenceReadout report={report} isBatch={isBatch} />
           </div>
 
-          <div className="h-72 mt-6">
+          <div className="w-full mt-6 flex-grow">
             <TelemetryDashboard batchReport={isBatch ? report : null} />
           </div>
         </div>
