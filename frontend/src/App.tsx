@@ -5,7 +5,7 @@ import IngestionModule from './components/IngestionModule';
 import IntelligenceReadout from './components/IntelligenceReadout';
 import TelemetryDashboard from './components/TelemetryDashboard';
 
-const API_BASE = 'https://daedalus26-swift-soc-backend.hf.space';
+const API_BASE = "https://daedalus26-swift-soc-backend.hf.space";
 
 
 export default function App() {

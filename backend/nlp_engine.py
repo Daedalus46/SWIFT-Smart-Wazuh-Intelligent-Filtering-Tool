@@ -67,7 +67,8 @@ def _compute_risk_level(
         default=0,
     )
     # Risk score: weighted combination of malicious ratio and max confidence
-    risk_score = round((mal_ratio * 60) + (max_confidence / 100 * 40), 1)
+    calc = (mal_ratio * 60) + (max_confidence / 100 * 40)
+    risk_score = float(round(float(calc), 1))
 
     if risk_score >= 70 or mal_ratio > 0.5:
         return {"level": "CRITICAL", "score": risk_score, "color": "red"}
@@ -110,7 +111,8 @@ def _build_summary_prompt(
 ) -> str:
     """Build a focused executive summary prompt."""
     threat_lines = []
-    for t in threat_summaries[:6]:
+    for i, t in enumerate(threat_summaries):
+        if i >= 6: break
         threat_lines.append(
             f"- {t.get('rule_description', 'Unknown')} "
             f"(Tactic: {t.get('mitre_tactic', 'N/A')}, "
@@ -123,7 +125,7 @@ def _build_summary_prompt(
         f"Write a detailed executive cybersecurity incident summary:\n\n"
         f"Risk Level: {risk_level}\n"
         f"Total logs: {total_logs}, Benign: {benign_count}, Malicious: {malicious_count}\n"
-        f"Threat ratio: {round(malicious_count / max(total_logs, 1) * 100, 1)}%\n"
+        f"Threat ratio: {float(round(float(malicious_count / max(total_logs, 1) * 100), 1))}%\n"
         f"Threats detected:\n{threat_block}\n\n"
         f"Write 2-3 sentences analyzing the severity and attack patterns observed."
     )
@@ -134,8 +136,8 @@ def _build_recommendations_prompt(
     risk_level: str,
 ) -> str:
     """Build a prompt for generating actionable recommendations."""
-    tactics = set(str(t.get("mitre_tactic", "")) for t in threat_summaries[:5])
-    descriptions = [str(t.get("rule_description", "")) for t in threat_summaries[:5]]
+    tactics = set(str(t.get("mitre_tactic", "")) for i, t in enumerate(threat_summaries) if i < 5)
+    descriptions = [str(t.get("rule_description", "")) for i, t in enumerate(threat_summaries) if i < 5]
 
     return (
         f"Given these cybersecurity threats at {risk_level} risk:\n"
@@ -171,10 +173,11 @@ def generate_structured_report(
     raw_summary = _run_t5(summary_prompt, max_tokens=200)
 
     # Enrich short summaries with data-driven context
-    mal_pct = round((malicious_count / max(total_logs, 1)) * 100, 1)
+    calc_pct = (malicious_count / max(total_logs, 1)) * 100
+    mal_pct = float(round(float(calc_pct), 1))
     if len(raw_summary.split()) < 15:
         top_threats = ", ".join(
-            str(t.get("rule_description", "Unknown")) for t in threat_summaries[:3]
+            str(t.get("rule_description", "Unknown")) for i, t in enumerate(threat_summaries) if i < 3
         )
         executive_summary = (
             f"Security analysis of {total_logs} log events identified "
@@ -201,11 +204,12 @@ def generate_structured_report(
         priority_actions = ["No immediate actions required. Continue monitoring."]
 
     # 5. Build top threats ranked list
-    ranked_threats = sorted(
+    sorted_threats = sorted(
         threat_summaries,
         key=lambda t: (float(t.get("ai_confidence_score", 0)) * int(t.get("occurrence_count", 1))),
         reverse=True,
-    )[:5]
+    )
+    ranked_threats = [x for i, x in enumerate(sorted_threats) if i < 5]
 
     top_threat_vectors = [
         {
