@@ -5,7 +5,8 @@ import IngestionModule from './components/IngestionModule';
 import IntelligenceReadout from './components/IntelligenceReadout';
 import TelemetryDashboard from './components/TelemetryDashboard';
 
-const API_BASE = 'http://127.0.0.1:8080';
+const API_BASE = 'https://daedalus26-swift-soc-backend.hf.space';
+
 
 export default function App() {
   const [report, setReport] = useState<any>(null);
@@ -38,7 +39,7 @@ export default function App() {
     try {
       const formData = new FormData();
       formData.append('file', file);
-      
+
       const response = await axios.post(`${API_BASE}/analyze_csv`, formData);
       setReport(response.data);
     } catch (e) {
@@ -52,19 +53,19 @@ export default function App() {
   return (
     <div className="flex flex-col min-h-screen font-sans text-slate-200 bg-slate-900">
       <Header />
-      
+
       <main className="flex-grow p-6">
         <div className="max-w-7xl mx-auto flex flex-col space-y-6 h-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6" style={{ minHeight: '500px' }}>
-            <IngestionModule 
-                onAnalyze={handleAnalyze} 
-                onAnalyzeCSV={handleAnalyzeCSV} 
-                isLoading={isLoading} 
+            <IngestionModule
+              onAnalyze={handleAnalyze}
+              onAnalyzeCSV={handleAnalyzeCSV}
+              isLoading={isLoading}
             />
             <IntelligenceReadout report={report} isBatch={isBatch} />
           </div>
-          
-          <div className="h-[500px] mt-6">
+
+          <div className="h-72 mt-6">
             <TelemetryDashboard batchReport={isBatch ? report : null} />
           </div>
         </div>
