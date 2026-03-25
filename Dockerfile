@@ -1,19 +1,20 @@
 FROM python:3.9
 
-# Create a non-root user (Hugging Face requirement)
+# 1. Create user and set up environment
 RUN useradd -m -u 1000 user
 USER user
-ENV PATH="/home/user/.local/bin:$PATH"
+ENV HOME=/home/user \
+    PATH=/home/user/.local/bin:$PATH
 
-# Set working directory
-WORKDIR /app
+WORKDIR $HOME/app
 
-# Copy requirements and install
-COPY --chown=user requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# 2. Install dependencies first (for faster rebuilding)
+COPY --chown=user requirements.txt $HOME/app/requirements.txt
+RUN pip install --no-cache-dir --upgrade -r $HOME/app/requirements.txt
 
-# Copy the rest of the application
-COPY --chown=user . .
+# 3. Copy the application code
+COPY --chown=user . $HOME/app
 
-# Run FastAPI on port 7860 (Hugging Face default)
+# 4. Start the server
+# NOTE: Ensure "backend" is a folder and "main.py" is inside it.
 CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "7860"]
