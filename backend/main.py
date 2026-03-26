@@ -71,7 +71,7 @@ def align_wazuh_logs(live_df: pd.DataFrame, expected_features: list) -> pd.DataF
 async def startup_event():
     print("Pre-loading NLP Model...")
     try:
-        from nlp_engine import _load_model
+        from backend.nlp_engine import _load_model
         _load_model()
     except Exception as e:
         print(f"Failed to pre-load model: {e}")
@@ -346,8 +346,7 @@ async def generate_pdf(request: PDFExportRequest):
 async def generate_nlp_report(request: NLPReportRequest):
     """Generate an AI-powered structured incident report using NLP."""
     try:
-        # ✅ FIX 1: Remove "backend." from the import
-        from nlp_engine import generate_structured_report, _get_device
+        from backend.nlp_engine import generate_structured_report, _get_device
         
         threat_dicts = [
             {
