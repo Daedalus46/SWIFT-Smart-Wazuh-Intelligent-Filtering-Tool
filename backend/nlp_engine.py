@@ -20,7 +20,6 @@ def _get_device() -> str:
 
 
 def _load_model() -> None:
-    """Lazy-load the Flan-T5-Small model and tokenizer on first use."""
     global _model, _tokenizer
     if _model is not None:
         return
@@ -28,24 +27,32 @@ def _load_model() -> None:
     from transformers import T5ForConditionalGeneration, T5Tokenizer
 
     model_name = "google/flan-t5-small"
-    device = _get_device()
+    
+    # Force CPU to save memory and avoid CUDA overhead errors
+    device = "cpu" 
 
-    print(f"[NLP Engine] Loading {model_name} on {device.upper()}...")
+    print(f"[NLP Engine] Loading {model_name}...")
+    
+    # Use 'low_cpu_mem_usage' to prevent the container from crashing during load
     _tokenizer = T5Tokenizer.from_pretrained(model_name)
-    _model = T5ForConditionalGeneration.from_pretrained(model_name).to(device)
-    print(f"[NLP Engine] Model loaded successfully on {device.upper()}.")
-
+    _model = T5ForConditionalGeneration.from_pretrained(
+        model_name, 
+        low_cpu_mem_usage=True
+    ).to(device)
+    
+    print(f"[NLP Engine] Model loaded successfully.")
 
 def _run_t5(prompt: str, max_tokens: int = 200) -> str:
-    """Run a single T5 inference pass with the given prompt."""
     assert _model is not None and _tokenizer is not None
-    device = _get_device()
-    inputs = _tokenizer(prompt, return_tensors="pt", max_length=512, truncation=True).to(device)
+    
+    # Ensure inputs are moved to CPU
+    inputs = _tokenizer(prompt, return_tensors="pt", max_length=512, truncation=True).to("cpu")
+    
     with torch.no_grad():
         outputs = _model.generate(
             **inputs,
             max_new_tokens=max_tokens,
-            num_beams=4,
+            num_beams=2,          # Reduced from 4 to 2 to save CPU/RAM
             early_stopping=True,
             no_repeat_ngram_size=3,
         )

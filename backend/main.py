@@ -67,6 +67,15 @@ def align_wazuh_logs(live_df: pd.DataFrame, expected_features: list) -> pd.DataF
     # Drop any unrecognized extra columns and enforce strict order
     return live_df[expected_features]
 
+@app.on_event("startup")
+async def startup_event():
+    print("Pre-loading NLP Model...")
+    try:
+        from nlp_engine import _load_model
+        _load_model()
+    except Exception as e:
+        print(f"Failed to pre-load model: {e}")
+
 @app.get("/")
 def health_check():
     return {"status": "Healthy", "message": "SWIFT API is running!"}
@@ -328,7 +337,7 @@ async def generate_pdf(request: PDFExportRequest):
             row_data.cell(mit_str)
             
     filename = "Security_Report.pdf"
-    output_path = os.path.join(os.getcwd(), filename)
+    output_path = f"/tmp/{filename}"
     pdf.output(output_path)
     
     return FileResponse(output_path, media_type="application/pdf", filename=filename)
@@ -337,7 +346,9 @@ async def generate_pdf(request: PDFExportRequest):
 async def generate_nlp_report(request: NLPReportRequest):
     """Generate an AI-powered structured incident report using NLP."""
     try:
-        from backend.nlp_engine import generate_structured_report, _get_device
+        # ✅ FIX 1: Remove "backend." from the import
+        from nlp_engine import generate_structured_report, _get_device
+        
         threat_dicts = [
             {
                 "rule_description": t.rule_description,
@@ -364,7 +375,10 @@ async def generate_nlp_report(request: NLPReportRequest):
             priority_actions=report["priority_actions"],
             stats=NLPReportStats(**report["stats"]),
             model_used="google/flan-t5-small",
-            device=_get_device().upper(),
+            # ✅ FIX 2: Ensure device detection doesn't crash on CPU-only Hugging Face
+            device=_get_device().upper() if _get_device() else "CPU",
         )
     except Exception as e:
+        # This will now print the actual error to your Hugging Face Logs
+        print(f"NLP ERROR: {str(e)}") 
         raise HTTPException(status_code=500, detail=f"NLP Report Generation Error: {str(e)}")
