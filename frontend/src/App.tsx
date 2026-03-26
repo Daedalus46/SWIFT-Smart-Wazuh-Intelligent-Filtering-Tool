@@ -5,7 +5,7 @@ import IngestionModule from './components/IngestionModule';
 import IntelligenceReadout from './components/IntelligenceReadout';
 import TelemetryDashboard from './components/TelemetryDashboard';
 
-const API_BASE = "https://daedalus26-swift-soc-backend.hf.space";
+const API_BASE = import.meta.env.VITE_API_BASE || "https://daedalus26-swift-soc-backend.hf.space";
 
 
 export default function App() {
@@ -62,7 +62,7 @@ export default function App() {
               onAnalyzeCSV={handleAnalyzeCSV}
               isLoading={isLoading}
             />
-            <IntelligenceReadout report={report} isBatch={isBatch} />
+            <IntelligenceReadout report={report} isBatch={isBatch} onClear={() => { setReport(null); setIsBatch(false); }} />
           </div>
 
           <div className="w-full mt-6 flex-grow">

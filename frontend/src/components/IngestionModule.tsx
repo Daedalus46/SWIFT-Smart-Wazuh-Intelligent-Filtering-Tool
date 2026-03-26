@@ -40,6 +40,7 @@ export default function IngestionModule({ onAnalyze, onAnalyzeCSV, isLoading }: 
           onChange={(e) => setLogInput(e.target.value)}
           className="flex-grow w-full bg-slate-950 text-emeraldGreen font-mono text-xs p-4 rounded focus:outline-none focus:ring-1 focus:ring-slate-500 resize-none"
           spellCheck="false"
+          aria-label="Raw JSON log payload input"
         />
       ) : (
         <div className="flex-grow flex flex-col items-center justify-center bg-slate-950/50 rounded border-2 border-dashed border-emeraldGreen/50">
@@ -55,15 +56,16 @@ export default function IngestionModule({ onAnalyze, onAnalyzeCSV, isLoading }: 
       )}
 
       <div className="mt-4 flex space-x-2">
-        <label className="flex-1 flex items-center justify-center space-x-2 py-3 bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer text-xs font-semibold rounded transition">
+        <label className="flex-1 flex items-center justify-center space-x-2 py-3 bg-slate-700 hover:bg-slate-600 text-slate-300 cursor-pointer text-xs font-semibold rounded transition" aria-label="Upload CSV file for bulk analysis">
           <UploadCloud className="w-4 h-4" />
           <span>UPLOAD CSV</span>
-          <input type="file" accept=".csv" className="hidden" onChange={handleFileChange} />
+          <input type="file" accept=".csv" className="hidden" onChange={handleFileChange} aria-label="Select CSV file" />
         </label>
 
         <button 
           onClick={handleSubmit}
           disabled={isLoading}
+          aria-label={file ? "Execute batch CSV analysis" : "Execute single log AI analysis"}
           className="flex-[2] flex items-center justify-center space-x-2 py-3 bg-emerald-700/80 hover:bg-emerald-600/80 text-white font-bold rounded transition disabled:opacity-50 text-xs tracking-widest"
         >
           {isLoading ? (

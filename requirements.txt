@@ -9,8 +9,8 @@ fpdf2>=2.7.0
 python-multipart>=0.0.6
 transformers>=4.35.0
 sentencepiece
+slowapi>=0.1.9
 
 # Special CPU-only versions of AI libraries
 --extra-index-url https://download.pytorch.org/whl/cpu
 torch
-torchvision

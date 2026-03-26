@@ -1,6 +1,9 @@
-from fastapi import FastAPI, HTTPException, File, UploadFile
+from fastapi import FastAPI, HTTPException, File, UploadFile, Request
+from slowapi import Limiter
+from slowapi.util import get_remote_address
+from slowapi.errors import RateLimitExceeded
+from fastapi.responses import JSONResponse, FileResponse
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse
 from backend.schemas import (
     LogPayload, AnalyzeResponse, BatchAnalyzeResponse, UniqueThreatReport,
     MaliciousLogEntry, PDFExportRequest, NLPReportRequest, NLPReportResponse,
@@ -11,13 +14,20 @@ from backend.expert_system import analyze_threat
 import io
 import os
 import datetime
+import tempfile
 from fpdf import FPDF
 import joblib
 import pandas as pd
 import hashlib
 import json
 
+limiter = Limiter(key_func=get_remote_address)
 app = FastAPI(title="SWIFT AI Core", description="Security Operations Center AI Engine")
+app.state.limiter = limiter
+
+@app.exception_handler(RateLimitExceeded)
+async def rate_limit_handler(request: Request, exc: RateLimitExceeded):
+    return JSONResponse(status_code=429, content={"detail": "Rate limit exceeded. Please wait before retrying."})
 
 app.add_middleware(
     CORSMiddleware,
@@ -26,6 +36,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+def anonymize_ip(ip: str) -> str:
+    """Hash an IP address for privacy-safe exports (GDPR/ethical compliance)."""
+    return "IP-" + hashlib.sha256(ip.encode()).hexdigest()[:8].upper()
 
 # Resolve project root (one level up from backend/)
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -231,7 +245,7 @@ async def analyze_csv(file: UploadFile = File(...)):
                     rule_description=raw_desc,
                     mitre_id=tactic_response,
                     owasp_cat=owasp_response,
-                    agent_ip=str(df.iloc[i].get('agent_ip', '0.0.0.0')),
+                    agent_ip=anonymize_ip(str(df.iloc[i].get('agent_ip', '0.0.0.0'))),
                     mitigation_steps=expert_advice["mitigation"]
                 ))
             else:
@@ -337,13 +351,14 @@ async def generate_pdf(request: PDFExportRequest):
             row_data.cell(mit_str)
             
     filename = "Security_Report.pdf"
-    output_path = f"/tmp/{filename}"
+    output_path = os.path.join(tempfile.gettempdir(), filename)
     pdf.output(output_path)
     
     return FileResponse(output_path, media_type="application/pdf", filename=filename)
 
 @app.post("/generate_nlp_report", response_model=NLPReportResponse)
-async def generate_nlp_report(request: NLPReportRequest):
+@limiter.limit("3/minute")
+async def generate_nlp_report(request: Request, payload: NLPReportRequest):
     """Generate an AI-powered structured incident report using NLP."""
     try:
         from backend.nlp_engine import generate_structured_report, _get_device
@@ -356,13 +371,13 @@ async def generate_nlp_report(request: NLPReportRequest):
                 "occurrence_count": t.occurrence_count,
                 "ai_confidence_score": t.ai_confidence_score,
             }
-            for t in request.unique_threats
+            for t in payload.unique_threats
         ]
         
         report = generate_structured_report(
-            total_logs=request.total_logs,
-            benign_count=request.benign_count,
-            malicious_count=request.malicious_count,
+            total_logs=payload.total_logs,
+            benign_count=payload.benign_count,
+            malicious_count=payload.malicious_count,
             threat_summaries=threat_dicts,
         )
         
