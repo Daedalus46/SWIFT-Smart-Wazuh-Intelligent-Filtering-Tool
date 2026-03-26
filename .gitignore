@@ -16,5 +16,6 @@ build/
 # *.pkl
 
 # Generated files
-Security_Report.pdf
 report/
+Security_Report.pdf
+test_cases/
