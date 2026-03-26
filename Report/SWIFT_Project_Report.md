@@ -72,7 +72,16 @@ This combination satisfies the CT-361 CLO 2 requirement: *"Identify and apply ap
 
 ## 4. Background & Methodology
 
-### 4.1 Background
+### 4.1 Datasets Used & Preprocessing
+
+Due to confidentiality standards regarding live enterprise logs, a robust synthetic dataset was programmatically generated specifically for training the Machine Learning module of this CCP project:
+- **Data Origin:** Created via the internal Python engine to accurately mimic raw Wazuh SIEM telemetry.
+- **Volume:** Over 30,000 specific log iterations designed exclusively for this platform.
+- **Distribution:** A realistic 70/30 class imbalance. 70% of logs represent Benign noise (e.g., successful SSH authentications, rule updates) and 30% represent Malicious threats (e.g., SQL injections, Brute Force attacks).
+- **Feature Engineering:** Utilized Mathematical Frequency Encoding to process high-cardinality string features (like `decoder_name` and `rule_description`) which allowed the XGBoost model to process enormous dictionaries without triggering memory-explosive One-Hot schemas.
+- **OSINT Enrichment:** Dynamically cross-matched target IP addresses against the community-validated FireHOL Level 2 intelligence blocklist to append the `is_known_bad_actor` flag.
+
+### 4.2 Background
 
 | Technology | Purpose | Justification |
 |-----------|---------|---------------|
