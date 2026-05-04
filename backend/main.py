@@ -219,7 +219,7 @@ async def analyze_log(payload: LogPayload):
         confidence = float(max(probs)) * 100.0
         
         classification = "Malicious Threat" if pred_class == 1 else "Benign Noise"
-        expert_advice = analyze_threat(payload.rule_description, pred_class)
+        expert_advice = analyze_threat(payload.rule_description, pred_class, rule_level=payload.rule_level)
         
         tactic_response = expert_advice["tactic"] if expert_advice["tactic"] != "Unknown Threat" else (mitre_id if mitre_id != "None" else "Unknown Threat")
         
@@ -292,7 +292,8 @@ async def analyze_live_wazuh(request: Request):
 
             if pred_class == 1:
                 malicious_cnt += 1
-                expert_advice = analyze_threat(raw_desc, pred_class, mitre_val, owasp_val)
+                rule_lvl_val = int(preprocessed_df.iloc[i].get('rule_level', 0))
+                expert_advice = analyze_threat(raw_desc, pred_class, mitre_val, owasp_val, rule_level=rule_lvl_val)
                 tactic_response = expert_advice["tactic"]
                 owasp_response = expert_advice.get("owasp", "None")
 
@@ -373,17 +374,33 @@ async def analyze_csv(file: UploadFile = File(...)):
         content = await file.read()
         df = pd.read_csv(io.BytesIO(content))
         
-        # --- Column Normalization ---
-        # Map dot-notation columns from OpenSearch/Kibana exports to underscores
+        # --- Universal Header Normalization ---
+        # Lowercase all headers, replace spaces and dots with underscores
+        # so "Agent IP", "agent.ip", "Agent.IP" all map to "agent_ip"
+        df.columns = [col.strip().lower().replace(' ', '_').replace('.', '_') for col in df.columns]
+        
+        # Also handle specific Kibana/OpenSearch multi-dot patterns
         col_rename_map = {
-            'rule.level': 'rule_level',
-            'rule.description': 'rule_description',
-            'rule.groups': 'rule_group',
-            'rule.mitre.id': 'mitre_id',
-            'agent.ip': 'agent_ip',
-            'decoder.name': 'decoder_name',
+            'rule_level': 'rule_level',
+            'rule_description': 'rule_description',
+            'rule_groups': 'rule_group',
+            'rule_mitre_id': 'mitre_id',
+            'agent_ip': 'agent_ip',
+            'decoder_name': 'decoder_name',
         }
         df.rename(columns=col_rename_map, inplace=True)
+        
+        # --- Track missing key features for confidence penalty ---
+        missing_features = []
+        if 'agent_ip' not in df.columns:
+            missing_features.append('agent_ip')
+        if 'decoder_name' not in df.columns:
+            missing_features.append('decoder_name')
+        if 'rule_description' not in df.columns:
+            missing_features.append('rule_description')
+        
+        # Each missing key feature reduces confidence by 5% (max penalty: 15%)
+        confidence_penalty = len(missing_features) * 5.0
         
         # Default UTC timestamp for rows with no timestamp column at all
         default_ts = datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.000Z")
@@ -435,7 +452,9 @@ async def analyze_csv(file: UploadFile = File(...)):
         malicious_cnt: int = 0
         
         for i, pred_class in enumerate(pred_classes):
-            confidence = float(max(probs[i])) * 100.0
+            raw_confidence = float(max(probs[i])) * 100.0
+            # Apply confidence penalty for missing CSV features
+            confidence = max(raw_confidence - confidence_penalty, 0.0)
             
             # Safe metadata extraction with fallbacks for response building
             raw_desc = str(df.iloc[i].get('rule_description', 'unknown')) if 'rule_description' in df.columns else 'unknown'
@@ -447,7 +466,8 @@ async def analyze_csv(file: UploadFile = File(...)):
             if pred_class == 1:
                 malicious_cnt = malicious_cnt + 1
                 
-                expert_advice = analyze_threat(raw_desc, pred_class, mitre_val, owasp_val)
+                csv_rule_level = int(df.iloc[i].get('rule_level', 0)) if 'rule_level' in df.columns else 0
+                expert_advice = analyze_threat(raw_desc, pred_class, mitre_val, owasp_val, rule_level=csv_rule_level)
                 tactic_response = expert_advice["tactic"]
                 owasp_response = expert_advice.get("owasp", "None")
                 

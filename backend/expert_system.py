@@ -61,8 +61,119 @@ MITRE_MAPPING = {
     }
 }
 
-def analyze_threat(rule_description: str, prediction_class: int, raw_mitre_id: str = "None", raw_rule_group: str = "None") -> dict:
+# =====================================================================
+# HIGH-SEVERITY BENIGN EXPLANATIONS
+# When the AI classifies a log as benign despite a high rule_level (>=8),
+# these keyword-matched explanations help the SOC analyst understand WHY
+# the AI made that decision instead of blindly trusting the severity.
+# =====================================================================
+HIGH_SEVERITY_BENIGN_EXPLANATIONS = {
+    "SCA": {
+        "tactic": "Compliance Audit",
+        "owasp": "None",
+        "mitigation": [
+            "No threat action required — this is a scheduled SCA policy compliance scan",
+            "AI classified as benign: CIS Benchmark checks routinely trigger high-severity Wazuh rules",
+            "Verify scan schedule matches your compliance calendar"
+        ]
+    },
+    "compliance": {
+        "tactic": "Compliance Audit",
+        "owasp": "None",
+        "mitigation": [
+            "No threat action required — routine compliance/vulnerability assessment",
+            "AI classified as benign: compliance scans generate high rule_level alerts by design",
+            "Review scan results in your vulnerability management platform"
+        ]
+    },
+    "disk usage": {
+        "tactic": "System Health Alert",
+        "owasp": "None",
+        "mitigation": [
+            "No threat action required — this is a system capacity warning, not an attack",
+            "AI classified as benign: disk usage alerts are operational, not adversarial",
+            "Consider expanding storage or archiving old logs to /cold_storage"
+        ]
+    },
+    "certificate": {
+        "tactic": "System Health Alert",
+        "owasp": "None",
+        "mitigation": [
+            "No threat action required — SSL/TLS certificate lifecycle notification",
+            "AI classified as benign: certificate expiry warnings are routine maintenance alerts",
+            "Schedule certificate renewal before expiration date"
+        ]
+    },
+    "password expir": {
+        "tactic": "Identity Management",
+        "owasp": "None",
+        "mitigation": [
+            "No threat action required — standard password rotation policy enforcement",
+            "AI classified as benign: password expiry is an identity management event, not an intrusion",
+            "Ensure user completes password reset before lockout"
+        ]
+    },
+    "update": {
+        "tactic": "System Maintenance",
+        "owasp": "None",
+        "mitigation": [
+            "No threat action required — scheduled system update/patch management",
+            "AI classified as benign: automatic service restarts during patching are expected",
+            "Verify update was applied successfully via patch management console"
+        ]
+    },
+    "key rotation": {
+        "tactic": "Identity Management",
+        "owasp": "None",
+        "mitigation": [
+            "No threat action required — SSH key rotation is a security best practice",
+            "AI classified as benign: key rotation events are administrative, not adversarial",
+            "Confirm new keys are distributed to authorized personnel"
+        ]
+    },
+    "maintenance": {
+        "tactic": "System Health Alert",
+        "owasp": "None",
+        "mitigation": [
+            "No threat action required — database or system maintenance operation",
+            "AI classified as benign: slow query logs and maintenance tasks are operational alerts",
+            "Review query performance and optimize if threshold violations persist"
+        ]
+    },
+    "default_high_sev_benign": {
+        "tactic": "Operational Alert",
+        "owasp": "None",
+        "mitigation": [
+            "AI classified this high-severity alert as benign based on learned feature patterns",
+            "Despite rule_level >= 8, the combination of decoder, description, and IP context indicates a routine operation",
+            "Recommend manual review if this alert type is unexpected in your environment"
+        ]
+    }
+}
+
+
+def analyze_threat(rule_description: str, prediction_class: int, raw_mitre_id: str = "None", raw_rule_group: str = "None", rule_level: int = 0) -> dict:
+    """
+    Expert system that maps AI predictions to actionable MITRE ATT&CK intelligence.
+    
+    Enhanced to handle high-severity benign logs: when the AI says "Benign" but the
+    rule_level is >= 8, the system explains WHY (e.g., compliance scan, disk alert)
+    instead of silently returning "No action required."
+    """
     if prediction_class == 0:
+        # --- HIGH-SEVERITY BENIGN HANDLER ---
+        # If the AI classified this as benign but the rule_level is unusually high,
+        # provide an explanation so the SOC analyst knows why.
+        if rule_level >= 8:
+            desc_lower = rule_description.lower()
+            for keyword, explanation in HIGH_SEVERITY_BENIGN_EXPLANATIONS.items():
+                if keyword == "default_high_sev_benign":
+                    continue
+                if keyword.lower() in desc_lower:
+                    return explanation
+            # No keyword match — use generic high-severity benign explanation
+            return HIGH_SEVERITY_BENIGN_EXPLANATIONS["default_high_sev_benign"]
+        
         return MITRE_MAPPING["default_benign"]
         
     # Match keywords in the raw description
