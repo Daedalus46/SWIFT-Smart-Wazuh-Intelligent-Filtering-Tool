@@ -1,0 +1,1001 @@
+timestamp,rule_level,decoder_name,rule_description,rule_group,mitre_id,agent_ip,is_malicious
+2026-04-17T10:56:00.000000Z,4,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.124,0
+2026-04-17T07:57:00.000000Z,10,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,64.23.243.96,1
+2026-04-21T22:58:00.000000Z,4,pam,Successful SSH login,authentication,None,192.168.1.135,0
+2026-03-30T15:38:00.000000Z,3,mysql,Standard DB query execution,database,None,192.168.1.108,0
+2026-04-23T21:11:00.000000Z,2,sudo,User executed allowed sudo command,privilege,None,192.168.1.245,0
+2026-04-11T22:31:00.000000Z,1,postfix,Mail delivery successful,mail,None,192.168.1.135,0
+2026-04-20T15:12:00.000000Z,3,cron,Cron job executed successfully,system,None,192.168.1.128,0
+2026-04-20T08:21:00.000000Z,8,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,45.227.254.52,1
+2026-04-03T23:08:00.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,87.217.142.63,1
+2026-04-03T03:54:00.000000Z,11,windows_defender,Malware Execution Detected,malware,T1204,64.23.243.96,1
+2026-04-20T19:09:00.000000Z,14,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,20.121.25.154,1
+2026-03-30T15:01:00.000000Z,4,postfix,Mail delivery successful,mail,None,192.168.1.30,0
+2026-04-01T08:43:00.000000Z,4,cron,Cron job executed successfully,system,None,192.168.1.221,0
+2026-04-11T00:47:00.000000Z,14,suricata,Command and Control Beaconing Detected,c2,T1071,54.39.136.194,1
+2026-04-13T11:21:00.000000Z,8,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,23.129.64.15,1
+2026-04-23T05:16:00.000000Z,7,windows_defender,Malware Execution Detected,malware,T1204,74.248.130.207,1
+2026-04-02T12:27:00.000000Z,10,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,85.203.23.153,1
+2026-04-11T23:03:00.000000Z,12,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,77.105.160.156,1
+2026-03-27T09:44:00.000000Z,12,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,64.174.156.108,1
+2026-04-20T10:21:00.000000Z,1,pam,Successful SSH login,authentication,None,192.168.1.195,0
+2026-04-19T14:22:00.000000Z,7,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,54.39.136.194,1
+2026-04-04T19:34:00.000000Z,3,mysql,Standard DB query execution,database,None,192.168.1.117,0
+2026-04-23T12:28:00.000000Z,9,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,112.216.161.220,1
+2026-04-20T08:23:00.000000Z,3,mysql,Standard DB query execution,database,None,192.168.1.240,0
+2026-03-31T15:49:00.000000Z,10,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,23.129.64.15,1
+2026-04-21T06:00:00.000000Z,2,syscheck,File integrity check passed,ossec,None,192.168.1.141,0
+2026-04-11T08:30:00.000000Z,10,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,17.137.99.49,1
+2026-03-30T23:15:00.000000Z,11,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,100.246.107.214,1
+2026-04-01T23:26:00.000000Z,1,postfix,Mail delivery successful,mail,None,192.168.1.145,0
+2026-04-17T14:22:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,43.213.110.65,1
+2026-04-21T09:19:00.000000Z,2,syscheck,File integrity check passed,ossec,None,192.168.1.152,0
+2026-04-03T08:20:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,77.105.160.156,1
+2026-03-31T18:19:00.000000Z,9,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,77.216.64.134,1
+2026-04-13T02:53:00.000000Z,4,postfix,Mail delivery successful,mail,None,192.168.1.190,0
+2026-04-03T20:04:00.000000Z,3,cron,Cron job executed successfully,system,None,192.168.1.46,0
+2026-04-22T14:20:00.000000Z,2,windows,System event 4624,windows_auth,None,192.168.1.9,0
+2026-04-02T14:21:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,54.39.136.194,1
+2026-03-25T10:22:00.000000Z,15,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,169.33.37.97,1
+2026-03-31T05:33:00.000000Z,2,sudo,User executed allowed sudo command,privilege,None,192.168.1.49,0
+2026-03-28T19:39:00.000000Z,15,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,51.222.95.16,1
+2026-04-01T21:42:00.000000Z,16,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,8.222.243.165,1
+2026-04-22T19:32:00.000000Z,10,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,145.169.166.211,1
+2026-04-01T00:14:00.000000Z,3,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.78,0
+2026-03-25T08:52:00.000000Z,4,sudo,User executed allowed sudo command,privilege,None,192.168.1.218,0
+2026-04-18T13:40:00.000000Z,2,mysql,Standard DB query execution,database,None,192.168.1.138,0
+2026-04-20T23:12:00.000000Z,12,modsecurity,SQL Injection attempt detected,owasp_10,T1190,64.28.122.62,1
+2026-03-26T10:03:00.000000Z,2,cron,Cron job executed successfully,system,None,192.168.1.112,0
+2026-04-18T06:42:00.000000Z,1,windows,System event 4624,windows_auth,None,192.168.1.251,0
+2026-03-26T01:34:00.000000Z,7,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,139.152.67.62,1
+2026-03-28T05:55:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,8.222.243.165,1
+2026-04-11T17:55:00.000000Z,8,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,51.161.65.163,1
+2026-04-05T16:06:00.000000Z,16,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,47.237.24.132,1
+2026-03-26T20:39:00.000000Z,7,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,38.34.179.51,1
+2026-03-26T19:45:00.000000Z,4,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.189,0
+2026-03-27T16:20:00.000000Z,16,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,47.7.183.15,1
+2026-04-21T01:07:00.000000Z,1,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.87,0
+2026-04-11T17:57:00.000000Z,4,cron,Cron job executed successfully,system,None,192.168.1.52,0
+2026-04-07T23:41:00.000000Z,1,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.118,0
+2026-04-09T08:07:00.000000Z,16,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,20.121.25.154,1
+2026-04-22T23:09:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,185.220.101.34,1
+2026-04-13T05:26:00.000000Z,3,pam,Successful SSH login,authentication,None,192.168.1.158,0
+2026-04-06T04:39:00.000000Z,15,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,197.233.112.240,1
+2026-04-04T18:35:00.000000Z,3,mysql,Standard DB query execution,database,None,192.168.1.107,0
+2026-03-29T06:16:00.000000Z,9,windows_defender,Malware Execution Detected,malware,T1204,185.220.101.34,1
+2026-04-03T04:52:00.000000Z,3,cron,Cron job executed successfully,system,None,192.168.1.34,0
+2026-04-08T11:42:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,185.220.101.34,1
+2026-03-26T07:25:00.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,61.159.116.233,1
+2026-04-13T10:22:00.000000Z,3,cron,Cron job executed successfully,system,None,192.168.1.67,0
+2026-04-05T09:49:00.000000Z,4,syscheck,File integrity check passed,ossec,None,192.168.1.129,0
+2026-04-06T08:18:00.000000Z,1,sudo,User executed allowed sudo command,privilege,None,192.168.1.121,0
+2026-04-06T08:32:00.000000Z,4,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.24,0
+2026-04-20T13:31:00.000000Z,15,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,38.121.80.155,1
+2026-04-17T18:27:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.222.95.16,1
+2026-04-14T15:32:00.000000Z,2,pam,Successful SSH login,authentication,None,192.168.1.227,0
+2026-03-25T14:31:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,118.178.104.223,1
+2026-04-13T10:31:00.000000Z,7,modsecurity,SQL Injection attempt detected,owasp_10,T1190,83.111.217.255,1
+2026-04-02T03:37:00.000000Z,4,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.156,0
+2026-04-22T13:46:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,148.128.55.170,1
+2026-04-08T23:35:00.000000Z,4,cron,Cron job executed successfully,system,None,192.168.1.136,0
+2026-03-28T16:38:00.000000Z,8,suricata,Command and Control Beaconing Detected,c2,T1071,74.248.130.207,1
+2026-04-09T10:15:00.000000Z,10,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,149.145.183.229,1
+2026-04-17T02:22:00.000000Z,2,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.120,0
+2026-04-14T06:17:00.000000Z,2,syscheck,File integrity check passed,ossec,None,192.168.1.80,0
+2026-04-02T11:04:00.000000Z,10,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,45.227.254.52,1
+2026-04-09T16:18:00.000000Z,1,postfix,Mail delivery successful,mail,None,192.168.1.199,0
+2026-04-11T11:31:00.000000Z,2,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.98,0
+2026-04-20T15:08:00.000000Z,15,windows_defender,Malware Execution Detected,malware,T1204,54.39.136.194,1
+2026-04-09T16:54:00.000000Z,1,sudo,User executed allowed sudo command,privilege,None,192.168.1.166,0
+2026-03-26T17:19:00.000000Z,4,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.70,0
+2026-04-07T02:52:00.000000Z,1,postfix,Mail delivery successful,mail,None,192.168.1.23,0
+2026-04-09T15:34:00.000000Z,2,postfix,Mail delivery successful,mail,None,192.168.1.97,0
+2026-04-04T18:19:00.000000Z,7,modsecurity,SQL Injection attempt detected,owasp_10,T1190,88.110.250.153,1
+2026-04-03T10:30:00.000000Z,15,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,103.45.67.89,1
+2026-04-14T10:16:00.000000Z,12,suricata,Command and Control Beaconing Detected,c2,T1071,8.222.243.165,1
+2026-03-28T13:27:00.000000Z,1,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.64,0
+2026-04-22T21:58:00.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,171.124.18.86,1
+2026-04-22T04:15:00.000000Z,1,mysql,Standard DB query execution,database,None,192.168.1.95,0
+2026-04-07T21:03:00.000000Z,3,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.127,0
+2026-03-31T18:01:00.000000Z,3,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.74,0
+2026-04-05T15:06:00.000000Z,11,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,47.237.24.132,1
+2026-04-03T17:51:00.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,85.203.23.153,1
+2026-04-18T13:46:00.000000Z,12,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,64.23.243.96,1
+2026-04-04T02:43:00.000000Z,13,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,32.45.135.187,1
+2026-03-30T14:27:00.000000Z,9,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,163.186.126.24,1
+2026-04-15T01:37:00.000000Z,3,sudo,User executed allowed sudo command,privilege,None,192.168.1.144,0
+2026-03-28T11:44:00.000000Z,11,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,77.105.160.156,1
+2026-04-10T18:25:00.000000Z,14,windows_defender,Malware Execution Detected,malware,T1204,169.223.122.132,1
+2026-04-05T20:25:00.000000Z,8,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,51.222.95.16,1
+2026-04-22T12:19:00.000000Z,2,iptables,Firewall accepted connection,firewall,None,192.168.1.148,0
+2026-04-05T15:08:00.000000Z,8,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,51.161.65.163,1
+2026-04-18T20:05:00.000000Z,13,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,47.237.24.132,1
+2026-04-12T11:11:00.000000Z,16,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,4.121.168.132,1
+2026-04-16T00:56:00.000000Z,4,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.12,0
+2026-04-12T17:01:00.000000Z,11,windows_defender,Malware Execution Detected,malware,T1204,128.252.254.27,1
+2026-04-18T15:23:00.000000Z,2,iptables,Firewall accepted connection,firewall,None,192.168.1.123,0
+2026-04-03T08:05:00.000000Z,1,pam,Successful SSH login,authentication,None,192.168.1.172,0
+2026-04-20T21:34:00.000000Z,13,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,91.197.251.73,1
+2026-04-11T17:58:00.000000Z,9,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,77.105.160.156,1
+2026-03-25T17:46:00.000000Z,8,suricata,Command and Control Beaconing Detected,c2,T1071,119.46.202.47,1
+2026-04-19T14:00:00.000000Z,16,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,38.34.179.51,1
+2026-04-12T01:16:00.000000Z,7,windows_defender,Malware Execution Detected,malware,T1204,23.129.64.15,1
+2026-03-31T07:10:00.000000Z,3,windows,System event 4624,windows_auth,None,192.168.1.63,0
+2026-04-15T23:11:00.000000Z,2,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.50,0
+2026-03-28T04:54:00.000000Z,3,syscheck,File integrity check passed,ossec,None,192.168.1.200,0
+2026-04-17T00:34:00.000000Z,14,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,26.40.166.94,1
+2026-04-21T21:06:00.000000Z,8,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,79.141.163.38,1
+2026-04-02T22:04:00.000000Z,7,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,85.203.23.153,1
+2026-04-03T23:58:00.000000Z,16,suricata,Command and Control Beaconing Detected,c2,T1071,87.236.155.219,1
+2026-04-20T23:39:00.000000Z,2,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.127,0
+2026-04-12T09:10:00.000000Z,1,iptables,Firewall accepted connection,firewall,None,192.168.1.140,0
+2026-04-21T07:09:00.000000Z,8,windows_defender,Malware Execution Detected,malware,T1204,81.85.214.150,1
+2026-04-11T05:05:00.000000Z,12,suricata,Command and Control Beaconing Detected,c2,T1071,51.161.65.163,1
+2026-04-22T08:09:00.000000Z,12,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,51.161.65.163,1
+2026-04-09T02:19:00.000000Z,3,sudo,User executed allowed sudo command,privilege,None,192.168.1.18,0
+2026-04-03T14:52:00.000000Z,7,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,73.83.205.15,1
+2026-04-17T19:00:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,77.105.160.156,1
+2026-04-05T08:44:00.000000Z,12,windows_defender,Malware Execution Detected,malware,T1204,52.24.5.108,1
+2026-04-07T19:00:00.000000Z,2,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.127,0
+2026-04-02T09:49:00.000000Z,3,windows,System event 4624,windows_auth,None,192.168.1.9,0
+2026-04-11T07:43:00.000000Z,1,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.198,0
+2026-04-23T04:09:00.000000Z,8,suricata,Command and Control Beaconing Detected,c2,T1071,77.105.160.156,1
+2026-04-01T18:26:00.000000Z,1,sudo,User executed allowed sudo command,privilege,None,192.168.1.211,0
+2026-04-16T01:48:00.000000Z,1,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.20,0
+2026-03-29T02:47:00.000000Z,1,mysql,Standard DB query execution,database,None,192.168.1.48,0
+2026-04-06T14:10:00.000000Z,3,cron,Cron job executed successfully,system,None,192.168.1.199,0
+2026-04-20T05:31:00.000000Z,3,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.10,0
+2026-04-22T10:37:00.000000Z,15,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,54.39.136.194,1
+2026-04-05T04:23:00.000000Z,4,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.253,0
+2026-04-04T05:11:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
+2026-04-01T07:06:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,171.252.69.31,1
+2026-04-05T20:18:00.000000Z,9,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,38.34.179.51,1
+2026-03-29T22:26:00.000000Z,2,mysql,Standard DB query execution,database,None,192.168.1.140,0
+2026-04-11T02:26:00.000000Z,1,sudo,User executed allowed sudo command,privilege,None,192.168.1.3,0
+2026-04-08T21:54:00.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,85.203.23.153,1
+2026-03-27T23:23:00.000000Z,16,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,185.220.101.34,1
+2026-04-03T13:12:00.000000Z,2,pam,Successful SSH login,authentication,None,192.168.1.253,0
+2026-04-09T23:40:00.000000Z,7,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,64.61.166.80,1
+2026-04-06T10:53:00.000000Z,1,pam,Successful SSH login,authentication,None,192.168.1.5,0
+2026-04-16T18:00:00.000000Z,1,pam,Successful SSH login,authentication,None,192.168.1.162,0
+2026-04-15T13:38:00.000000Z,3,cron,Cron job executed successfully,system,None,192.168.1.250,0
+2026-04-10T01:33:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,92.100.46.215,1
+2026-04-21T11:02:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,8.222.243.165,1
+2026-04-05T05:02:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,33.78.146.105,1
+2026-04-14T06:41:00.000000Z,1,cron,Cron job executed successfully,system,None,192.168.1.57,0
+2026-03-30T18:31:00.000000Z,1,syscheck,File integrity check passed,ossec,None,192.168.1.219,0
+2026-03-30T06:21:00.000000Z,11,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,185.220.101.34,1
+2026-04-01T03:29:00.000000Z,1,iptables,Firewall accepted connection,firewall,None,192.168.1.90,0
+2026-04-04T10:32:00.000000Z,8,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,45.227.254.52,1
+2026-04-22T19:50:00.000000Z,1,mysql,Standard DB query execution,database,None,192.168.1.222,0
+2026-04-04T15:21:00.000000Z,11,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,92.231.22.76,1
+2026-04-21T18:36:00.000000Z,4,windows,System event 4624,windows_auth,None,192.168.1.47,0
+2026-04-14T19:06:00.000000Z,3,cron,Cron job executed successfully,system,None,192.168.1.177,0
+2026-04-13T07:13:00.000000Z,2,iptables,Firewall accepted connection,firewall,None,192.168.1.133,0
+2026-03-31T14:47:00.000000Z,4,mysql,Standard DB query execution,database,None,192.168.1.239,0
+2026-04-03T01:27:00.000000Z,3,postfix,Mail delivery successful,mail,None,192.168.1.53,0
+2026-04-11T04:30:00.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,27.84.133.150,1
+2026-04-15T13:37:00.000000Z,8,windows_defender,Malware Execution Detected,malware,T1204,129.157.47.49,1
+2026-04-11T09:15:00.000000Z,3,mysql,Standard DB query execution,database,None,192.168.1.248,0
+2026-03-31T13:16:00.000000Z,4,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.170,0
+2026-04-06T13:19:00.000000Z,1,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.162,0
+2026-04-07T20:39:00.000000Z,3,iptables,Firewall accepted connection,firewall,None,192.168.1.120,0
+2026-04-14T05:51:00.000000Z,3,windows,System event 4624,windows_auth,None,192.168.1.109,0
+2026-03-31T20:21:00.000000Z,11,windows_defender,Malware Execution Detected,malware,T1204,106.82.221.213,1
+2026-04-18T05:24:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,45.227.254.52,1
+2026-04-07T18:34:00.000000Z,8,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,103.45.67.89,1
+2026-03-25T03:21:00.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,77.105.160.156,1
+2026-04-22T16:48:00.000000Z,3,syscheck,File integrity check passed,ossec,None,192.168.1.126,0
+2026-04-20T16:40:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,74.248.130.207,1
+2026-04-11T09:00:00.000000Z,9,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,185.220.101.34,1
+2026-04-01T18:59:00.000000Z,3,iptables,Firewall accepted connection,firewall,None,192.168.1.58,0
+2026-04-17T10:56:00.000000Z,16,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,181.13.238.243,1
+2026-04-10T18:06:00.000000Z,1,sudo,User executed allowed sudo command,privilege,None,192.168.1.50,0
+2026-04-20T06:04:00.000000Z,7,suricata,Command and Control Beaconing Detected,c2,T1071,134.49.193.122,1
+2026-03-31T06:29:00.000000Z,8,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,113.249.107.197,1
+2026-04-04T18:58:00.000000Z,7,modsecurity,SQL Injection attempt detected,owasp_10,T1190,77.105.160.156,1
+2026-04-20T09:58:00.000000Z,15,suricata,Command and Control Beaconing Detected,c2,T1071,185.220.101.34,1
+2026-04-03T08:47:00.000000Z,10,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,149.114.22.207,1
+2026-04-23T13:54:00.000000Z,16,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,185.220.101.34,1
+2026-04-04T14:11:00.000000Z,3,sudo,User executed allowed sudo command,privilege,None,192.168.1.252,0
+2026-04-08T11:04:00.000000Z,1,mysql,Standard DB query execution,database,None,192.168.1.234,0
+2026-04-05T21:21:00.000000Z,2,pam,Successful SSH login,authentication,None,192.168.1.126,0
+2026-04-12T12:08:00.000000Z,2,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.35,0
+2026-03-29T15:06:00.000000Z,2,sudo,User executed allowed sudo command,privilege,None,192.168.1.18,0
+2026-04-06T18:26:00.000000Z,12,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,64.82.230.13,1
+2026-04-17T03:09:00.000000Z,16,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,54.187.21.201,1
+2026-04-20T10:48:00.000000Z,13,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,150.167.10.54,1
+2026-03-30T16:16:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,8.222.243.165,1
+2026-03-27T02:01:00.000000Z,2,sudo,User executed allowed sudo command,privilege,None,192.168.1.181,0
+2026-04-02T21:05:00.000000Z,15,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,51.222.95.16,1
+2026-04-08T07:34:00.000000Z,4,mysql,Standard DB query execution,database,None,192.168.1.115,0
+2026-04-22T16:51:00.000000Z,1,mysql,Standard DB query execution,database,None,192.168.1.177,0
+2026-04-15T19:29:00.000000Z,1,iptables,Firewall accepted connection,firewall,None,192.168.1.117,0
+2026-03-25T15:00:00.000000Z,3,cron,Cron job executed successfully,system,None,192.168.1.179,0
+2026-04-04T15:01:00.000000Z,2,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.177,0
+2026-04-17T08:47:00.000000Z,8,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
+2026-03-29T21:45:00.000000Z,1,windows,System event 4624,windows_auth,None,192.168.1.205,0
+2026-04-14T23:34:00.000000Z,2,postfix,Mail delivery successful,mail,None,192.168.1.93,0
+2026-04-14T19:18:00.000000Z,8,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,157.157.201.220,1
+2026-04-11T05:52:00.000000Z,3,sudo,User executed allowed sudo command,privilege,None,192.168.1.128,0
+2026-03-30T11:43:00.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,51.161.65.163,1
+2026-04-16T02:10:00.000000Z,15,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,109.166.232.10,1
+2026-04-03T23:06:00.000000Z,14,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,38.154.73.38,1
+2026-04-06T11:19:00.000000Z,8,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,120.127.93.133,1
+2026-03-30T14:56:00.000000Z,1,pam,Successful SSH login,authentication,None,192.168.1.31,0
+2026-04-23T01:44:00.000000Z,3,iptables,Firewall accepted connection,firewall,None,192.168.1.108,0
+2026-04-16T11:15:00.000000Z,1,postfix,Mail delivery successful,mail,None,192.168.1.100,0
+2026-03-30T19:27:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
+2026-03-26T01:24:00.000000Z,12,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,51.161.65.163,1
+2026-04-01T19:34:00.000000Z,3,cron,Cron job executed successfully,system,None,192.168.1.60,0
+2026-03-25T14:01:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,96.126.104.237,1
+2026-03-28T09:18:00.000000Z,10,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,38.34.179.51,1
+2026-04-16T07:36:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,23.129.64.15,1
+2026-04-12T13:11:00.000000Z,1,windows,System event 4624,windows_auth,None,192.168.1.196,0
+2026-04-04T22:42:00.000000Z,1,mysql,Standard DB query execution,database,None,192.168.1.144,0
+2026-04-01T22:39:00.000000Z,1,windows,System event 4624,windows_auth,None,192.168.1.154,0
+2026-03-31T11:11:00.000000Z,3,syscheck,File integrity check passed,ossec,None,192.168.1.121,0
+2026-04-07T11:04:00.000000Z,2,postfix,Mail delivery successful,mail,None,192.168.1.167,0
+2026-04-20T08:55:00.000000Z,2,iptables,Firewall accepted connection,firewall,None,192.168.1.230,0
+2026-04-10T15:03:00.000000Z,3,syscheck,File integrity check passed,ossec,None,192.168.1.22,0
+2026-04-17T07:00:00.000000Z,4,syscheck,File integrity check passed,ossec,None,192.168.1.51,0
+2026-04-23T01:48:00.000000Z,14,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,64.23.243.96,1
+2026-03-29T23:51:00.000000Z,8,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,33.40.89.129,1
+2026-04-08T20:55:00.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,23.129.64.15,1
+2026-04-07T10:44:00.000000Z,16,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-04-03T13:38:00.000000Z,11,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,20.121.25.154,1
+2026-03-30T12:41:00.000000Z,1,cron,Cron job executed successfully,system,None,192.168.1.105,0
+2026-03-31T02:39:00.000000Z,11,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,45.227.254.52,1
+2026-04-03T19:28:00.000000Z,9,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,126.1.32.141,1
+2026-04-17T09:04:00.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,109.127.98.44,1
+2026-04-08T22:51:00.000000Z,11,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,103.45.67.89,1
+2026-04-09T19:55:00.000000Z,3,sudo,User executed allowed sudo command,privilege,None,192.168.1.43,0
+2026-04-04T17:22:00.000000Z,2,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.32,0
+2026-04-16T09:05:00.000000Z,7,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,51.161.65.163,1
+2026-04-19T06:24:00.000000Z,1,postfix,Mail delivery successful,mail,None,192.168.1.55,0
+2026-04-08T09:23:00.000000Z,3,postfix,Mail delivery successful,mail,None,192.168.1.71,0
+2026-04-23T09:30:00.000000Z,8,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,182.7.147.162,1
+2026-03-31T23:38:00.000000Z,2,pam,Successful SSH login,authentication,None,192.168.1.62,0
+2026-03-27T09:17:00.000000Z,2,syscheck,File integrity check passed,ossec,None,192.168.1.42,0
+2026-03-29T21:58:00.000000Z,8,windows_defender,Malware Execution Detected,malware,T1204,185.220.101.34,1
+2026-04-17T02:13:00.000000Z,3,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.167,0
+2026-04-11T02:50:00.000000Z,2,sudo,User executed allowed sudo command,privilege,None,192.168.1.6,0
+2026-04-13T18:50:00.000000Z,1,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.75,0
+2026-04-22T01:59:00.000000Z,4,mysql,Standard DB query execution,database,None,192.168.1.178,0
+2026-04-02T20:08:00.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,198.234.193.185,1
+2026-04-21T15:14:00.000000Z,11,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,103.45.67.89,1
+2026-04-06T21:04:00.000000Z,10,windows_defender,Malware Execution Detected,malware,T1204,51.161.65.163,1
+2026-03-31T19:47:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,77.105.160.156,1
+2026-03-31T02:53:00.000000Z,3,iptables,Firewall accepted connection,firewall,None,192.168.1.185,0
+2026-03-29T18:52:00.000000Z,4,mysql,Standard DB query execution,database,None,192.168.1.114,0
+2026-04-02T22:47:00.000000Z,12,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,85.203.23.153,1
+2026-03-28T00:14:00.000000Z,2,windows,System event 4624,windows_auth,None,192.168.1.239,0
+2026-04-10T23:38:00.000000Z,1,syscheck,File integrity check passed,ossec,None,192.168.1.218,0
+2026-04-05T17:43:00.000000Z,13,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,31.14.52.62,1
+2026-04-12T17:13:00.000000Z,15,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,20.121.25.154,1
+2026-04-13T07:57:00.000000Z,1,pam,Successful SSH login,authentication,None,192.168.1.149,0
+2026-04-18T21:38:00.000000Z,16,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,64.23.243.96,1
+2026-03-26T16:06:00.000000Z,2,postfix,Mail delivery successful,mail,None,192.168.1.220,0
+2026-03-25T15:41:00.000000Z,2,pam,Successful SSH login,authentication,None,192.168.1.163,0
+2026-04-02T05:32:00.000000Z,3,syscheck,File integrity check passed,ossec,None,192.168.1.253,0
+2026-03-30T04:02:00.000000Z,4,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.190,0
+2026-03-26T13:00:00.000000Z,11,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,200.241.126.121,1
+2026-04-02T02:26:00.000000Z,10,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,103.23.6.219,1
+2026-03-30T01:21:00.000000Z,4,pam,Successful SSH login,authentication,None,192.168.1.119,0
+2026-03-28T04:01:00.000000Z,1,iptables,Firewall accepted connection,firewall,None,192.168.1.177,0
+2026-03-26T18:57:00.000000Z,4,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.171,0
+2026-04-18T00:02:00.000000Z,1,pam,Successful SSH login,authentication,None,192.168.1.89,0
+2026-04-12T21:10:00.000000Z,11,suricata,Command and Control Beaconing Detected,c2,T1071,59.217.188.85,1
+2026-04-22T14:19:00.000000Z,11,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,103.45.67.89,1
+2026-04-16T04:25:00.000000Z,1,iptables,Firewall accepted connection,firewall,None,192.168.1.147,0
+2026-04-23T20:52:00.000000Z,3,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.209,0
+2026-04-12T12:33:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,24.102.242.215,1
+2026-04-11T19:14:00.000000Z,4,sudo,User executed allowed sudo command,privilege,None,192.168.1.199,0
+2026-04-19T19:35:00.000000Z,2,cron,Cron job executed successfully,system,None,192.168.1.231,0
+2026-03-31T16:58:00.000000Z,4,cron,Cron job executed successfully,system,None,192.168.1.29,0
+2026-03-25T20:29:00.000000Z,4,mysql,Standard DB query execution,database,None,192.168.1.40,0
+2026-04-15T18:48:00.000000Z,4,postfix,Mail delivery successful,mail,None,192.168.1.218,0
+2026-04-22T12:49:00.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,23.129.64.15,1
+2026-03-28T17:21:00.000000Z,16,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,189.58.251.177,1
+2026-04-12T09:35:00.000000Z,1,sudo,User executed allowed sudo command,privilege,None,192.168.1.61,0
+2026-03-27T07:39:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,77.105.160.156,1
+2026-04-05T03:57:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,54.39.136.194,1
+2026-04-01T02:43:00.000000Z,15,suricata,Command and Control Beaconing Detected,c2,T1071,85.203.23.153,1
+2026-04-05T19:37:00.000000Z,3,postfix,Mail delivery successful,mail,None,192.168.1.239,0
+2026-04-17T01:26:00.000000Z,3,cron,Cron job executed successfully,system,None,192.168.1.198,0
+2026-04-23T15:49:00.000000Z,8,suricata,Command and Control Beaconing Detected,c2,T1071,54.248.169.230,1
+2026-04-02T19:55:00.000000Z,3,pam,Successful SSH login,authentication,None,192.168.1.215,0
+2026-04-17T18:53:00.000000Z,12,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,131.54.177.26,1
+2026-04-02T16:31:00.000000Z,8,suricata,Command and Control Beaconing Detected,c2,T1071,74.248.130.207,1
+2026-04-09T14:14:00.000000Z,11,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,182.116.70.63,1
+2026-04-13T14:07:00.000000Z,1,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.100,0
+2026-03-29T01:33:00.000000Z,16,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,105.100.60.231,1
+2026-04-07T01:41:00.000000Z,4,sudo,User executed allowed sudo command,privilege,None,192.168.1.157,0
+2026-04-21T05:01:00.000000Z,11,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,98.90.216.162,1
+2026-04-17T03:27:00.000000Z,1,iptables,Firewall accepted connection,firewall,None,192.168.1.233,0
+2026-03-25T05:51:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,64.23.243.96,1
+2026-03-26T12:43:00.000000Z,4,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.137,0
+2026-04-21T17:39:00.000000Z,4,windows,System event 4624,windows_auth,None,192.168.1.47,0
+2026-04-08T17:18:00.000000Z,4,iptables,Firewall accepted connection,firewall,None,192.168.1.8,0
+2026-04-10T11:38:00.000000Z,16,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.222.95.16,1
+2026-04-07T06:49:00.000000Z,8,suricata,Command and Control Beaconing Detected,c2,T1071,185.231.56.233,1
+2026-04-07T04:42:00.000000Z,2,mysql,Standard DB query execution,database,None,192.168.1.47,0
+2026-03-28T02:38:00.000000Z,1,sudo,User executed allowed sudo command,privilege,None,192.168.1.211,0
+2026-03-26T07:34:00.000000Z,13,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,5.69.142.247,1
+2026-04-09T15:32:00.000000Z,10,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,164.233.52.202,1
+2026-03-29T15:13:00.000000Z,7,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,77.105.160.156,1
+2026-04-16T05:25:00.000000Z,8,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,53.87.128.129,1
+2026-04-03T18:36:00.000000Z,14,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,64.23.243.96,1
+2026-04-20T19:02:00.000000Z,2,windows,System event 4624,windows_auth,None,192.168.1.135,0
+2026-04-21T16:04:00.000000Z,4,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.62,0
+2026-04-07T21:16:00.000000Z,4,syscheck,File integrity check passed,ossec,None,192.168.1.122,0
+2026-04-16T11:45:00.000000Z,13,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,8.222.243.165,1
+2026-03-28T04:00:00.000000Z,8,suricata,Command and Control Beaconing Detected,c2,T1071,64.23.243.96,1
+2026-04-19T21:36:00.000000Z,15,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,8.222.243.165,1
+2026-04-12T18:39:00.000000Z,2,windows,System event 4624,windows_auth,None,192.168.1.98,0
+2026-03-29T01:21:00.000000Z,3,pam,Successful SSH login,authentication,None,192.168.1.108,0
+2026-04-22T23:36:00.000000Z,3,mysql,Standard DB query execution,database,None,192.168.1.40,0
+2026-04-01T13:42:00.000000Z,2,mysql,Standard DB query execution,database,None,192.168.1.184,0
+2026-04-06T13:55:00.000000Z,1,windows,System event 4624,windows_auth,None,192.168.1.51,0
+2026-03-31T11:29:00.000000Z,2,pam,Successful SSH login,authentication,None,192.168.1.80,0
+2026-04-05T01:28:00.000000Z,2,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.224,0
+2026-04-08T21:17:00.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,185.220.101.34,1
+2026-04-13T23:08:00.000000Z,2,pam,Successful SSH login,authentication,None,192.168.1.238,0
+2026-04-11T12:22:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,183.37.223.134,1
+2026-03-30T06:41:00.000000Z,1,cron,Cron job executed successfully,system,None,192.168.1.44,0
+2026-03-29T22:39:00.000000Z,12,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,74.248.130.207,1
+2026-04-12T12:01:00.000000Z,12,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,163.21.20.187,1
+2026-04-05T00:36:00.000000Z,10,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,47.237.24.132,1
+2026-04-20T17:23:00.000000Z,14,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,116.160.207.68,1
+2026-04-07T02:58:00.000000Z,1,pam,Successful SSH login,authentication,None,192.168.1.29,0
+2026-04-14T07:21:00.000000Z,10,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,160.202.159.167,1
+2026-03-25T01:43:00.000000Z,1,windows,System event 4624,windows_auth,None,192.168.1.8,0
+2026-04-20T07:25:00.000000Z,3,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.86,0
+2026-04-23T22:53:00.000000Z,7,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,45.227.254.52,1
+2026-04-07T19:12:00.000000Z,4,windows,System event 4624,windows_auth,None,192.168.1.224,0
+2026-03-31T14:27:00.000000Z,2,syscheck,File integrity check passed,ossec,None,192.168.1.216,0
+2026-04-07T06:34:00.000000Z,1,cron,Cron job executed successfully,system,None,192.168.1.133,0
+2026-04-13T17:49:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,64.23.243.96,1
+2026-03-28T19:46:00.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,20.121.25.154,1
+2026-03-29T01:04:00.000000Z,8,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,199.205.89.209,1
+2026-03-25T07:47:00.000000Z,10,windows_defender,Malware Execution Detected,malware,T1204,164.102.29.223,1
+2026-04-17T14:49:00.000000Z,13,suricata,Command and Control Beaconing Detected,c2,T1071,150.128.163.109,1
+2026-04-07T14:26:00.000000Z,4,windows,System event 4624,windows_auth,None,192.168.1.231,0
+2026-04-06T12:36:00.000000Z,3,cron,Cron job executed successfully,system,None,192.168.1.5,0
+2026-04-18T09:56:00.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,185.220.101.34,1
+2026-04-09T02:06:00.000000Z,13,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,54.39.136.194,1
+2026-04-21T20:26:00.000000Z,3,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.157,0
+2026-04-04T18:12:00.000000Z,13,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,159.21.16.36,1
+2026-04-12T23:18:00.000000Z,11,suricata,Command and Control Beaconing Detected,c2,T1071,44.46.96.48,1
+2026-04-23T20:46:00.000000Z,2,pam,Successful SSH login,authentication,None,192.168.1.83,0
+2026-04-02T03:22:00.000000Z,1,pam,Successful SSH login,authentication,None,192.168.1.109,0
+2026-04-02T10:12:00.000000Z,4,sudo,User executed allowed sudo command,privilege,None,192.168.1.174,0
+2026-04-11T05:54:00.000000Z,1,postfix,Mail delivery successful,mail,None,192.168.1.196,0
+2026-04-21T11:19:00.000000Z,2,cron,Cron job executed successfully,system,None,192.168.1.204,0
+2026-03-31T12:30:00.000000Z,1,postfix,Mail delivery successful,mail,None,192.168.1.212,0
+2026-03-30T08:30:00.000000Z,3,mysql,Standard DB query execution,database,None,192.168.1.40,0
+2026-04-01T15:49:00.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,145.229.170.150,1
+2026-03-30T01:12:00.000000Z,4,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.95,0
+2026-04-09T21:51:00.000000Z,8,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,77.105.160.156,1
+2026-04-12T01:14:00.000000Z,14,windows_defender,Malware Execution Detected,malware,T1204,54.39.136.194,1
+2026-04-06T18:02:00.000000Z,2,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.40,0
+2026-04-14T12:46:00.000000Z,14,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,20.121.25.154,1
+2026-04-08T17:12:00.000000Z,9,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,38.34.179.51,1
+2026-04-15T13:43:00.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,54.39.136.194,1
+2026-04-20T00:05:00.000000Z,9,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,96.66.141.22,1
+2026-04-21T13:13:00.000000Z,3,cron,Cron job executed successfully,system,None,192.168.1.116,0
+2026-04-11T12:12:00.000000Z,3,mysql,Standard DB query execution,database,None,192.168.1.59,0
+2026-04-01T06:30:00.000000Z,1,pam,Successful SSH login,authentication,None,192.168.1.15,0
+2026-04-19T02:25:00.000000Z,11,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,13.44.82.243,1
+2026-03-30T11:53:00.000000Z,3,syscheck,File integrity check passed,ossec,None,192.168.1.38,0
+2026-04-18T22:30:00.000000Z,2,windows,System event 4624,windows_auth,None,192.168.1.251,0
+2026-03-28T11:55:00.000000Z,10,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,174.25.228.85,1
+2026-04-20T07:46:00.000000Z,16,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,158.77.108.85,1
+2026-03-30T08:24:00.000000Z,2,pam,Successful SSH login,authentication,None,192.168.1.247,0
+2026-04-18T14:18:00.000000Z,9,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,138.244.109.247,1
+2026-04-21T04:47:00.000000Z,3,mysql,Standard DB query execution,database,None,192.168.1.46,0
+2026-04-16T06:00:00.000000Z,1,pam,Successful SSH login,authentication,None,192.168.1.122,0
+2026-04-16T01:22:00.000000Z,1,postfix,Mail delivery successful,mail,None,192.168.1.49,0
+2026-04-13T04:01:00.000000Z,11,suricata,Command and Control Beaconing Detected,c2,T1071,79.141.163.38,1
+2026-04-21T14:50:00.000000Z,12,suricata,Command and Control Beaconing Detected,c2,T1071,45.227.254.52,1
+2026-03-25T15:10:00.000000Z,16,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,103.45.67.89,1
+2026-03-28T09:47:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,78.186.122.254,1
+2026-04-20T23:54:00.000000Z,1,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.122,0
+2026-04-18T06:01:00.000000Z,3,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.117,0
+2026-04-08T20:37:00.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,57.185.66.171,1
+2026-04-09T10:16:00.000000Z,15,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,74.248.130.207,1
+2026-04-09T05:08:00.000000Z,4,cron,Cron job executed successfully,system,None,192.168.1.13,0
+2026-03-28T01:57:00.000000Z,14,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,103.45.67.89,1
+2026-04-12T19:35:00.000000Z,2,sudo,User executed allowed sudo command,privilege,None,192.168.1.160,0
+2026-04-16T08:36:00.000000Z,9,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,74.248.130.207,1
+2026-04-13T17:38:00.000000Z,13,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,47.237.24.132,1
+2026-03-31T14:16:00.000000Z,12,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,20.121.25.154,1
+2026-03-30T07:30:00.000000Z,8,modsecurity,SQL Injection attempt detected,owasp_10,T1190,99.102.181.151,1
+2026-04-23T00:24:00.000000Z,2,mysql,Standard DB query execution,database,None,192.168.1.55,0
+2026-04-09T13:09:00.000000Z,10,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,38.34.179.51,1
+2026-04-20T09:06:00.000000Z,3,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.158,0
+2026-04-21T06:08:00.000000Z,3,syscheck,File integrity check passed,ossec,None,192.168.1.150,0
+2026-04-14T10:08:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,103.45.67.89,1
+2026-04-12T06:44:00.000000Z,8,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,106.60.222.154,1
+2026-04-04T12:13:00.000000Z,1,windows,System event 4624,windows_auth,None,192.168.1.93,0
+2026-04-23T11:21:00.000000Z,9,windows_defender,Malware Execution Detected,malware,T1204,135.162.166.135,1
+2026-03-29T18:55:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,84.105.116.43,1
+2026-04-07T04:49:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
+2026-03-27T09:15:00.000000Z,16,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,64.23.243.96,1
+2026-04-20T22:09:00.000000Z,4,windows,System event 4624,windows_auth,None,192.168.1.216,0
+2026-04-05T11:08:00.000000Z,2,cron,Cron job executed successfully,system,None,192.168.1.10,0
+2026-04-09T23:56:00.000000Z,2,mysql,Standard DB query execution,database,None,192.168.1.187,0
+2026-04-13T18:50:00.000000Z,3,cron,Cron job executed successfully,system,None,192.168.1.24,0
+2026-04-02T19:05:00.000000Z,2,pam,Successful SSH login,authentication,None,192.168.1.10,0
+2026-04-20T13:50:00.000000Z,7,windows_defender,Malware Execution Detected,malware,T1204,38.34.179.51,1
+2026-03-25T09:15:00.000000Z,1,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.5,0
+2026-04-19T20:34:00.000000Z,4,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.182,0
+2026-04-09T06:01:00.000000Z,4,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.202,0
+2026-03-31T14:56:00.000000Z,1,postfix,Mail delivery successful,mail,None,192.168.1.197,0
+2026-04-09T15:14:00.000000Z,1,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.122,0
+2026-04-10T04:57:00.000000Z,4,iptables,Firewall accepted connection,firewall,None,192.168.1.172,0
+2026-04-06T15:46:00.000000Z,2,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.14,0
+2026-04-22T17:04:00.000000Z,13,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,198.178.35.86,1
+2026-04-14T15:14:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
+2026-03-26T21:41:00.000000Z,4,iptables,Firewall accepted connection,firewall,None,192.168.1.186,0
+2026-04-21T10:37:00.000000Z,15,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,195.69.239.125,1
+2026-04-01T09:58:00.000000Z,13,windows_defender,Malware Execution Detected,malware,T1204,73.166.193.245,1
+2026-04-01T02:23:00.000000Z,1,postfix,Mail delivery successful,mail,None,192.168.1.30,0
+2026-04-08T18:09:00.000000Z,1,iptables,Firewall accepted connection,firewall,None,192.168.1.251,0
+2026-04-19T17:45:00.000000Z,4,mysql,Standard DB query execution,database,None,192.168.1.224,0
+2026-04-16T03:05:00.000000Z,1,mysql,Standard DB query execution,database,None,192.168.1.122,0
+2026-04-11T00:44:00.000000Z,1,syscheck,File integrity check passed,ossec,None,192.168.1.201,0
+2026-03-27T09:18:00.000000Z,8,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,167.87.152.112,1
+2026-03-26T20:56:00.000000Z,3,syscheck,File integrity check passed,ossec,None,192.168.1.149,0
+2026-04-17T16:45:00.000000Z,2,iptables,Firewall accepted connection,firewall,None,192.168.1.108,0
+2026-04-06T16:55:00.000000Z,1,mysql,Standard DB query execution,database,None,192.168.1.188,0
+2026-03-25T20:23:00.000000Z,8,suricata,Command and Control Beaconing Detected,c2,T1071,137.47.247.5,1
+2026-03-30T03:40:00.000000Z,12,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,64.213.139.218,1
+2026-04-16T22:42:00.000000Z,4,windows,System event 4624,windows_auth,None,192.168.1.95,0
+2026-03-31T22:49:00.000000Z,3,postfix,Mail delivery successful,mail,None,192.168.1.161,0
+2026-03-25T11:13:00.000000Z,1,cron,Cron job executed successfully,system,None,192.168.1.202,0
+2026-04-01T06:03:00.000000Z,11,windows_defender,Malware Execution Detected,malware,T1204,85.203.23.153,1
+2026-04-23T00:14:00.000000Z,3,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.246,0
+2026-04-09T00:15:00.000000Z,4,pam,Successful SSH login,authentication,None,192.168.1.149,0
+2026-03-30T14:23:00.000000Z,7,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,8.222.243.165,1
+2026-03-25T21:44:00.000000Z,7,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,22.81.155.77,1
+2026-04-21T20:51:00.000000Z,2,sudo,User executed allowed sudo command,privilege,None,192.168.1.154,0
+2026-03-31T04:18:00.000000Z,1,iptables,Firewall accepted connection,firewall,None,192.168.1.37,0
+2026-04-20T02:55:00.000000Z,14,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,56.127.75.181,1
+2026-04-10T23:56:00.000000Z,2,iptables,Firewall accepted connection,firewall,None,192.168.1.119,0
+2026-03-25T14:05:00.000000Z,2,pam,Successful SSH login,authentication,None,192.168.1.134,0
+2026-04-02T05:20:00.000000Z,12,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,174.248.202.137,1
+2026-04-02T13:35:00.000000Z,4,pam,Successful SSH login,authentication,None,192.168.1.217,0
+2026-04-19T07:21:00.000000Z,15,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,136.126.17.133,1
+2026-04-20T13:23:00.000000Z,7,windows_defender,Malware Execution Detected,malware,T1204,54.39.136.194,1
+2026-04-22T05:42:00.000000Z,3,syscheck,File integrity check passed,ossec,None,192.168.1.190,0
+2026-04-04T06:42:00.000000Z,4,mysql,Standard DB query execution,database,None,192.168.1.76,0
+2026-04-18T23:22:00.000000Z,14,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,74.248.130.207,1
+2026-04-06T05:50:00.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,102.179.79.2,1
+2026-04-20T07:29:00.000000Z,2,mysql,Standard DB query execution,database,None,192.168.1.148,0
+2026-04-17T07:57:00.000000Z,4,mysql,Standard DB query execution,database,None,192.168.1.148,0
+2026-04-04T17:49:00.000000Z,8,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,23.129.64.15,1
+2026-04-10T12:01:00.000000Z,2,cron,Cron job executed successfully,system,None,192.168.1.211,0
+2026-04-19T04:52:00.000000Z,4,mysql,Standard DB query execution,database,None,192.168.1.123,0
+2026-04-16T18:50:00.000000Z,4,windows,System event 4624,windows_auth,None,192.168.1.145,0
+2026-04-08T16:27:00.000000Z,15,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,160.54.240.139,1
+2026-04-01T15:33:00.000000Z,3,iptables,Firewall accepted connection,firewall,None,192.168.1.143,0
+2026-04-18T20:49:00.000000Z,2,sudo,User executed allowed sudo command,privilege,None,192.168.1.102,0
+2026-04-07T08:28:00.000000Z,15,suricata,Command and Control Beaconing Detected,c2,T1071,79.141.163.38,1
+2026-04-10T04:52:00.000000Z,12,modsecurity,SQL Injection attempt detected,owasp_10,T1190,1.117.223.179,1
+2026-04-23T23:18:00.000000Z,1,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.32,0
+2026-04-18T11:06:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,103.45.67.89,1
+2026-04-15T14:22:00.000000Z,3,iptables,Firewall accepted connection,firewall,None,192.168.1.39,0
+2026-04-05T12:21:00.000000Z,1,syscheck,File integrity check passed,ossec,None,192.168.1.18,0
+2026-04-15T19:10:00.000000Z,1,syscheck,File integrity check passed,ossec,None,192.168.1.37,0
+2026-04-14T21:45:00.000000Z,4,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.184,0
+2026-04-23T00:57:00.000000Z,1,sudo,User executed allowed sudo command,privilege,None,192.168.1.183,0
+2026-04-11T21:48:00.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,147.58.6.243,1
+2026-04-21T23:37:00.000000Z,8,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,64.23.243.96,1
+2026-04-04T02:38:00.000000Z,3,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.52,0
+2026-04-06T13:24:00.000000Z,1,pam,Successful SSH login,authentication,None,192.168.1.180,0
+2026-04-19T01:15:00.000000Z,1,iptables,Firewall accepted connection,firewall,None,192.168.1.76,0
+2026-04-19T08:45:00.000000Z,1,syscheck,File integrity check passed,ossec,None,192.168.1.49,0
+2026-03-31T00:05:00.000000Z,8,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,51.161.65.163,1
+2026-04-11T07:16:00.000000Z,16,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,80.16.152.138,1
+2026-04-07T11:00:00.000000Z,13,suricata,Command and Control Beaconing Detected,c2,T1071,77.105.160.156,1
+2026-03-28T16:10:00.000000Z,1,mysql,Standard DB query execution,database,None,192.168.1.3,0
+2026-04-10T17:12:00.000000Z,7,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-04-08T01:30:00.000000Z,2,pam,Successful SSH login,authentication,None,192.168.1.112,0
+2026-03-31T17:56:00.000000Z,1,pam,Successful SSH login,authentication,None,192.168.1.169,0
+2026-04-19T19:24:00.000000Z,10,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,45.227.254.52,1
+2026-04-16T17:09:00.000000Z,3,iptables,Firewall accepted connection,firewall,None,192.168.1.197,0
+2026-04-21T11:45:00.000000Z,9,windows_defender,Malware Execution Detected,malware,T1204,193.184.190.140,1
+2026-04-04T05:15:00.000000Z,7,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
+2026-04-09T11:43:00.000000Z,12,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,198.225.143.69,1
+2026-03-25T16:23:00.000000Z,3,iptables,Firewall accepted connection,firewall,None,192.168.1.245,0
+2026-04-05T18:53:00.000000Z,1,mysql,Standard DB query execution,database,None,192.168.1.10,0
+2026-04-13T08:35:00.000000Z,9,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,185.220.101.34,1
+2026-04-08T17:04:00.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,183.99.182.109,1
+2026-04-05T19:34:00.000000Z,16,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,134.187.201.71,1
+2026-03-28T00:44:00.000000Z,4,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.171,0
+2026-04-06T19:47:00.000000Z,10,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,20.121.25.154,1
+2026-04-02T17:10:00.000000Z,8,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,161.78.207.184,1
+2026-03-27T23:23:00.000000Z,4,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.30,0
+2026-04-16T15:32:00.000000Z,4,mysql,Standard DB query execution,database,None,192.168.1.141,0
+2026-04-05T11:18:00.000000Z,2,cron,Cron job executed successfully,system,None,192.168.1.159,0
+2026-04-02T09:48:00.000000Z,1,sudo,User executed allowed sudo command,privilege,None,192.168.1.180,0
+2026-03-28T19:18:00.000000Z,4,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.175,0
+2026-03-28T23:16:00.000000Z,8,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,23.129.64.15,1
+2026-03-26T07:24:00.000000Z,1,cron,Cron job executed successfully,system,None,192.168.1.58,0
+2026-04-07T06:24:00.000000Z,2,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.18,0
+2026-04-18T08:15:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,100.3.233.246,1
+2026-04-21T21:00:00.000000Z,2,cron,Cron job executed successfully,system,None,192.168.1.203,0
+2026-03-27T02:23:00.000000Z,1,mysql,Standard DB query execution,database,None,192.168.1.135,0
+2026-03-25T04:43:00.000000Z,1,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.238,0
+2026-04-17T10:13:00.000000Z,3,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.229,0
+2026-04-23T23:26:00.000000Z,15,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,45.227.254.52,1
+2026-03-27T21:22:00.000000Z,11,suricata,Command and Control Beaconing Detected,c2,T1071,107.228.122.30,1
+2026-03-27T03:23:00.000000Z,7,suricata,Command and Control Beaconing Detected,c2,T1071,85.203.23.153,1
+2026-04-20T19:14:00.000000Z,15,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,61.167.71.54,1
+2026-04-12T19:02:00.000000Z,4,mysql,Standard DB query execution,database,None,192.168.1.62,0
+2026-04-16T09:26:00.000000Z,10,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,51.222.95.16,1
+2026-04-15T09:38:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,74.248.130.207,1
+2026-04-13T05:45:00.000000Z,15,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,45.227.254.52,1
+2026-04-11T23:14:00.000000Z,4,pam,Successful SSH login,authentication,None,192.168.1.179,0
+2026-04-08T18:43:00.000000Z,4,postfix,Mail delivery successful,mail,None,192.168.1.126,0
+2026-04-20T21:29:00.000000Z,4,windows,System event 4624,windows_auth,None,192.168.1.202,0
+2026-03-30T18:36:00.000000Z,2,mysql,Standard DB query execution,database,None,192.168.1.38,0
+2026-04-12T20:14:00.000000Z,4,postfix,Mail delivery successful,mail,None,192.168.1.79,0
+2026-04-15T03:31:00.000000Z,16,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,91.66.150.21,1
+2026-03-30T20:20:00.000000Z,16,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,85.203.23.153,1
+2026-04-06T07:02:00.000000Z,8,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.161.65.163,1
+2026-03-31T02:00:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,38.34.179.51,1
+2026-04-20T07:32:00.000000Z,8,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
+2026-04-22T00:04:00.000000Z,4,windows,System event 4624,windows_auth,None,192.168.1.107,0
+2026-04-01T05:14:00.000000Z,9,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,129.9.207.17,1
+2026-04-16T09:16:00.000000Z,2,pam,Successful SSH login,authentication,None,192.168.1.9,0
+2026-04-11T17:05:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,185.220.101.34,1
+2026-04-16T09:56:00.000000Z,2,mysql,Standard DB query execution,database,None,192.168.1.228,0
+2026-03-30T06:31:00.000000Z,1,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.81,0
+2026-04-17T16:37:00.000000Z,10,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-04-10T19:44:00.000000Z,4,iptables,Firewall accepted connection,firewall,None,192.168.1.97,0
+2026-04-02T15:44:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,185.220.101.34,1
+2026-04-06T05:15:00.000000Z,16,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,24.194.109.208,1
+2026-04-16T14:48:00.000000Z,8,windows_defender,Malware Execution Detected,malware,T1204,138.55.74.68,1
+2026-04-09T06:21:00.000000Z,1,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.240,0
+2026-03-27T01:47:00.000000Z,2,windows,System event 4624,windows_auth,None,192.168.1.87,0
+2026-04-13T00:13:00.000000Z,10,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,103.45.67.89,1
+2026-04-09T02:29:00.000000Z,2,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.191,0
+2026-04-16T01:58:00.000000Z,14,suricata,Command and Control Beaconing Detected,c2,T1071,51.222.95.16,1
+2026-03-27T16:14:00.000000Z,12,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,8.222.243.165,1
+2026-04-19T21:08:00.000000Z,1,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.73,0
+2026-04-04T03:05:00.000000Z,2,iptables,Firewall accepted connection,firewall,None,192.168.1.195,0
+2026-04-19T01:17:00.000000Z,11,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,195.219.217.233,1
+2026-03-26T15:18:00.000000Z,1,mysql,Standard DB query execution,database,None,192.168.1.47,0
+2026-04-02T17:54:00.000000Z,9,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,8.222.243.165,1
+2026-04-16T16:44:00.000000Z,11,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,64.23.243.96,1
+2026-04-07T13:53:00.000000Z,16,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,38.34.179.51,1
+2026-04-23T01:43:00.000000Z,4,syscheck,File integrity check passed,ossec,None,192.168.1.238,0
+2026-04-20T10:38:00.000000Z,2,pam,Successful SSH login,authentication,None,192.168.1.222,0
+2026-04-13T03:51:00.000000Z,3,postfix,Mail delivery successful,mail,None,192.168.1.247,0
+2026-03-25T22:55:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,23.129.64.15,1
+2026-03-31T07:40:00.000000Z,7,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,136.72.244.180,1
+2026-03-28T08:18:00.000000Z,4,windows,System event 4624,windows_auth,None,192.168.1.151,0
+2026-04-12T22:21:00.000000Z,14,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,8.222.243.165,1
+2026-03-30T02:14:00.000000Z,7,windows_defender,Malware Execution Detected,malware,T1204,49.220.7.54,1
+2026-03-29T02:30:00.000000Z,3,mysql,Standard DB query execution,database,None,192.168.1.84,0
+2026-04-19T21:24:00.000000Z,1,iptables,Firewall accepted connection,firewall,None,192.168.1.215,0
+2026-04-19T10:03:00.000000Z,16,modsecurity,SQL Injection attempt detected,owasp_10,T1190,23.250.119.51,1
+2026-03-26T10:40:00.000000Z,9,suricata,Command and Control Beaconing Detected,c2,T1071,185.220.101.34,1
+2026-03-31T07:46:00.000000Z,16,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,79.242.189.3,1
+2026-04-05T12:42:00.000000Z,3,pam,Successful SSH login,authentication,None,192.168.1.121,0
+2026-04-11T21:05:00.000000Z,2,postfix,Mail delivery successful,mail,None,192.168.1.24,0
+2026-04-02T10:00:00.000000Z,3,iptables,Firewall accepted connection,firewall,None,192.168.1.162,0
+2026-04-16T10:27:00.000000Z,15,windows_defender,Malware Execution Detected,malware,T1204,99.244.30.69,1
+2026-03-27T01:26:00.000000Z,8,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,77.105.160.156,1
+2026-03-30T09:25:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,34.204.49.50,1
+2026-04-15T19:18:00.000000Z,4,postfix,Mail delivery successful,mail,None,192.168.1.206,0
+2026-04-04T02:14:00.000000Z,12,windows_defender,Malware Execution Detected,malware,T1204,45.227.254.52,1
+2026-03-30T03:36:00.000000Z,4,postfix,Mail delivery successful,mail,None,192.168.1.248,0
+2026-03-30T00:30:00.000000Z,8,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,77.105.160.156,1
+2026-03-26T11:36:00.000000Z,9,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,95.236.244.31,1
+2026-04-16T06:11:00.000000Z,15,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,51.222.95.16,1
+2026-04-16T03:31:00.000000Z,1,sudo,User executed allowed sudo command,privilege,None,192.168.1.153,0
+2026-03-31T16:39:00.000000Z,4,sudo,User executed allowed sudo command,privilege,None,192.168.1.88,0
+2026-04-15T02:12:00.000000Z,2,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.8,0
+2026-04-22T18:20:00.000000Z,3,windows,System event 4624,windows_auth,None,192.168.1.251,0
+2026-03-30T16:11:00.000000Z,11,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,103.45.67.89,1
+2026-04-21T00:25:00.000000Z,3,sudo,User executed allowed sudo command,privilege,None,192.168.1.195,0
+2026-04-14T02:38:00.000000Z,1,iptables,Firewall accepted connection,firewall,None,192.168.1.155,0
+2026-04-17T12:40:00.000000Z,12,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,54.39.136.194,1
+2026-04-12T23:43:00.000000Z,2,postfix,Mail delivery successful,mail,None,192.168.1.75,0
+2026-04-06T22:54:00.000000Z,3,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.91,0
+2026-04-23T17:18:00.000000Z,9,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,79.141.163.38,1
+2026-04-09T08:59:00.000000Z,13,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,51.222.95.16,1
+2026-04-19T07:05:00.000000Z,4,pam,Successful SSH login,authentication,None,192.168.1.183,0
+2026-03-31T21:04:00.000000Z,4,sudo,User executed allowed sudo command,privilege,None,192.168.1.96,0
+2026-04-16T00:04:00.000000Z,3,postfix,Mail delivery successful,mail,None,192.168.1.200,0
+2026-04-07T19:14:00.000000Z,11,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,51.222.95.16,1
+2026-04-04T17:42:00.000000Z,13,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,23.129.64.15,1
+2026-04-03T12:20:00.000000Z,1,windows,System event 4624,windows_auth,None,192.168.1.29,0
+2026-04-04T14:28:00.000000Z,1,sudo,User executed allowed sudo command,privilege,None,192.168.1.11,0
+2026-04-08T19:56:00.000000Z,1,syscheck,File integrity check passed,ossec,None,192.168.1.204,0
+2026-04-15T11:54:00.000000Z,9,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,73.177.192.23,1
+2026-04-21T21:35:00.000000Z,9,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,54.39.136.194,1
+2026-04-08T19:44:00.000000Z,2,windows,System event 4624,windows_auth,None,192.168.1.201,0
+2026-04-07T12:45:00.000000Z,16,modsecurity,SQL Injection attempt detected,owasp_10,T1190,47.237.24.132,1
+2026-03-26T23:53:00.000000Z,16,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,84.243.188.188,1
+2026-04-12T05:34:00.000000Z,1,cron,Cron job executed successfully,system,None,192.168.1.163,0
+2026-04-11T23:06:00.000000Z,12,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,45.227.254.52,1
+2026-04-15T17:59:00.000000Z,14,windows_defender,Malware Execution Detected,malware,T1204,26.3.16.69,1
+2026-04-10T23:25:00.000000Z,4,cron,Cron job executed successfully,system,None,192.168.1.107,0
+2026-04-21T05:06:00.000000Z,1,sudo,User executed allowed sudo command,privilege,None,192.168.1.38,0
+2026-03-25T20:05:00.000000Z,4,pam,Successful SSH login,authentication,None,192.168.1.151,0
+2026-04-11T11:13:00.000000Z,1,mysql,Standard DB query execution,database,None,192.168.1.89,0
+2026-04-19T18:41:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,8.222.243.165,1
+2026-04-08T09:48:00.000000Z,3,windows,System event 4624,windows_auth,None,192.168.1.147,0
+2026-03-30T16:13:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,54.39.136.194,1
+2026-03-30T23:55:00.000000Z,2,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.169,0
+2026-03-29T12:29:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.222.95.16,1
+2026-04-13T10:31:00.000000Z,9,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,25.92.250.122,1
+2026-04-22T13:04:00.000000Z,4,pam,Successful SSH login,authentication,None,192.168.1.230,0
+2026-03-27T02:27:00.000000Z,16,windows_defender,Malware Execution Detected,malware,T1204,77.105.160.156,1
+2026-04-17T02:14:00.000000Z,8,windows_defender,Malware Execution Detected,malware,T1204,74.248.130.207,1
+2026-04-19T21:43:00.000000Z,9,suricata,Command and Control Beaconing Detected,c2,T1071,23.129.64.15,1
+2026-04-11T12:23:00.000000Z,3,syscheck,File integrity check passed,ossec,None,192.168.1.137,0
+2026-04-22T13:56:00.000000Z,4,cron,Cron job executed successfully,system,None,192.168.1.251,0
+2026-04-20T03:34:00.000000Z,7,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,183.205.170.225,1
+2026-03-31T18:59:00.000000Z,4,syscheck,File integrity check passed,ossec,None,192.168.1.129,0
+2026-04-05T12:19:00.000000Z,15,windows_defender,Malware Execution Detected,malware,T1204,20.121.25.154,1
+2026-04-08T04:06:00.000000Z,3,syscheck,File integrity check passed,ossec,None,192.168.1.140,0
+2026-04-12T09:45:00.000000Z,4,sudo,User executed allowed sudo command,privilege,None,192.168.1.132,0
+2026-04-11T04:12:00.000000Z,12,modsecurity,SQL Injection attempt detected,owasp_10,T1190,178.17.201.33,1
+2026-04-11T00:22:00.000000Z,15,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,184.245.127.122,1
+2026-04-22T22:57:00.000000Z,3,iptables,Firewall accepted connection,firewall,None,192.168.1.14,0
+2026-04-06T22:30:00.000000Z,8,modsecurity,SQL Injection attempt detected,owasp_10,T1190,23.129.64.15,1
+2026-04-16T18:50:00.000000Z,15,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,98.151.79.188,1
+2026-04-06T23:38:00.000000Z,14,windows_defender,Malware Execution Detected,malware,T1204,23.129.64.15,1
+2026-04-05T18:03:00.000000Z,3,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.47,0
+2026-03-25T07:10:00.000000Z,2,sudo,User executed allowed sudo command,privilege,None,192.168.1.227,0
+2026-03-27T07:24:00.000000Z,2,mysql,Standard DB query execution,database,None,192.168.1.9,0
+2026-04-10T22:12:00.000000Z,3,mysql,Standard DB query execution,database,None,192.168.1.199,0
+2026-04-20T09:56:00.000000Z,7,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,182.78.118.168,1
+2026-04-20T01:45:00.000000Z,2,windows,System event 4624,windows_auth,None,192.168.1.111,0
+2026-04-18T05:54:00.000000Z,4,cron,Cron job executed successfully,system,None,192.168.1.104,0
+2026-04-07T18:44:00.000000Z,16,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,158.93.177.173,1
+2026-03-29T09:13:00.000000Z,1,sudo,User executed allowed sudo command,privilege,None,192.168.1.171,0
+2026-03-25T03:51:00.000000Z,3,windows,System event 4624,windows_auth,None,192.168.1.5,0
+2026-04-16T06:21:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,79.141.163.38,1
+2026-04-17T15:42:00.000000Z,16,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,23.129.64.15,1
+2026-04-14T13:16:00.000000Z,4,syscheck,File integrity check passed,ossec,None,192.168.1.213,0
+2026-04-14T01:34:00.000000Z,3,pam,Successful SSH login,authentication,None,192.168.1.96,0
+2026-03-30T15:16:00.000000Z,14,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,85.203.23.153,1
+2026-04-11T14:53:00.000000Z,1,cron,Cron job executed successfully,system,None,192.168.1.243,0
+2026-03-31T16:57:00.000000Z,11,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,54.39.136.194,1
+2026-04-15T21:34:00.000000Z,8,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,93.102.97.43,1
+2026-04-11T17:30:00.000000Z,2,sudo,User executed allowed sudo command,privilege,None,192.168.1.154,0
+2026-03-26T01:15:00.000000Z,15,windows_defender,Malware Execution Detected,malware,T1204,175.144.227.117,1
+2026-04-01T15:22:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,23.129.64.15,1
+2026-04-12T08:35:00.000000Z,15,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,103.45.67.89,1
+2026-04-13T18:24:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,79.141.163.38,1
+2026-03-28T08:49:00.000000Z,3,pam,Successful SSH login,authentication,None,192.168.1.200,0
+2026-04-19T15:02:00.000000Z,8,suricata,Command and Control Beaconing Detected,c2,T1071,64.23.243.96,1
+2026-03-28T23:55:00.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,45.227.254.52,1
+2026-04-21T03:07:00.000000Z,4,pam,Successful SSH login,authentication,None,192.168.1.159,0
+2026-04-10T17:20:00.000000Z,2,mysql,Standard DB query execution,database,None,192.168.1.5,0
+2026-04-01T16:04:00.000000Z,15,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,45.20.94.215,1
+2026-04-20T17:40:00.000000Z,7,suricata,Command and Control Beaconing Detected,c2,T1071,23.129.64.15,1
+2026-03-25T09:19:00.000000Z,11,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,20.121.25.154,1
+2026-03-27T21:12:00.000000Z,3,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.90,0
+2026-04-17T12:40:00.000000Z,2,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.120,0
+2026-03-31T07:58:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.146.162.205,1
+2026-03-25T02:26:00.000000Z,16,windows_defender,Malware Execution Detected,malware,T1204,77.105.160.156,1
+2026-03-27T09:43:00.000000Z,1,syscheck,File integrity check passed,ossec,None,192.168.1.129,0
+2026-04-06T18:55:00.000000Z,12,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,73.232.225.68,1
+2026-04-18T03:04:00.000000Z,4,sudo,User executed allowed sudo command,privilege,None,192.168.1.119,0
+2026-04-23T13:19:00.000000Z,4,cron,Cron job executed successfully,system,None,192.168.1.61,0
+2026-03-29T07:16:00.000000Z,16,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,79.141.163.38,1
+2026-04-04T04:27:00.000000Z,16,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,154.17.165.88,1
+2026-04-09T14:25:00.000000Z,3,sudo,User executed allowed sudo command,privilege,None,192.168.1.126,0
+2026-04-22T04:32:00.000000Z,1,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.16,0
+2026-03-29T05:43:00.000000Z,3,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.84,0
+2026-04-02T07:59:00.000000Z,14,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,120.129.74.71,1
+2026-04-20T02:06:00.000000Z,9,windows_defender,Malware Execution Detected,malware,T1204,66.91.108.124,1
+2026-04-03T00:17:00.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,23.129.64.15,1
+2026-03-29T08:40:00.000000Z,3,postfix,Mail delivery successful,mail,None,192.168.1.212,0
+2026-04-21T22:30:00.000000Z,9,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,51.161.65.163,1
+2026-04-15T22:28:00.000000Z,7,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,110.219.22.195,1
+2026-03-28T04:26:00.000000Z,14,suricata,Command and Control Beaconing Detected,c2,T1071,103.45.67.89,1
+2026-04-02T04:31:00.000000Z,3,postfix,Mail delivery successful,mail,None,192.168.1.142,0
+2026-04-20T04:56:00.000000Z,8,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,47.237.24.132,1
+2026-04-09T03:25:00.000000Z,13,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,26.212.42.179,1
+2026-03-29T10:19:00.000000Z,13,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,20.121.25.154,1
+2026-04-18T06:47:00.000000Z,9,windows_defender,Malware Execution Detected,malware,T1204,8.222.243.165,1
+2026-04-14T13:08:00.000000Z,14,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,35.67.45.176,1
+2026-04-08T09:43:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,38.34.179.51,1
+2026-04-02T11:20:00.000000Z,13,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,23.129.64.15,1
+2026-04-22T13:58:00.000000Z,2,windows,System event 4624,windows_auth,None,192.168.1.197,0
+2026-04-22T02:29:00.000000Z,2,iptables,Firewall accepted connection,firewall,None,192.168.1.116,0
+2026-04-20T12:11:00.000000Z,7,modsecurity,SQL Injection attempt detected,owasp_10,T1190,103.45.67.89,1
+2026-03-31T02:35:00.000000Z,16,windows_defender,Malware Execution Detected,malware,T1204,20.121.25.154,1
+2026-04-09T22:38:00.000000Z,3,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.71,0
+2026-04-12T02:10:00.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,8.222.243.165,1
+2026-03-29T05:23:00.000000Z,15,windows_defender,Malware Execution Detected,malware,T1204,38.34.179.51,1
+2026-04-09T04:39:00.000000Z,7,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
+2026-04-01T09:52:00.000000Z,1,cron,Cron job executed successfully,system,None,192.168.1.39,0
+2026-04-04T15:52:00.000000Z,14,windows_defender,Malware Execution Detected,malware,T1204,10.72.127.232,1
+2026-04-18T21:03:00.000000Z,1,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.245,0
+2026-04-01T10:04:00.000000Z,1,postfix,Mail delivery successful,mail,None,192.168.1.57,0
+2026-03-27T23:32:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,54.39.136.194,1
+2026-04-01T17:36:00.000000Z,2,sudo,User executed allowed sudo command,privilege,None,192.168.1.24,0
+2026-04-16T20:50:00.000000Z,14,windows_defender,Malware Execution Detected,malware,T1204,103.45.67.89,1
+2026-04-08T23:44:00.000000Z,8,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,38.34.179.51,1
+2026-04-03T14:42:00.000000Z,2,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.123,0
+2026-03-31T00:57:00.000000Z,2,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.187,0
+2026-04-05T05:24:00.000000Z,2,iptables,Firewall accepted connection,firewall,None,192.168.1.85,0
+2026-03-31T02:57:00.000000Z,1,mysql,Standard DB query execution,database,None,192.168.1.179,0
+2026-04-08T05:16:00.000000Z,3,postfix,Mail delivery successful,mail,None,192.168.1.211,0
+2026-04-04T00:55:00.000000Z,1,sudo,User executed allowed sudo command,privilege,None,192.168.1.207,0
+2026-04-07T02:28:00.000000Z,14,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,77.105.160.156,1
+2026-04-21T11:11:00.000000Z,9,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,23.129.64.15,1
+2026-03-29T05:50:00.000000Z,9,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,54.39.136.194,1
+2026-04-22T20:34:00.000000Z,3,mysql,Standard DB query execution,database,None,192.168.1.23,0
+2026-04-16T09:36:00.000000Z,4,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.53,0
+2026-04-07T05:55:00.000000Z,12,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,133.151.169.174,1
+2026-04-06T19:51:00.000000Z,2,windows,System event 4624,windows_auth,None,192.168.1.232,0
+2026-04-12T02:14:00.000000Z,2,postfix,Mail delivery successful,mail,None,192.168.1.185,0
+2026-03-25T23:33:00.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,51.161.65.163,1
+2026-04-17T17:54:00.000000Z,4,iptables,Firewall accepted connection,firewall,None,192.168.1.222,0
+2026-04-14T06:51:00.000000Z,8,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,155.207.64.135,1
+2026-04-01T05:25:00.000000Z,16,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,77.105.160.156,1
+2026-04-15T09:57:00.000000Z,2,mysql,Standard DB query execution,database,None,192.168.1.244,0
+2026-04-22T08:40:00.000000Z,2,mysql,Standard DB query execution,database,None,192.168.1.114,0
+2026-04-09T12:05:00.000000Z,8,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,8.222.243.165,1
+2026-04-14T02:41:00.000000Z,7,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
+2026-03-31T08:51:00.000000Z,1,windows,System event 4624,windows_auth,None,192.168.1.51,0
+2026-04-09T20:26:00.000000Z,13,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,77.105.160.156,1
+2026-04-19T12:48:00.000000Z,8,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,22.50.245.159,1
+2026-04-01T14:00:00.000000Z,16,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,51.161.65.163,1
+2026-04-14T20:39:00.000000Z,2,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.191,0
+2026-04-05T13:53:00.000000Z,1,cron,Cron job executed successfully,system,None,192.168.1.80,0
+2026-04-06T04:01:00.000000Z,4,postfix,Mail delivery successful,mail,None,192.168.1.72,0
+2026-04-03T09:31:00.000000Z,9,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,80.111.210.182,1
+2026-04-06T02:33:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,107.93.162.171,1
+2026-04-06T23:21:00.000000Z,2,postfix,Mail delivery successful,mail,None,192.168.1.113,0
+2026-04-21T02:05:00.000000Z,15,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,54.39.136.194,1
+2026-04-18T00:36:00.000000Z,12,modsecurity,SQL Injection attempt detected,owasp_10,T1190,185.220.101.34,1
+2026-03-31T12:58:00.000000Z,3,windows,System event 4624,windows_auth,None,192.168.1.235,0
+2026-04-16T21:49:00.000000Z,2,pam,Successful SSH login,authentication,None,192.168.1.214,0
+2026-04-14T13:25:00.000000Z,7,suricata,Command and Control Beaconing Detected,c2,T1071,74.248.130.207,1
+2026-04-21T06:08:00.000000Z,12,modsecurity,SQL Injection attempt detected,owasp_10,T1190,23.129.64.15,1
+2026-04-01T11:18:00.000000Z,10,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,54.39.136.194,1
+2026-04-15T02:33:00.000000Z,2,mysql,Standard DB query execution,database,None,192.168.1.225,0
+2026-04-03T13:47:00.000000Z,9,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,162.82.226.208,1
+2026-03-25T18:58:00.000000Z,4,pam,Successful SSH login,authentication,None,192.168.1.91,0
+2026-04-10T08:23:00.000000Z,1,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.222,0
+2026-04-11T20:15:00.000000Z,2,postfix,Mail delivery successful,mail,None,192.168.1.181,0
+2026-04-10T08:22:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,77.105.160.156,1
+2026-04-15T08:33:00.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,8.222.243.165,1
+2026-04-01T08:13:00.000000Z,3,pam,Successful SSH login,authentication,None,192.168.1.158,0
+2026-04-04T13:45:00.000000Z,3,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.107,0
+2026-04-21T06:26:00.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,34.75.12.245,1
+2026-04-20T13:30:00.000000Z,1,sudo,User executed allowed sudo command,privilege,None,192.168.1.251,0
+2026-04-13T14:21:00.000000Z,8,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,31.144.58.125,1
+2026-04-20T19:11:00.000000Z,4,windows,System event 4624,windows_auth,None,192.168.1.118,0
+2026-04-17T16:43:00.000000Z,1,windows,System event 4624,windows_auth,None,192.168.1.77,0
+2026-03-29T01:41:00.000000Z,8,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-04-09T04:35:00.000000Z,3,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.145,0
+2026-03-26T23:41:00.000000Z,10,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,41.71.226.161,1
+2026-04-17T04:37:00.000000Z,14,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,95.179.15.167,1
+2026-03-29T02:53:00.000000Z,2,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.211,0
+2026-04-09T21:03:00.000000Z,16,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,38.34.179.51,1
+2026-03-27T13:11:00.000000Z,3,iptables,Firewall accepted connection,firewall,None,192.168.1.146,0
+2026-04-09T10:57:00.000000Z,7,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,38.34.179.51,1
+2026-04-02T13:16:00.000000Z,7,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,83.5.163.93,1
+2026-04-22T17:10:00.000000Z,7,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,166.38.67.155,1
+2026-03-31T08:32:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,111.54.157.130,1
+2026-04-21T18:48:00.000000Z,3,iptables,Firewall accepted connection,firewall,None,192.168.1.87,0
+2026-03-26T20:27:00.000000Z,2,sudo,User executed allowed sudo command,privilege,None,192.168.1.27,0
+2026-03-28T01:47:00.000000Z,7,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,77.105.160.156,1
+2026-03-28T23:21:00.000000Z,1,mysql,Standard DB query execution,database,None,192.168.1.102,0
+2026-04-19T20:10:00.000000Z,2,mysql,Standard DB query execution,database,None,192.168.1.25,0
+2026-04-23T04:29:00.000000Z,2,sudo,User executed allowed sudo command,privilege,None,192.168.1.151,0
+2026-03-28T11:26:00.000000Z,1,mysql,Standard DB query execution,database,None,192.168.1.211,0
+2026-04-06T03:43:00.000000Z,1,cron,Cron job executed successfully,system,None,192.168.1.67,0
+2026-04-10T04:10:00.000000Z,3,postfix,Mail delivery successful,mail,None,192.168.1.62,0
+2026-04-09T19:23:00.000000Z,12,suricata,Command and Control Beaconing Detected,c2,T1071,23.129.64.15,1
+2026-04-12T04:46:00.000000Z,15,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,190.216.212.100,1
+2026-03-27T07:06:00.000000Z,1,mysql,Standard DB query execution,database,None,192.168.1.100,0
+2026-03-27T09:46:00.000000Z,3,pam,Successful SSH login,authentication,None,192.168.1.94,0
+2026-04-22T20:25:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,69.211.74.166,1
+2026-04-18T23:01:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,113.36.121.211,1
+2026-04-20T00:39:00.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-04-17T22:21:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,117.212.173.127,1
+2026-03-25T12:20:00.000000Z,2,windows,System event 4624,windows_auth,None,192.168.1.178,0
+2026-04-15T08:00:00.000000Z,3,sudo,User executed allowed sudo command,privilege,None,192.168.1.49,0
+2026-04-13T07:09:00.000000Z,10,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,45.227.254.52,1
+2026-03-29T05:08:00.000000Z,4,windows,System event 4624,windows_auth,None,192.168.1.131,0
+2026-03-25T15:54:00.000000Z,12,modsecurity,SQL Injection attempt detected,owasp_10,T1190,175.172.17.57,1
+2026-04-07T19:04:00.000000Z,11,windows_defender,Malware Execution Detected,malware,T1204,8.222.243.165,1
+2026-03-27T20:48:00.000000Z,3,iptables,Firewall accepted connection,firewall,None,192.168.1.129,0
+2026-03-25T10:13:00.000000Z,10,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,195.72.175.236,1
+2026-03-31T19:01:00.000000Z,8,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,44.243.146.31,1
+2026-04-19T09:09:00.000000Z,4,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.134,0
+2026-04-11T10:07:00.000000Z,4,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.87,0
+2026-04-06T20:18:00.000000Z,3,pam,Successful SSH login,authentication,None,192.168.1.156,0
+2026-03-27T09:24:00.000000Z,9,windows_defender,Malware Execution Detected,malware,T1204,187.101.77.253,1
+2026-03-25T17:23:00.000000Z,4,syscheck,File integrity check passed,ossec,None,192.168.1.173,0
+2026-04-08T20:13:00.000000Z,2,syscheck,File integrity check passed,ossec,None,192.168.1.27,0
+2026-04-01T21:03:00.000000Z,1,windows,System event 4624,windows_auth,None,192.168.1.191,0
+2026-04-21T21:30:00.000000Z,2,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.131,0
+2026-03-30T06:43:00.000000Z,14,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,20.121.25.154,1
+2026-04-04T15:17:00.000000Z,15,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,74.248.130.207,1
+2026-04-18T16:29:00.000000Z,3,cron,Cron job executed successfully,system,None,192.168.1.209,0
+2026-04-06T21:24:00.000000Z,2,pam,Successful SSH login,authentication,None,192.168.1.45,0
+2026-04-07T03:53:00.000000Z,2,cron,Cron job executed successfully,system,None,192.168.1.11,0
+2026-04-20T01:05:00.000000Z,2,sudo,User executed allowed sudo command,privilege,None,192.168.1.249,0
+2026-03-27T11:27:00.000000Z,12,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,47.237.24.132,1
+2026-04-07T11:57:00.000000Z,4,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.194,0
+2026-04-01T19:10:00.000000Z,15,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,160.226.112.225,1
+2026-04-01T16:19:00.000000Z,7,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,51.161.65.163,1
+2026-04-21T12:45:00.000000Z,9,suricata,Command and Control Beaconing Detected,c2,T1071,51.222.95.16,1
+2026-04-18T07:59:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,103.45.67.89,1
+2026-04-03T15:25:00.000000Z,2,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.141,0
+2026-03-31T23:39:00.000000Z,14,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,8.222.243.165,1
+2026-04-12T14:30:00.000000Z,7,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,32.99.239.145,1
+2026-04-14T06:20:00.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,74.248.130.207,1
+2026-03-26T08:30:00.000000Z,14,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,103.45.67.89,1
+2026-04-08T08:18:00.000000Z,10,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,171.103.97.157,1
+2026-04-13T22:08:00.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,64.23.243.96,1
+2026-04-15T10:07:00.000000Z,13,windows_defender,Malware Execution Detected,malware,T1204,20.121.25.154,1
+2026-04-11T13:29:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,77.105.160.156,1
+2026-03-30T05:37:00.000000Z,11,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,64.171.211.110,1
+2026-03-26T00:33:00.000000Z,3,cron,Cron job executed successfully,system,None,192.168.1.165,0
+2026-04-15T16:34:00.000000Z,2,syscheck,File integrity check passed,ossec,None,192.168.1.130,0
+2026-04-10T10:36:00.000000Z,14,windows_defender,Malware Execution Detected,malware,T1204,51.161.65.163,1
+2026-04-23T23:38:00.000000Z,12,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,51.161.65.163,1
+2026-04-06T22:13:00.000000Z,2,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.204,0
+2026-04-11T07:33:00.000000Z,14,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,77.105.160.156,1
+2026-04-23T09:13:00.000000Z,2,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.125,0
+2026-04-11T15:57:00.000000Z,13,windows_defender,Malware Execution Detected,malware,T1204,20.121.25.154,1
+2026-03-29T05:00:00.000000Z,3,postfix,Mail delivery successful,mail,None,192.168.1.16,0
+2026-04-01T02:27:00.000000Z,1,postfix,Mail delivery successful,mail,None,192.168.1.250,0
+2026-04-02T17:35:00.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,105.113.161.234,1
+2026-04-16T13:26:00.000000Z,16,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,77.105.160.156,1
+2026-03-26T23:29:00.000000Z,3,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.45,0
+2026-04-23T23:16:00.000000Z,8,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,167.98.71.162,1
+2026-04-08T10:16:00.000000Z,11,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,54.39.136.194,1
+2026-04-23T01:42:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,120.160.55.62,1
+2026-04-19T11:15:00.000000Z,1,sudo,User executed allowed sudo command,privilege,None,192.168.1.54,0
+2026-03-25T23:01:00.000000Z,16,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,45.227.254.52,1
+2026-04-09T13:03:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,178.178.252.120,1
+2026-04-22T11:10:00.000000Z,1,mysql,Standard DB query execution,database,None,192.168.1.190,0
+2026-04-07T04:10:00.000000Z,4,iptables,Firewall accepted connection,firewall,None,192.168.1.12,0
+2026-03-28T17:30:00.000000Z,8,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,51.222.95.16,1
+2026-03-31T04:27:00.000000Z,4,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.197,0
+2026-03-28T03:48:00.000000Z,4,mysql,Standard DB query execution,database,None,192.168.1.252,0
+2026-04-19T10:12:00.000000Z,1,windows,System event 4624,windows_auth,None,192.168.1.108,0
+2026-04-08T02:04:00.000000Z,4,cron,Cron job executed successfully,system,None,192.168.1.75,0
+2026-03-28T22:03:00.000000Z,4,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.102,0
+2026-04-09T06:07:00.000000Z,2,pam,Successful SSH login,authentication,None,192.168.1.43,0
+2026-04-14T18:06:00.000000Z,4,iptables,Firewall accepted connection,firewall,None,192.168.1.161,0
+2026-04-01T08:13:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,121.89.113.60,1
+2026-03-31T02:03:00.000000Z,7,modsecurity,SQL Injection attempt detected,owasp_10,T1190,2.231.3.173,1
+2026-04-12T21:57:00.000000Z,4,mysql,Standard DB query execution,database,None,192.168.1.75,0
+2026-04-02T18:13:00.000000Z,7,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,37.241.53.33,1
+2026-03-27T10:01:00.000000Z,1,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.182,0
+2026-04-19T19:32:00.000000Z,3,iptables,Firewall accepted connection,firewall,None,192.168.1.141,0
+2026-03-27T11:21:00.000000Z,4,mysql,Standard DB query execution,database,None,192.168.1.39,0
+2026-03-26T19:25:00.000000Z,2,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.238,0
+2026-04-18T20:15:00.000000Z,2,sudo,User executed allowed sudo command,privilege,None,192.168.1.84,0
+2026-04-16T06:42:00.000000Z,13,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,37.130.33.125,1
+2026-04-11T22:38:00.000000Z,3,sudo,User executed allowed sudo command,privilege,None,192.168.1.184,0
+2026-04-10T12:17:00.000000Z,7,modsecurity,SQL Injection attempt detected,owasp_10,T1190,103.45.67.89,1
+2026-03-27T19:05:00.000000Z,7,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,51.222.95.16,1
+2026-03-31T23:57:00.000000Z,7,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,79.141.163.38,1
+2026-04-14T16:19:00.000000Z,4,pam,Successful SSH login,authentication,None,192.168.1.143,0
+2026-04-21T01:28:00.000000Z,13,suricata,Command and Control Beaconing Detected,c2,T1071,51.222.95.16,1
+2026-04-15T22:39:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,8.222.243.165,1
+2026-04-19T05:17:00.000000Z,14,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,3.247.243.109,1
+2026-03-31T02:40:00.000000Z,1,pam,Successful SSH login,authentication,None,192.168.1.20,0
+2026-04-02T14:12:00.000000Z,1,iptables,Firewall accepted connection,firewall,None,192.168.1.231,0
+2026-04-12T11:29:00.000000Z,4,iptables,Firewall accepted connection,firewall,None,192.168.1.113,0
+2026-04-18T12:05:00.000000Z,12,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
+2026-04-22T15:00:00.000000Z,1,sudo,User executed allowed sudo command,privilege,None,192.168.1.125,0
+2026-04-16T15:50:00.000000Z,4,cron,Cron job executed successfully,system,None,192.168.1.131,0
+2026-03-25T14:55:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,34.85.93.190,1
+2026-04-02T09:53:00.000000Z,11,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,94.86.78.29,1
+2026-04-13T08:00:00.000000Z,1,syscheck,File integrity check passed,ossec,None,192.168.1.21,0
+2026-03-29T18:31:00.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,11.127.57.236,1
+2026-03-30T05:49:00.000000Z,9,suricata,Command and Control Beaconing Detected,c2,T1071,8.222.243.165,1
+2026-03-29T10:42:00.000000Z,1,iptables,Firewall accepted connection,firewall,None,192.168.1.177,0
+2026-03-25T15:16:00.000000Z,2,sudo,User executed allowed sudo command,privilege,None,192.168.1.185,0
+2026-03-30T19:08:00.000000Z,1,sudo,User executed allowed sudo command,privilege,None,192.168.1.105,0
+2026-04-13T06:56:00.000000Z,4,pam,Successful SSH login,authentication,None,192.168.1.37,0
+2026-04-17T08:06:00.000000Z,15,suricata,Command and Control Beaconing Detected,c2,T1071,71.238.59.26,1
+2026-04-08T19:33:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,79.141.163.38,1
+2026-04-21T16:40:00.000000Z,16,modsecurity,SQL Injection attempt detected,owasp_10,T1190,47.237.24.132,1
+2026-04-13T18:07:00.000000Z,7,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,45.227.254.52,1
+2026-03-26T20:10:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,74.248.130.207,1
+2026-04-07T20:07:00.000000Z,3,sudo,User executed allowed sudo command,privilege,None,192.168.1.17,0
+2026-03-27T13:13:00.000000Z,3,postfix,Mail delivery successful,mail,None,192.168.1.203,0
+2026-04-18T07:37:00.000000Z,12,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,45.227.254.52,1
+2026-04-14T17:27:00.000000Z,15,suricata,Command and Control Beaconing Detected,c2,T1071,135.67.78.219,1
+2026-03-31T14:59:00.000000Z,3,syscheck,File integrity check passed,ossec,None,192.168.1.244,0
+2026-04-22T15:53:00.000000Z,7,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,79.141.163.38,1
+2026-03-26T05:49:00.000000Z,3,sudo,User executed allowed sudo command,privilege,None,192.168.1.126,0
+2026-03-28T07:47:00.000000Z,8,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,45.227.254.52,1
+2026-04-16T04:28:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,79.141.163.38,1
+2026-04-09T17:06:00.000000Z,13,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,78.22.10.138,1
+2026-04-13T12:23:00.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,118.244.219.133,1
+2026-04-20T22:50:00.000000Z,10,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,30.147.95.33,1
+2026-03-30T12:23:00.000000Z,3,mysql,Standard DB query execution,database,None,192.168.1.87,0
+2026-04-20T20:01:00.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,77.105.160.156,1
+2026-03-30T07:39:00.000000Z,3,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.8,0
+2026-04-12T19:17:00.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,181.126.196.101,1
+2026-04-03T05:43:00.000000Z,14,windows_defender,Malware Execution Detected,malware,T1204,102.56.79.109,1
+2026-03-26T14:41:00.000000Z,14,suricata,Command and Control Beaconing Detected,c2,T1071,125.15.92.2,1
+2026-03-30T04:20:00.000000Z,3,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.89,0
+2026-04-07T05:31:00.000000Z,14,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,79.141.163.38,1
+2026-04-14T20:04:00.000000Z,13,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,47.179.146.25,1
+2026-04-19T21:44:00.000000Z,14,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,45.227.254.52,1
+2026-04-11T08:51:00.000000Z,15,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,112.207.60.58,1
+2026-04-16T23:20:00.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,171.115.39.222,1
+2026-04-23T13:04:00.000000Z,9,suricata,Command and Control Beaconing Detected,c2,T1071,176.106.203.241,1
+2026-04-10T09:27:00.000000Z,1,cron,Cron job executed successfully,system,None,192.168.1.6,0
+2026-03-25T03:36:00.000000Z,4,windows,System event 4624,windows_auth,None,192.168.1.246,0
+2026-04-07T09:19:00.000000Z,1,pam,Successful SSH login,authentication,None,192.168.1.96,0
+2026-04-13T09:32:00.000000Z,3,windows,System event 4624,windows_auth,None,192.168.1.209,0
+2026-03-26T23:57:00.000000Z,7,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,77.105.160.156,1
+2026-04-12T03:32:00.000000Z,4,mysql,Standard DB query execution,database,None,192.168.1.79,0
+2026-04-16T14:07:00.000000Z,2,pam,Successful SSH login,authentication,None,192.168.1.225,0
+2026-04-13T12:31:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,187.131.48.64,1
+2026-04-05T18:31:00.000000Z,4,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.161,0
+2026-04-21T16:10:00.000000Z,13,windows_defender,Malware Execution Detected,malware,T1204,54.39.136.194,1
+2026-03-31T21:35:00.000000Z,15,windows_defender,Malware Execution Detected,malware,T1204,47.237.24.132,1
+2026-04-02T15:22:00.000000Z,3,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.114,0
+2026-04-02T06:59:00.000000Z,15,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,28.254.113.169,1
+2026-04-09T19:56:00.000000Z,4,cron,Cron job executed successfully,system,None,192.168.1.3,0
+2026-03-30T21:00:00.000000Z,9,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,79.141.163.38,1
+2026-04-02T05:20:00.000000Z,16,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,2.143.115.205,1
+2026-04-06T14:47:00.000000Z,4,syscheck,File integrity check passed,ossec,None,192.168.1.250,0
+2026-04-13T10:28:00.000000Z,7,suricata,Command and Control Beaconing Detected,c2,T1071,85.203.23.153,1
+2026-03-27T14:36:00.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,45.227.254.52,1
+2026-04-22T19:10:00.000000Z,4,syscheck,File integrity check passed,ossec,None,192.168.1.190,0
+2026-04-10T19:44:00.000000Z,16,windows_defender,Malware Execution Detected,malware,T1204,118.22.3.121,1
+2026-03-31T14:11:00.000000Z,10,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,8.222.243.165,1
+2026-03-27T20:38:00.000000Z,8,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,51.161.65.163,1
+2026-03-27T05:33:00.000000Z,1,syscheck,File integrity check passed,ossec,None,192.168.1.108,0
+2026-03-31T18:42:00.000000Z,1,sudo,User executed allowed sudo command,privilege,None,192.168.1.108,0
+2026-04-06T23:33:00.000000Z,2,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.251,0
+2026-03-27T18:18:00.000000Z,15,windows_defender,Malware Execution Detected,malware,T1204,38.34.179.51,1
+2026-04-09T15:54:00.000000Z,7,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,136.157.236.38,1
+2026-04-03T13:09:00.000000Z,2,sudo,User executed allowed sudo command,privilege,None,192.168.1.84,0
+2026-03-30T21:19:00.000000Z,15,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,31.178.55.117,1
+2026-04-01T16:52:00.000000Z,3,cron,Cron job executed successfully,system,None,192.168.1.159,0
+2026-04-06T18:20:00.000000Z,1,pam,Successful SSH login,authentication,None,192.168.1.88,0
+2026-03-26T05:52:00.000000Z,7,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,48.162.114.203,1
+2026-04-21T11:32:00.000000Z,2,syscheck,File integrity check passed,ossec,None,192.168.1.234,0
+2026-04-14T02:06:00.000000Z,13,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,51.161.65.163,1
+2026-04-03T22:32:00.000000Z,1,iptables,Firewall accepted connection,firewall,None,192.168.1.235,0
+2026-04-21T02:29:00.000000Z,10,suricata,Command and Control Beaconing Detected,c2,T1071,77.105.160.156,1
+2026-04-14T19:45:00.000000Z,2,postfix,Mail delivery successful,mail,None,192.168.1.111,0
+2026-04-01T08:15:00.000000Z,9,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,156.26.46.76,1
+2026-03-25T10:02:00.000000Z,15,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,81.38.209.242,1
+2026-04-12T10:55:00.000000Z,1,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.56,0
+2026-04-08T14:29:00.000000Z,2,windows,System event 4624,windows_auth,None,192.168.1.51,0
+2026-03-31T05:00:00.000000Z,14,suricata,Command and Control Beaconing Detected,c2,T1071,23.129.64.15,1
+2026-03-30T04:42:00.000000Z,4,syscheck,File integrity check passed,ossec,None,192.168.1.154,0
+2026-04-20T06:24:00.000000Z,9,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,79.141.163.38,1
+2026-04-01T08:45:00.000000Z,9,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,51.161.65.163,1
+2026-03-29T10:14:00.000000Z,4,mysql,Standard DB query execution,database,None,192.168.1.81,0
+2026-04-05T19:43:00.000000Z,15,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,45.227.254.52,1
+2026-03-29T20:37:00.000000Z,2,windows,System event 4624,windows_auth,None,192.168.1.49,0
+2026-04-17T19:21:00.000000Z,4,cron,Cron job executed successfully,system,None,192.168.1.107,0
+2026-03-28T22:21:00.000000Z,2,syscheck,File integrity check passed,ossec,None,192.168.1.98,0
+2026-04-17T01:03:00.000000Z,8,suricata,Lateral movement via Windows Admin Shares,lateral_movement,T1021,38.34.179.51,1
+2026-04-16T08:47:00.000000Z,4,iptables,Firewall accepted connection,firewall,None,192.168.1.37,0
+2026-03-26T20:48:00.000000Z,1,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.236,0
+2026-03-31T18:59:00.000000Z,4,pam,Successful SSH login,authentication,None,192.168.1.138,0
+2026-04-08T00:43:00.000000Z,3,syscheck,File integrity check passed,ossec,None,192.168.1.183,0
+2026-04-04T16:30:00.000000Z,14,windows,Suspicious privilege escalation via token manipulation,privilege_escalation,T1134,156.241.172.248,1
+2026-04-14T10:45:00.000000Z,1,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.11,0
+2026-04-21T07:19:00.000000Z,16,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,23.129.64.15,1
+2026-03-29T08:30:00.000000Z,3,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.222,0
+2026-04-18T05:39:00.000000Z,2,mysql,Standard DB query execution,database,None,192.168.1.99,0

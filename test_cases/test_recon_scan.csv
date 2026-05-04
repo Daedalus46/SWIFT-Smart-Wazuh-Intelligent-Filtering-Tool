@@ -1,0 +1,351 @@
+timestamp,rule_level,decoder_name,rule_description,rule_group,mitre_id,agent_ip,is_malicious
+2026-03-21T00:00:00.000000Z,12,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:00:00.000000Z,3,windows,System event 4624,windows_auth,None,192.168.1.245,0
+2026-03-21T00:01:00.000000Z,14,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:03:00.000000Z,13,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:04:00.000000Z,1,sudo,User executed allowed sudo command,privilege,None,192.168.1.81,0
+2026-03-21T00:05:00.000000Z,8,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:05:00.000000Z,14,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:05:00.000000Z,14,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:05:00.000000Z,8,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:05:00.000000Z,8,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:05:00.000000Z,3,syscheck,File integrity check passed,ossec,None,192.168.1.14,0
+2026-03-21T00:06:00.000000Z,13,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:06:00.000000Z,11,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:06:00.000000Z,14,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:07:00.000000Z,10,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:08:00.000000Z,13,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:08:00.000000Z,11,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:08:00.000000Z,3,iptables,Firewall accepted connection,firewall,None,192.168.1.78,0
+2026-03-21T00:09:00.000000Z,11,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:09:00.000000Z,4,syscheck,File integrity check passed,ossec,None,192.168.1.108,0
+2026-03-21T00:10:00.000000Z,13,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:10:00.000000Z,10,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:10:00.000000Z,12,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:10:00.000000Z,14,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:10:00.000000Z,4,syscheck,File integrity check passed,ossec,None,192.168.1.45,0
+2026-03-21T00:12:00.000000Z,8,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:12:00.000000Z,9,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:12:00.000000Z,12,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:12:00.000000Z,9,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:12:00.000000Z,4,windows,System event 4624,windows_auth,None,192.168.1.53,0
+2026-03-21T00:13:00.000000Z,14,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:13:00.000000Z,9,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:13:00.000000Z,9,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:14:00.000000Z,10,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:14:00.000000Z,9,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:14:00.000000Z,13,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:14:00.000000Z,13,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:14:00.000000Z,14,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:14:00.000000Z,11,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:15:00.000000Z,14,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:15:00.000000Z,8,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:15:00.000000Z,2,mysql,Standard DB query execution,database,None,192.168.1.7,0
+2026-03-21T00:15:00.000000Z,1,mysql,Standard DB query execution,database,None,192.168.1.73,0
+2026-03-21T00:16:00.000000Z,11,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:16:00.000000Z,14,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:16:00.000000Z,8,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:17:00.000000Z,10,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:17:00.000000Z,11,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:18:00.000000Z,10,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:18:00.000000Z,13,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:18:00.000000Z,13,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:19:00.000000Z,11,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:19:00.000000Z,9,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:19:00.000000Z,8,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:19:00.000000Z,12,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:20:00.000000Z,8,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:20:00.000000Z,9,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:21:00.000000Z,12,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:21:00.000000Z,4,syscheck,File integrity check passed,ossec,None,192.168.1.253,0
+2026-03-21T00:21:00.000000Z,1,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.31,0
+2026-03-21T00:22:00.000000Z,14,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:22:00.000000Z,8,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:24:00.000000Z,8,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:24:00.000000Z,8,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:25:00.000000Z,4,syscheck,File integrity check passed,ossec,None,192.168.1.193,0
+2026-03-21T00:27:00.000000Z,14,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:27:00.000000Z,13,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:27:00.000000Z,3,pam,Successful SSH login,authentication,None,192.168.1.172,0
+2026-03-21T00:27:00.000000Z,4,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.143,0
+2026-03-21T00:27:00.000000Z,4,iptables,Firewall accepted connection,firewall,None,192.168.1.235,0
+2026-03-21T00:28:00.000000Z,12,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:28:00.000000Z,14,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:28:00.000000Z,11,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:28:00.000000Z,2,iptables,Firewall accepted connection,firewall,None,192.168.1.109,0
+2026-03-21T00:29:00.000000Z,14,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:29:00.000000Z,8,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:29:00.000000Z,14,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:29:00.000000Z,1,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.155,0
+2026-03-21T00:30:00.000000Z,12,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:30:00.000000Z,8,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:30:00.000000Z,13,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:30:00.000000Z,14,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:30:00.000000Z,12,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:31:00.000000Z,9,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:31:00.000000Z,11,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:31:00.000000Z,13,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:32:00.000000Z,8,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:32:00.000000Z,10,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:32:00.000000Z,10,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:32:00.000000Z,3,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.61,0
+2026-03-21T00:33:00.000000Z,10,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:33:00.000000Z,4,iptables,Firewall accepted connection,firewall,None,192.168.1.8,0
+2026-03-21T00:33:00.000000Z,3,sudo,User executed allowed sudo command,privilege,None,192.168.1.68,0
+2026-03-21T00:34:00.000000Z,13,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:34:00.000000Z,8,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:34:00.000000Z,11,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:34:00.000000Z,12,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:35:00.000000Z,11,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:35:00.000000Z,9,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:35:00.000000Z,14,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:35:00.000000Z,14,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:35:00.000000Z,11,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:35:00.000000Z,2,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.126,0
+2026-03-21T00:37:00.000000Z,12,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:38:00.000000Z,9,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:38:00.000000Z,10,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:39:00.000000Z,11,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:39:00.000000Z,9,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:39:00.000000Z,12,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:40:00.000000Z,8,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:40:00.000000Z,14,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:40:00.000000Z,8,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:40:00.000000Z,4,syscheck,File integrity check passed,ossec,None,192.168.1.57,0
+2026-03-21T00:41:00.000000Z,8,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:42:00.000000Z,11,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:42:00.000000Z,12,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:42:00.000000Z,8,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:43:00.000000Z,13,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:43:00.000000Z,4,windows,System event 4624,windows_auth,None,192.168.1.233,0
+2026-03-21T00:44:00.000000Z,13,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:44:00.000000Z,10,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:44:00.000000Z,3,iptables,Firewall accepted connection,firewall,None,192.168.1.101,0
+2026-03-21T00:45:00.000000Z,14,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:45:00.000000Z,8,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:45:00.000000Z,9,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:45:00.000000Z,4,sudo,User executed allowed sudo command,privilege,None,192.168.1.29,0
+2026-03-21T00:46:00.000000Z,9,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:46:00.000000Z,13,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:46:00.000000Z,13,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:46:00.000000Z,14,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:47:00.000000Z,14,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:47:00.000000Z,2,syscheck,File integrity check passed,ossec,None,192.168.1.77,0
+2026-03-21T00:48:00.000000Z,10,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:48:00.000000Z,11,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:49:00.000000Z,9,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:49:00.000000Z,8,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:49:00.000000Z,14,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:49:00.000000Z,3,cron,Cron job executed successfully,system,None,192.168.1.98,0
+2026-03-21T00:50:00.000000Z,9,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:50:00.000000Z,12,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:50:00.000000Z,2,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.148,0
+2026-03-21T00:51:00.000000Z,13,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:51:00.000000Z,11,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:51:00.000000Z,10,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:51:00.000000Z,10,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:51:00.000000Z,1,windows,System event 4624,windows_auth,None,192.168.1.33,0
+2026-03-21T00:52:00.000000Z,12,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:53:00.000000Z,11,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:53:00.000000Z,3,postfix,Mail delivery successful,mail,None,192.168.1.134,0
+2026-03-21T00:54:00.000000Z,13,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:54:00.000000Z,12,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:54:00.000000Z,2,mysql,Standard DB query execution,database,None,192.168.1.188,0
+2026-03-21T00:54:00.000000Z,4,syscheck,File integrity check passed,ossec,None,192.168.1.91,0
+2026-03-21T00:54:00.000000Z,3,sudo,User executed allowed sudo command,privilege,None,192.168.1.94,0
+2026-03-21T00:55:00.000000Z,11,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:55:00.000000Z,12,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:55:00.000000Z,14,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:55:00.000000Z,1,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.128,0
+2026-03-21T00:56:00.000000Z,9,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:57:00.000000Z,9,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T00:57:00.000000Z,9,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T00:57:00.000000Z,1,mysql,Standard DB query execution,database,None,192.168.1.178,0
+2026-03-21T00:57:00.000000Z,1,sudo,User executed allowed sudo command,privilege,None,192.168.1.82,0
+2026-03-21T00:58:00.000000Z,8,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:00:00.000000Z,10,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:00:00.000000Z,2,sudo,User executed allowed sudo command,privilege,None,192.168.1.159,0
+2026-03-21T01:01:00.000000Z,8,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:01:00.000000Z,9,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:01:00.000000Z,1,pam,Successful SSH login,authentication,None,192.168.1.100,0
+2026-03-21T01:01:00.000000Z,3,sudo,User executed allowed sudo command,privilege,None,192.168.1.150,0
+2026-03-21T01:02:00.000000Z,8,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:03:00.000000Z,10,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:03:00.000000Z,14,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:03:00.000000Z,1,iptables,Firewall accepted connection,firewall,None,192.168.1.62,0
+2026-03-21T01:03:00.000000Z,2,postfix,Mail delivery successful,mail,None,192.168.1.119,0
+2026-03-21T01:04:00.000000Z,9,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:04:00.000000Z,11,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:04:00.000000Z,4,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.194,0
+2026-03-21T01:04:00.000000Z,1,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.24,0
+2026-03-21T01:05:00.000000Z,10,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:05:00.000000Z,14,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:05:00.000000Z,8,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:05:00.000000Z,2,pam,Successful SSH login,authentication,None,192.168.1.73,0
+2026-03-21T01:06:00.000000Z,11,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:06:00.000000Z,10,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:06:00.000000Z,8,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:07:00.000000Z,10,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:07:00.000000Z,3,mysql,Standard DB query execution,database,None,192.168.1.215,0
+2026-03-21T01:08:00.000000Z,4,iptables,Firewall accepted connection,firewall,None,192.168.1.55,0
+2026-03-21T01:08:00.000000Z,1,syscheck,File integrity check passed,ossec,None,192.168.1.116,0
+2026-03-21T01:09:00.000000Z,11,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:09:00.000000Z,14,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:09:00.000000Z,12,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:10:00.000000Z,14,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:10:00.000000Z,13,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:10:00.000000Z,9,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:10:00.000000Z,1,syscheck,File integrity check passed,ossec,None,192.168.1.242,0
+2026-03-21T01:11:00.000000Z,13,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:11:00.000000Z,11,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:12:00.000000Z,8,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:12:00.000000Z,4,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.153,0
+2026-03-21T01:13:00.000000Z,8,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:13:00.000000Z,14,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:13:00.000000Z,2,postfix,Mail delivery successful,mail,None,192.168.1.193,0
+2026-03-21T01:14:00.000000Z,9,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:15:00.000000Z,14,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:15:00.000000Z,9,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:15:00.000000Z,12,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:16:00.000000Z,13,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:16:00.000000Z,9,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:16:00.000000Z,8,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:16:00.000000Z,2,syscheck,File integrity check passed,ossec,None,192.168.1.118,0
+2026-03-21T01:16:00.000000Z,2,postfix,Mail delivery successful,mail,None,192.168.1.73,0
+2026-03-21T01:16:00.000000Z,3,iptables,Firewall accepted connection,firewall,None,192.168.1.157,0
+2026-03-21T01:16:00.000000Z,4,mysql,Standard DB query execution,database,None,192.168.1.135,0
+2026-03-21T01:17:00.000000Z,14,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:17:00.000000Z,12,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:17:00.000000Z,2,windows,System event 4624,windows_auth,None,192.168.1.39,0
+2026-03-21T01:17:00.000000Z,2,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.4,0
+2026-03-21T01:18:00.000000Z,3,mysql,Standard DB query execution,database,None,192.168.1.70,0
+2026-03-21T01:19:00.000000Z,14,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:20:00.000000Z,9,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:20:00.000000Z,8,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:20:00.000000Z,3,windows,System event 4624,windows_auth,None,192.168.1.106,0
+2026-03-21T01:21:00.000000Z,9,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:21:00.000000Z,10,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:22:00.000000Z,8,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:22:00.000000Z,10,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:22:00.000000Z,10,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:22:00.000000Z,11,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:22:00.000000Z,1,sudo,User executed allowed sudo command,privilege,None,192.168.1.102,0
+2026-03-21T01:22:00.000000Z,1,windows,System event 4624,windows_auth,None,192.168.1.129,0
+2026-03-21T01:23:00.000000Z,13,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:23:00.000000Z,9,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:23:00.000000Z,13,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:24:00.000000Z,10,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:24:00.000000Z,14,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:24:00.000000Z,9,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:24:00.000000Z,10,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:25:00.000000Z,13,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:25:00.000000Z,13,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:25:00.000000Z,10,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:25:00.000000Z,12,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:26:00.000000Z,9,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:26:00.000000Z,11,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:26:00.000000Z,10,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:26:00.000000Z,2,mysql,Standard DB query execution,database,None,192.168.1.155,0
+2026-03-21T01:27:00.000000Z,13,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:27:00.000000Z,3,syscheck,File integrity check passed,ossec,None,192.168.1.46,0
+2026-03-21T01:27:00.000000Z,1,windows,System event 4624,windows_auth,None,192.168.1.41,0
+2026-03-21T01:28:00.000000Z,11,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:28:00.000000Z,1,windows,System event 4624,windows_auth,None,192.168.1.197,0
+2026-03-21T01:29:00.000000Z,13,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:29:00.000000Z,2,sudo,User executed allowed sudo command,privilege,None,192.168.1.84,0
+2026-03-21T01:31:00.000000Z,12,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:32:00.000000Z,12,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:33:00.000000Z,14,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:34:00.000000Z,12,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:34:00.000000Z,4,pam,Successful SSH login,authentication,None,192.168.1.197,0
+2026-03-21T01:35:00.000000Z,10,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:35:00.000000Z,8,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:35:00.000000Z,14,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:35:00.000000Z,12,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:35:00.000000Z,2,iptables,Firewall accepted connection,firewall,None,192.168.1.150,0
+2026-03-21T01:35:00.000000Z,4,pam,Successful SSH login,authentication,None,192.168.1.28,0
+2026-03-21T01:35:00.000000Z,3,postfix,Mail delivery successful,mail,None,192.168.1.97,0
+2026-03-21T01:36:00.000000Z,13,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:36:00.000000Z,11,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:36:00.000000Z,1,sudo,User executed allowed sudo command,privilege,None,192.168.1.161,0
+2026-03-21T01:37:00.000000Z,11,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:37:00.000000Z,11,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:38:00.000000Z,14,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:38:00.000000Z,13,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:38:00.000000Z,10,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:38:00.000000Z,4,sudo,User executed allowed sudo command,privilege,None,192.168.1.168,0
+2026-03-21T01:39:00.000000Z,8,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:39:00.000000Z,8,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:39:00.000000Z,2,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.2,0
+2026-03-21T01:39:00.000000Z,1,pam,Successful SSH login,authentication,None,192.168.1.171,0
+2026-03-21T01:39:00.000000Z,3,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.130,0
+2026-03-21T01:39:00.000000Z,3,postfix,Mail delivery successful,mail,None,192.168.1.29,0
+2026-03-21T01:39:00.000000Z,1,postfix,Mail delivery successful,mail,None,192.168.1.168,0
+2026-03-21T01:40:00.000000Z,9,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:40:00.000000Z,10,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:41:00.000000Z,13,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:41:00.000000Z,2,windows,System event 4624,windows_auth,None,192.168.1.31,0
+2026-03-21T01:42:00.000000Z,8,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:42:00.000000Z,3,cron,Cron job executed successfully,system,None,192.168.1.94,0
+2026-03-21T01:42:00.000000Z,2,syscheck,File integrity check passed,ossec,None,192.168.1.21,0
+2026-03-21T01:43:00.000000Z,13,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:43:00.000000Z,8,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:43:00.000000Z,9,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:43:00.000000Z,3,mysql,Standard DB query execution,database,None,192.168.1.19,0
+2026-03-21T01:44:00.000000Z,2,syscheck,File integrity check passed,ossec,None,192.168.1.182,0
+2026-03-21T01:45:00.000000Z,8,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:45:00.000000Z,9,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:45:00.000000Z,14,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:45:00.000000Z,1,cron,Cron job executed successfully,system,None,192.168.1.44,0
+2026-03-21T01:45:00.000000Z,2,syscheck,File integrity check passed,ossec,None,192.168.1.187,0
+2026-03-21T01:46:00.000000Z,13,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:46:00.000000Z,11,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:46:00.000000Z,10,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:46:00.000000Z,11,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:46:00.000000Z,12,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:46:00.000000Z,3,postfix,Mail delivery successful,mail,None,192.168.1.116,0
+2026-03-21T01:46:00.000000Z,1,sudo,User executed allowed sudo command,privilege,None,192.168.1.64,0
+2026-03-21T01:46:00.000000Z,4,cron,Cron job executed successfully,system,None,192.168.1.224,0
+2026-03-21T01:47:00.000000Z,10,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:47:00.000000Z,13,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:47:00.000000Z,2,sudo,User executed allowed sudo command,privilege,None,192.168.1.136,0
+2026-03-21T01:48:00.000000Z,8,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:48:00.000000Z,8,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:48:00.000000Z,12,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:48:00.000000Z,4,pam,Successful SSH login,authentication,None,192.168.1.63,0
+2026-03-21T01:48:00.000000Z,4,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.87,0
+2026-03-21T01:48:00.000000Z,3,mysql,Standard DB query execution,database,None,192.168.1.189,0
+2026-03-21T01:49:00.000000Z,4,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.204,0
+2026-03-21T01:50:00.000000Z,12,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:51:00.000000Z,11,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:51:00.000000Z,14,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:52:00.000000Z,14,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:52:00.000000Z,14,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:52:00.000000Z,1,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.163,0
+2026-03-21T01:53:00.000000Z,11,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:53:00.000000Z,8,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:53:00.000000Z,8,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:53:00.000000Z,9,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:53:00.000000Z,4,iptables,Firewall accepted connection,firewall,None,192.168.1.47,0
+2026-03-21T01:54:00.000000Z,12,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:54:00.000000Z,2,iptables,Firewall accepted connection,firewall,None,192.168.1.233,0
+2026-03-21T01:55:00.000000Z,11,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:55:00.000000Z,9,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:55:00.000000Z,4,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.239,0
+2026-03-21T01:56:00.000000Z,12,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:56:00.000000Z,9,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:56:00.000000Z,11,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:56:00.000000Z,8,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T01:57:00.000000Z,13,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:57:00.000000Z,14,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:57:00.000000Z,13,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:57:00.000000Z,2,sudo,User executed allowed sudo command,privilege,None,192.168.1.104,0
+2026-03-21T01:58:00.000000Z,14,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:58:00.000000Z,12,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T01:58:00.000000Z,4,iptables,Firewall accepted connection,firewall,None,192.168.1.141,0
+2026-03-21T01:59:00.000000Z,3,cron,Cron job executed successfully,system,None,192.168.1.109,0
+2026-03-21T01:59:00.000000Z,2,pam,Successful SSH login,authentication,None,192.168.1.29,0
+2026-03-21T02:00:00.000000Z,9,suricata,Nmap port scanning detected (Reconnaissance),reconnaissance,T1046,185.220.101.34,1
+2026-03-21T02:00:00.000000Z,14,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T02:00:00.000000Z,8,nginx,HTTP Flood Denial of Service (DoS),dos,T1498,185.220.101.34,1
+2026-03-21T02:00:00.000000Z,1,windows,System event 4624,windows_auth,None,192.168.1.97,0

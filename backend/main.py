@@ -81,6 +81,88 @@ def align_wazuh_logs(live_df: pd.DataFrame, expected_features: list) -> pd.DataF
     # Drop any unrecognized extra columns and enforce strict order
     return live_df[expected_features]
 
+
+def preprocess_live_wazuh_log(raw_json_list: list[dict]) -> pd.DataFrame:
+    """
+    Bridge between raw Wazuh JSON alerts and the XGBoost model's expected input.
+
+    Takes a list of raw, nested Wazuh JSON objects (as they arrive from the
+    Wazuh API or webhook) and produces a model-ready DataFrame with the exact
+    7 columns the classifier was trained on, in the correct order.
+
+    Feature engineering replicates the training pipeline in train_model.py:
+      - hour extracted from ISO-8601 timestamp
+      - is_known_bad_actor from the globally-loaded FireHOL blocklist
+      - frequency-encoded categoricals via the globally-loaded label_encoders.pkl
+
+    Args:
+        raw_json_list: List of raw Wazuh alert dicts with nested keys such as
+                       agent.ip, rule.level, decoder.name, rule.groups, rule.mitre.id.
+
+    Returns:
+        pd.DataFrame with columns:
+        ['rule_level', 'hour', 'is_known_bad_actor',
+         'decoder_name_freq', 'rule_description_freq',
+         'rule_group_freq', 'mitre_id_freq']
+    """
+    EXPECTED_COLUMNS = [
+        'rule_level', 'hour', 'is_known_bad_actor',
+        'decoder_name_freq', 'rule_description_freq',
+        'rule_group_freq', 'mitre_id_freq'
+    ]
+
+    rows = []
+    for alert in raw_json_list:
+        # --- Flatten nested Wazuh JSON with safe .get() ---
+        agent_ip      = alert.get("agent", {}).get("ip", "0.0.0.0")
+        timestamp_str = alert.get("timestamp", "")
+        rule_obj      = alert.get("rule", {})
+        rule_level    = rule_obj.get("level", 0)
+        rule_desc     = rule_obj.get("description", "")
+        decoder_name  = alert.get("decoder", {}).get("name", "")
+
+        # rule.groups is a list in real Wazuh alerts; take first item or "None"
+        groups_list   = rule_obj.get("groups", [])
+        rule_group    = groups_list[0] if groups_list else "None"
+
+        # rule.mitre.id is a list in real Wazuh alerts; take first item or "None"
+        mitre_obj     = rule_obj.get("mitre", {})
+        mitre_ids     = mitre_obj.get("id", []) if isinstance(mitre_obj, dict) else []
+        mitre_id      = mitre_ids[0] if mitre_ids else "None"
+
+        # --- Feature engineering (identical to train_model.py) ---
+        try:
+            hour = pd.to_datetime(timestamp_str).hour
+        except Exception:
+            hour = 0
+
+        is_known_bad = 1 if agent_ip in blocklist_ips else 0
+
+        # Frequency-encode categoricals using the training-time dictionaries
+        dec_freq   = freq_decoders.get(decoder_name, 0.0)
+        rule_freq  = freq_rules.get(rule_desc, 0.0)
+        group_freq = freq_groups.get(rule_group, 0.0)
+        mitre_freq = freq_mitre.get(mitre_id, 0.0)
+
+        rows.append({
+            'rule_level':           rule_level,
+            'hour':                 hour,
+            'is_known_bad_actor':   is_known_bad,
+            'decoder_name_freq':    dec_freq,
+            'rule_description_freq': rule_freq,
+            'rule_group_freq':      group_freq,
+            'mitre_id_freq':        mitre_freq,
+            # Carry-through metadata (dropped before prediction, kept for response)
+            '_agent_ip':            agent_ip,
+            '_rule_description':    rule_desc,
+            '_mitre_id':            mitre_id,
+            '_rule_group':          rule_group,
+        })
+
+    df = pd.DataFrame(rows)
+    df[EXPECTED_COLUMNS] = df[EXPECTED_COLUMNS].fillna(0)
+    return df
+
 @app.on_event("startup")
 async def startup_event():
     print("Pre-loading NLP Model...")
@@ -153,6 +235,134 @@ async def analyze_log(payload: LogPayload):
         raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Internal Analysis Error: {str(e)}")
+
+
+@app.post("/analyze_live", response_model=BatchAnalyzeResponse)
+async def analyze_live_wazuh(request: Request):
+    """
+    Accepts a JSON body containing a list of raw Wazuh alert objects,
+    preprocesses them via preprocess_live_wazuh_log(), and runs batch
+    prediction through the XGBoost model.
+    """
+    if not xgb_clf:
+        raise HTTPException(status_code=503, detail="AI engine offline or models missing.")
+
+    try:
+        body = await request.json()
+        # Accept either a bare list or {"logs": [...]}
+        if isinstance(body, list):
+            raw_json_list = body
+        elif isinstance(body, dict) and "logs" in body:
+            raw_json_list = body["logs"]
+        else:
+            raise HTTPException(status_code=400, detail="Body must be a JSON array of Wazuh alerts or {\"logs\": [...]}")
+
+        if not raw_json_list:
+            raise HTTPException(status_code=400, detail="Empty log list provided.")
+
+        # --- Preprocess raw Wazuh JSON into model-ready DataFrame ---
+        preprocessed_df = preprocess_live_wazuh_log(raw_json_list)
+
+        # Separate metadata columns from model features
+        EXPECTED_COLUMNS = [
+            'rule_level', 'hour', 'is_known_bad_actor',
+            'decoder_name_freq', 'rule_description_freq',
+            'rule_group_freq', 'mitre_id_freq'
+        ]
+        X_infer = align_wazuh_logs(preprocessed_df[EXPECTED_COLUMNS].copy(), training_columns)
+
+        # --- XGBoost Prediction (untouched model logic) ---
+        pred_classes = xgb_clf.predict(X_infer)
+        probs = xgb_clf.predict_proba(X_infer)
+
+        unique_threats_dict: dict = {}
+        raw_malicious = []
+        benign_cnt = 0
+        malicious_cnt = 0
+
+        for i, pred_class in enumerate(pred_classes):
+            confidence = float(max(probs[i])) * 100.0
+
+            # Pull metadata from the carry-through columns
+            raw_desc   = str(preprocessed_df.iloc[i].get('_rule_description', ''))
+            mitre_val  = str(preprocessed_df.iloc[i].get('_mitre_id', 'None'))
+            owasp_val  = str(preprocessed_df.iloc[i].get('_rule_group', 'None'))
+            agent_ip   = str(preprocessed_df.iloc[i].get('_agent_ip', '0.0.0.0'))
+            timestamp  = str(raw_json_list[i].get('timestamp', ''))
+
+            if pred_class == 1:
+                malicious_cnt += 1
+                expert_advice = analyze_threat(raw_desc, pred_class, mitre_val, owasp_val)
+                tactic_response = expert_advice["tactic"]
+                owasp_response = expert_advice.get("owasp", "None")
+
+                if raw_desc in unique_threats_dict:
+                    unique_threats_dict[raw_desc]["occurrence_count"] += 1
+                    current_conf = float(unique_threats_dict[raw_desc]["ai_confidence_score"])
+                    unique_threats_dict[raw_desc]["ai_confidence_score"] = float(max(current_conf, round(confidence, 2)))
+                else:
+                    unique_threats_dict[raw_desc] = {
+                        "threat_classification": "Malicious Threat",
+                        "rule_description": raw_desc,
+                        "mitre_tactic": tactic_response,
+                        "owasp_category": owasp_response,
+                        "mitigation_steps": expert_advice["mitigation"],
+                        "occurrence_count": 1,
+                        "ai_confidence_score": float(round(confidence, 2))
+                    }
+
+                raw_malicious.append(MaliciousLogEntry(
+                    timestamp=timestamp,
+                    rule_description=raw_desc,
+                    mitre_id=tactic_response,
+                    owasp_cat=owasp_response,
+                    agent_ip=anonymize_ip(agent_ip),
+                    mitigation_steps=expert_advice["mitigation"]
+                ))
+            else:
+                benign_cnt += 1
+
+        unique_threats_list = [UniqueThreatReport(**data) for data in unique_threats_dict.values()]
+
+        # Severity breakdown from raw rule_level in preprocessed data
+        sev = {"low": 0, "medium": 0, "high": 0, "critical": 0}
+        for rl in preprocessed_df['rule_level']:
+            rl = int(rl)
+            if rl <= 4:
+                sev["low"] += 1
+            elif rl <= 8:
+                sev["medium"] += 1
+            elif rl <= 12:
+                sev["high"] += 1
+            else:
+                sev["critical"] += 1
+
+        # Threat categories grouped by MITRE tactic
+        tactic_map: dict = {}
+        for t in unique_threats_list:
+            tactic = t.mitre_tactic
+            if tactic not in tactic_map:
+                tactic_map[tactic] = {"tactic": tactic, "threat_count": 0, "total_occurrences": 0, "threats": []}
+            tactic_map[tactic]["threat_count"] += 1
+            tactic_map[tactic]["total_occurrences"] += t.occurrence_count
+            tactic_map[tactic]["threats"].append(t.rule_description)
+
+        categories = [ThreatCategory(**v) for v in sorted(tactic_map.values(), key=lambda x: x["total_occurrences"], reverse=True)]
+
+        return BatchAnalyzeResponse(
+            total_logs=len(preprocessed_df),
+            benign_count=benign_cnt,
+            malicious_count=malicious_cnt,
+            unique_threats=unique_threats_list,
+            raw_malicious_logs=raw_malicious,
+            severity_breakdown=SeverityBreakdown(**sev),
+            threat_categories=categories
+        )
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Live Wazuh Processing Error: {str(e)}")
 
 @app.post("/analyze_csv", response_model=BatchAnalyzeResponse)
 async def analyze_csv(file: UploadFile = File(...)):
