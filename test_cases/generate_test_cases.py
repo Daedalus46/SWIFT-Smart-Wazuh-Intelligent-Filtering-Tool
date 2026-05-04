@@ -1,5 +1,12 @@
 """
-SWIFT Test Case Generator - Generates multiple CSV files with Wazuh log test scenarios.
+SWIFT Test Case Generator v2 — Realistic SOC Scenarios
+=======================================================
+Generates CSV test files that mirror real-world Wazuh/Kibana exports:
+  - Broken/mixed headers (dot-notation, spaces, mixed case)
+  - Missing values and partial columns
+  - Grey-area logs (high-sev benign, low-sev malicious)
+  - Signal contradiction (bad IPs benign, internal IPs compromised)
+  - Attack campaign simulations
 """
 import csv
 import random
@@ -7,13 +14,10 @@ import os
 from datetime import datetime, timedelta
 from typing import List, Dict
 
-HEADER: List[str] = [
-    "timestamp", "rule_level", "decoder_name",
-    "rule_description", "rule_group", "mitre_id",
-    "agent_ip", "is_malicious",
-]
-
-BENIGN_TEMPLATES: List[Dict[str, str]] = [
+# =====================================================================
+# TEMPLATES
+# =====================================================================
+BENIGN = [
     {"decoder_name": "web-accesslog", "rule_description": "Normal GET request to /index.html", "rule_group": "web_traffic", "mitre_id": "None"},
     {"decoder_name": "syscheck", "rule_description": "File integrity check passed", "rule_group": "ossec", "mitre_id": "None"},
     {"decoder_name": "pam", "rule_description": "Successful SSH login", "rule_group": "authentication", "mitre_id": "None"},
@@ -26,7 +30,7 @@ BENIGN_TEMPLATES: List[Dict[str, str]] = [
     {"decoder_name": "sudo", "rule_description": "User executed allowed sudo command", "rule_group": "privilege", "mitre_id": "None"},
 ]
 
-MALICIOUS_TEMPLATES: List[Dict[str, str]] = [
+MALICIOUS = [
     {"decoder_name": "modsecurity", "rule_description": "SQL Injection attempt detected", "rule_group": "owasp_10", "mitre_id": "T1190"},
     {"decoder_name": "modsecurity", "rule_description": "Cross Site Scripting (XSS) detected", "rule_group": "owasp_10", "mitre_id": "T1190"},
     {"decoder_name": "sshd", "rule_description": "Multiple SSH authentication failures (Brute Force)", "rule_group": "authentication_failed", "mitre_id": "T1110"},
@@ -38,215 +42,304 @@ MALICIOUS_TEMPLATES: List[Dict[str, str]] = [
     {"decoder_name": "suricata", "rule_description": "Command and Control Beaconing Detected", "rule_group": "c2", "mitre_id": "T1071"},
 ]
 
-EDGE_CASE_TEMPLATES: List[Dict[str, str]] = [
-    {"decoder_name": "auditd", "rule_description": "Unauthorized root login from remote host", "rule_group": "authentication_failed", "mitre_id": "T1078"},
-    {"decoder_name": "suricata", "rule_description": "DNS Tunneling activity detected", "rule_group": "exfiltration", "mitre_id": "T1048"},
-    {"decoder_name": "modsecurity", "rule_description": "Remote File Inclusion (RFI) attempt", "rule_group": "owasp_10", "mitre_id": "T1190"},
-    {"decoder_name": "suricata", "rule_description": "Cryptominer traffic detected", "rule_group": "malware", "mitre_id": "T1496"},
-    {"decoder_name": "windows", "rule_description": "Pass-the-Hash credential theft detected", "rule_group": "credential_access", "mitre_id": "T1550"},
-    {"decoder_name": "sshd", "rule_description": "SSH key-based login from blocklisted IP", "rule_group": "authentication_failed", "mitre_id": "T1110"},
-    {"decoder_name": "suricata", "rule_description": "Data exfiltration over HTTPS detected", "rule_group": "exfiltration", "mitre_id": "T1041"},
-    {"decoder_name": "windows_defender", "rule_description": "Ransomware behavior pattern detected", "rule_group": "malware", "mitre_id": "T1486"},
+# Grey-area: high-severity benign (compliance scans, system alerts)
+HIGH_SEV_BENIGN = [
+    {"decoder_name": "sca", "rule_description": "SCA policy scan: CIS Benchmark compliance check completed", "rule_group": "compliance", "mitre_id": "None"},
+    {"decoder_name": "syscheck", "rule_description": "High disk usage alert - /var/log at 92% capacity", "rule_group": "system_monitor", "mitre_id": "None"},
+    {"decoder_name": "pam", "rule_description": "Password expiry warning for user admin (30 days remaining)", "rule_group": "authentication", "mitre_id": "None"},
+    {"decoder_name": "sshd", "rule_description": "Multiple SSH authentication failures (Brute Force)", "rule_group": "authentication_failed", "mitre_id": "T1110"},
+    {"decoder_name": "suricata", "rule_description": "Nmap port scanning detected (Reconnaissance)", "rule_group": "reconnaissance", "mitre_id": "T1046"},
 ]
 
-BAD_IPS: List[str] = [
+# Grey-area: low-severity malicious (subtle attacks)
+LOW_SEV_MALICIOUS = [
+    {"decoder_name": "sshd", "rule_description": "Subtle brute force: 3 failed logins from single source", "rule_group": "authentication_failed", "mitre_id": "T1110"},
+    {"decoder_name": "suricata", "rule_description": "Hidden port scan: slow SYN sweep on non-standard ports", "rule_group": "reconnaissance", "mitre_id": "T1046"},
+    {"decoder_name": "pam", "rule_description": "Successful SSH login", "rule_group": "authentication", "mitre_id": "None"},
+    {"decoder_name": "web-accesslog", "rule_description": "Normal GET request to /index.html", "rule_group": "web_traffic", "mitre_id": "None"},
+    {"decoder_name": "suricata", "rule_description": "DNS tunneling: suspicious TXT record queries to unknown domain", "rule_group": "c2", "mitre_id": "T1071"},
+]
+
+# Severity-overlap templates (level 5-8, used in both classes)
+MID_SEVERITY_SHARED = [
+    {"decoder_name": "sshd", "rule_description": "Multiple failed password attempts", "rule_group": "authentication_failed", "mitre_id": "T1110"},
+    {"decoder_name": "nginx", "rule_description": "Unusual traffic spike detected", "rule_group": "web_traffic", "mitre_id": "None"},
+    {"decoder_name": "suricata", "rule_description": "Outbound connection to rare external IP", "rule_group": "network_monitor", "mitre_id": "None"},
+    {"decoder_name": "syscheck", "rule_description": "Unexpected file modification in /etc/", "rule_group": "ossec", "mitre_id": "None"},
+    {"decoder_name": "windows", "rule_description": "Service started from non-standard path", "rule_group": "windows_system", "mitre_id": "None"},
+]
+
+BAD_IPS = [
     "103.45.67.89", "45.227.254.52", "185.220.101.34", "23.129.64.15",
     "51.222.95.16", "54.39.136.194", "8.222.243.165", "47.237.24.132",
     "85.203.23.153", "77.105.160.156", "38.34.179.51", "20.121.25.154",
-    "64.23.243.96", "51.161.65.163", "74.248.130.207", "79.141.163.38",
 ]
 
+# Header variants for broken-header tests
+HEADERS_CLEAN = ["timestamp", "rule_level", "decoder_name", "rule_description", "rule_group", "mitre_id", "agent_ip", "is_malicious"]
+HEADERS_DOT = ["timestamp", "rule.level", "decoder.name", "rule.description", "rule.groups", "rule.mitre.id", "agent.ip", "is_malicious"]
+HEADERS_SPACE = ["Timestamp", "Rule Level", "Decoder Name", "Rule Description", "Rule Group", "Mitre ID", "Agent IP", "is_malicious"]
+HEADERS_MIXED = ["timestamp", "Rule.Level", "decoder_name", "rule description", "rule.groups", "MITRE_ID", "Agent IP", "is_malicious"]
 
-def _rand_ts(base: datetime, span_minutes: int = 43200) -> str:
-    offset = timedelta(minutes=random.randint(0, span_minutes))
-    return (base + offset).strftime("%Y-%m-%dT%H:%M:%S.%fZ")
 
-def _benign_ip() -> str:
+def _ts(base, span=43200):
+    return (base + timedelta(minutes=random.randint(0, span))).strftime("%Y-%m-%dT%H:%M:%S.%fZ")
+
+def _int_ip():
     return f"192.168.1.{random.randint(2, 254)}"
 
-def _malicious_ip() -> str:
-    if random.random() < 0.6:
-        return random.choice(BAD_IPS)
-    return f"{random.randint(1, 200)}.{random.randint(1, 255)}.{random.randint(1, 255)}.{random.randint(1, 255)}"
+def _ext_ip():
+    return random.choice(BAD_IPS) if random.random() < 0.6 else f"{random.randint(1,200)}.{random.randint(1,255)}.1.{random.randint(1,255)}"
 
-def _write_csv(path: str, rows: List[Dict[str, object]]) -> None:
+def _row(base, t, level, ip, label):
+    return [_ts(base), level, t["decoder_name"], t["rule_description"], t["rule_group"], t["mitre_id"], ip, label]
+
+def _write(path, header, rows):
     with open(path, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=HEADER)
-        writer.writeheader()
-        writer.writerows(rows)
-    print(f"  [OK] {os.path.basename(path)}  ({len(rows)} rows)")
+        w = csv.writer(f)
+        w.writerow(header)
+        w.writerows(rows)
+    print(f"  [OK] {os.path.basename(path):40s} ({len(rows)} rows)")
 
 
-def gen_all_benign(out_dir: str, n: int = 500) -> None:
+def main():
+    d = os.path.dirname(os.path.abspath(__file__))
+    random.seed(42)
     base = datetime(2026, 3, 25, 0, 0, 0)
-    rows = []
-    for _ in range(n):
-        t = random.choice(BENIGN_TEMPLATES)
-        rows.append({"timestamp": _rand_ts(base), "rule_level": random.randint(1, 4), **t, "agent_ip": _benign_ip(), "is_malicious": 0})
-    random.shuffle(rows)
-    _write_csv(os.path.join(out_dir, "test_all_benign.csv"), rows)
 
-def gen_all_malicious(out_dir: str, n: int = 500) -> None:
-    base = datetime(2026, 3, 25, 0, 0, 0)
-    rows = []
-    for _ in range(n):
-        t = random.choice(MALICIOUS_TEMPLATES)
-        rows.append({"timestamp": _rand_ts(base), "rule_level": random.randint(7, 16), **t, "agent_ip": _malicious_ip(), "is_malicious": 1})
-    random.shuffle(rows)
-    _write_csv(os.path.join(out_dir, "test_all_malicious.csv"), rows)
+    print("\nGenerating SWIFT realistic test cases...\n")
 
-def gen_mixed_balanced(out_dir: str, n: int = 1000) -> None:
-    base = datetime(2026, 3, 25, 0, 0, 0)
+    # =====================================================================
+    # 1. Clean baseline (standard headers, no noise)
+    # =====================================================================
     rows = []
-    half = n // 2
-    for _ in range(half):
-        t = random.choice(BENIGN_TEMPLATES)
-        rows.append({"timestamp": _rand_ts(base), "rule_level": random.randint(1, 4), **t, "agent_ip": _benign_ip(), "is_malicious": 0})
-    for _ in range(half):
-        t = random.choice(MALICIOUS_TEMPLATES)
-        rows.append({"timestamp": _rand_ts(base), "rule_level": random.randint(7, 16), **t, "agent_ip": _malicious_ip(), "is_malicious": 1})
+    for _ in range(350):
+        t = random.choice(BENIGN)
+        rows.append(_row(base, t, random.randint(1, 4), _int_ip(), 0))
+    for _ in range(150):
+        t = random.choice(MALICIOUS)
+        rows.append(_row(base, t, random.randint(8, 15), _ext_ip(), 1))
     random.shuffle(rows)
-    _write_csv(os.path.join(out_dir, "test_mixed_balanced.csv"), rows)
+    _write(os.path.join(d, "test_clean_baseline.csv"), HEADERS_CLEAN, rows)
 
-def gen_realistic_skewed(out_dir: str, n: int = 2000) -> None:
-    base = datetime(2026, 3, 25, 0, 0, 0)
+    # =====================================================================
+    # 2. Kibana export (dot-notation headers)
+    # =====================================================================
     rows = []
-    n_benign = int(n * 0.7)
-    for _ in range(n_benign):
-        t = random.choice(BENIGN_TEMPLATES)
-        rows.append({"timestamp": _rand_ts(base), "rule_level": random.randint(1, 4), **t, "agent_ip": _benign_ip(), "is_malicious": 0})
-    for _ in range(n - n_benign):
-        t = random.choice(MALICIOUS_TEMPLATES)
-        rows.append({"timestamp": _rand_ts(base), "rule_level": random.randint(7, 16), **t, "agent_ip": _malicious_ip(), "is_malicious": 1})
+    for _ in range(400):
+        t = random.choice(BENIGN)
+        rows.append(_row(base, t, random.randint(1, 4), _int_ip(), 0))
+    for _ in range(200):
+        t = random.choice(MALICIOUS)
+        rows.append(_row(base, t, random.randint(8, 15), _ext_ip(), 1))
     random.shuffle(rows)
-    _write_csv(os.path.join(out_dir, "test_realistic_skewed.csv"), rows)
+    _write(os.path.join(d, "test_kibana_export.csv"), HEADERS_DOT, rows)
 
-def gen_brute_force_burst(out_dir: str) -> None:
-    base = datetime(2026, 3, 25, 14, 0, 0)
-    attacker_ip = "103.45.67.89"
+    # =====================================================================
+    # 3. Dashboard export (spaces + mixed case headers)
+    # =====================================================================
+    rows = []
+    for _ in range(300):
+        t = random.choice(BENIGN)
+        rows.append(_row(base, t, random.randint(1, 4), _int_ip(), 0))
+    for _ in range(100):
+        t = random.choice(MALICIOUS)
+        rows.append(_row(base, t, random.randint(8, 15), _ext_ip(), 1))
+    random.shuffle(rows)
+    _write(os.path.join(d, "test_dashboard_export.csv"), HEADERS_SPACE, rows)
+
+    # =====================================================================
+    # 4. Mixed broken headers (worst-case real export)
+    # =====================================================================
     rows = []
     for _ in range(250):
-        rows.append({"timestamp": (base + timedelta(seconds=random.randint(0, 1800))).strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
-            "rule_level": random.choice([10, 11, 12, 13, 14, 15]), "decoder_name": "sshd",
-            "rule_description": "Multiple SSH authentication failures (Brute Force)",
-            "rule_group": "authentication_failed", "mitre_id": "T1110", "agent_ip": attacker_ip, "is_malicious": 1})
-    for _ in range(50):
-        t = random.choice(BENIGN_TEMPLATES)
-        rows.append({"timestamp": _rand_ts(base, span_minutes=60), "rule_level": random.randint(1, 4), **t, "agent_ip": _benign_ip(), "is_malicious": 0})
-    rows.sort(key=lambda r: r["timestamp"])
-    _write_csv(os.path.join(out_dir, "test_brute_force_burst.csv"), rows)
+        t = random.choice(BENIGN)
+        rows.append(_row(base, t, random.randint(1, 4), _int_ip(), 0))
+    for _ in range(250):
+        t = random.choice(MALICIOUS)
+        rows.append(_row(base, t, random.randint(8, 15), _ext_ip(), 1))
+    random.shuffle(rows)
+    _write(os.path.join(d, "test_broken_headers.csv"), HEADERS_MIXED, rows)
 
-def gen_sqli_xss_campaign(out_dir: str) -> None:
-    base = datetime(2026, 3, 24, 8, 0, 0)
+    # =====================================================================
+    # 5. Partial CSV (missing agent_ip and decoder_name columns entirely)
+    # =====================================================================
     rows = []
-    web_attacks = [t for t in MALICIOUS_TEMPLATES if t["rule_group"] == "owasp_10"]
+    partial_hdr = ["timestamp", "rule_level", "rule_description", "is_malicious"]
+    for _ in range(200):
+        t = random.choice(BENIGN)
+        rows.append([_ts(base), random.randint(1, 4), t["rule_description"], 0])
+    for _ in range(100):
+        t = random.choice(MALICIOUS)
+        rows.append([_ts(base), random.randint(8, 15), t["rule_description"], 1])
+    random.shuffle(rows)
+    _write(os.path.join(d, "test_partial_columns.csv"), partial_hdr, rows)
+
+    # =====================================================================
+    # 6. Null-heavy CSV (~15% missing values scattered)
+    # =====================================================================
+    rows = []
+    for _ in range(350):
+        t = random.choice(BENIGN)
+        row = _row(base, t, random.randint(1, 4), _int_ip(), 0)
+        for j in range(len(row) - 1):  # don't null the label
+            if random.random() < 0.15:
+                row[j] = ""
+        rows.append(row)
+    for _ in range(150):
+        t = random.choice(MALICIOUS)
+        row = _row(base, t, random.randint(8, 15), _ext_ip(), 1)
+        for j in range(len(row) - 1):
+            if random.random() < 0.15:
+                row[j] = ""
+        rows.append(row)
+    random.shuffle(rows)
+    _write(os.path.join(d, "test_null_heavy.csv"), HEADERS_CLEAN, rows)
+
+    # =====================================================================
+    # 7. Grey area — high-severity benign + low-severity malicious
+    # =====================================================================
+    rows = []
+    for _ in range(150):
+        t = random.choice(HIGH_SEV_BENIGN)
+        rows.append(_row(base, t, random.randint(10, 12), _int_ip(), 0))
+    for _ in range(150):
+        t = random.choice(LOW_SEV_MALICIOUS)
+        rows.append(_row(base, t, random.randint(3, 5), _int_ip(), 1))
+    for _ in range(100):
+        t = random.choice(MID_SEVERITY_SHARED)
+        rows.append(_row(base, t, random.randint(5, 8), _int_ip(), random.choice([0, 1])))
+    random.shuffle(rows)
+    _write(os.path.join(d, "test_grey_area.csv"), HEADERS_CLEAN, rows)
+
+    # =====================================================================
+    # 8. Signal contradiction — bad IPs benign, internal IPs malicious
+    # =====================================================================
+    rows = []
+    for _ in range(200):
+        t = random.choice(BENIGN)
+        rows.append(_row(base, t, random.randint(1, 3), random.choice(BAD_IPS), 0))
+    for _ in range(200):
+        t = random.choice(MALICIOUS)
+        rows.append(_row(base, t, random.randint(8, 12), _int_ip(), 1))
+    random.shuffle(rows)
+    _write(os.path.join(d, "test_signal_contradiction.csv"), HEADERS_CLEAN, rows)
+
+    # =====================================================================
+    # 9. Brute force burst (single attacker, 30-minute window)
+    # =====================================================================
+    burst_base = datetime(2026, 3, 25, 14, 0, 0)
+    rows = []
+    attacker = "103.45.67.89"
+    for _ in range(250):
+        rows.append([
+            (burst_base + timedelta(seconds=random.randint(0, 1800))).strftime("%Y-%m-%dT%H:%M:%S.%fZ"),
+            random.choice([10, 11, 12, 13, 14]), "sshd",
+            "Multiple SSH authentication failures (Brute Force)",
+            "authentication_failed", "T1110", attacker, 1
+        ])
+    for _ in range(50):
+        t = random.choice(BENIGN)
+        rows.append(_row(burst_base, t, random.randint(1, 4), _int_ip(), 0))
+    rows.sort(key=lambda r: r[0])
+    _write(os.path.join(d, "test_brute_force_burst.csv"), HEADERS_CLEAN, rows)
+
+    # =====================================================================
+    # 10. SQLi/XSS web attack campaign (6 attackers, 12-hour window)
+    # =====================================================================
+    web_base = datetime(2026, 3, 24, 8, 0, 0)
+    rows = []
+    web_attacks = [t for t in MALICIOUS if t["rule_group"] == "owasp_10"]
     attackers = random.sample(BAD_IPS, 6)
     for _ in range(300):
         t = random.choice(web_attacks)
-        rows.append({"timestamp": _rand_ts(base, span_minutes=720), "rule_level": random.randint(9, 16), **t, "agent_ip": random.choice(attackers), "is_malicious": 1})
+        rows.append(_row(web_base, t, random.randint(9, 15), random.choice(attackers), 1))
     for _ in range(100):
-        t = random.choice(BENIGN_TEMPLATES)
-        rows.append({"timestamp": _rand_ts(base, span_minutes=720), "rule_level": random.randint(1, 4), **t, "agent_ip": _benign_ip(), "is_malicious": 0})
+        t = random.choice(BENIGN)
+        rows.append(_row(web_base, t, random.randint(1, 4), _int_ip(), 0))
     random.shuffle(rows)
-    _write_csv(os.path.join(out_dir, "test_sqli_xss_campaign.csv"), rows)
+    _write(os.path.join(d, "test_sqli_xss_campaign.csv"), HEADERS_CLEAN, rows)
 
-def gen_lateral_movement(out_dir: str) -> None:
-    base = datetime(2026, 3, 23, 2, 0, 0)
+    # =====================================================================
+    # 11. Lateral movement + C2 (internal pivoting, night hours)
+    # =====================================================================
+    lat_base = datetime(2026, 3, 23, 2, 0, 0)
     rows = []
-    lateral_templates = [t for t in MALICIOUS_TEMPLATES if t["rule_group"] in ("lateral_movement", "c2", "privilege_escalation")]
-    pivot_ips = [f"10.0.{random.randint(1,5)}.{random.randint(10,50)}" for _ in range(5)]
+    lateral = [t for t in MALICIOUS if t["rule_group"] in ("lateral_movement", "c2", "privilege_escalation")]
+    pivots = [f"10.0.{random.randint(1,5)}.{random.randint(10,50)}" for _ in range(5)]
     for _ in range(200):
-        t = random.choice(lateral_templates)
-        rows.append({"timestamp": _rand_ts(base, span_minutes=480), "rule_level": random.randint(8, 16), **t, "agent_ip": random.choice(pivot_ips), "is_malicious": 1})
+        t = random.choice(lateral)
+        rows.append(_row(lat_base, t, random.randint(8, 15), random.choice(pivots), 1))
     for _ in range(150):
-        t = random.choice(BENIGN_TEMPLATES)
-        rows.append({"timestamp": _rand_ts(base, span_minutes=480), "rule_level": random.randint(1, 4), **t, "agent_ip": _benign_ip(), "is_malicious": 0})
-    rows.sort(key=lambda r: r["timestamp"])
-    _write_csv(os.path.join(out_dir, "test_lateral_movement.csv"), rows)
+        t = random.choice(BENIGN)
+        rows.append(_row(lat_base, t, random.randint(1, 4), _int_ip(), 0))
+    rows.sort(key=lambda r: r[0])
+    _write(os.path.join(d, "test_lateral_movement.csv"), HEADERS_CLEAN, rows)
 
-def gen_edge_cases(out_dir: str) -> None:
-    base = datetime(2026, 3, 25, 0, 0, 0)
-    rows = []
-    for _ in range(100):
-        t = random.choice(EDGE_CASE_TEMPLATES)
-        rows.append({"timestamp": _rand_ts(base), "rule_level": random.randint(8, 16), **t, "agent_ip": _malicious_ip(), "is_malicious": 1})
-    for _ in range(50):
-        t = random.choice(MALICIOUS_TEMPLATES)
-        rows.append({"timestamp": _rand_ts(base), "rule_level": random.randint(4, 6), **t, "agent_ip": _malicious_ip(), "is_malicious": 1})
-    for _ in range(50):
-        t = random.choice(BENIGN_TEMPLATES)
-        rows.append({"timestamp": _rand_ts(base), "rule_level": random.randint(7, 10), **t, "agent_ip": _benign_ip(), "is_malicious": 0})
-    for _ in range(50):
-        t = random.choice(MALICIOUS_TEMPLATES)
-        rows.append({"timestamp": _rand_ts(base), "rule_level": random.randint(9, 15), **t, "agent_ip": f"192.168.1.{random.randint(2, 254)}", "is_malicious": 1})
-    for _ in range(50):
-        t = random.choice(BENIGN_TEMPLATES)
-        rows.append({"timestamp": _rand_ts(base), "rule_level": random.randint(1, 4), **t, "agent_ip": _benign_ip(), "is_malicious": 0})
-    random.shuffle(rows)
-    _write_csv(os.path.join(out_dir, "test_edge_cases.csv"), rows)
-
-def gen_malware_outbreak(out_dir: str) -> None:
-    base = datetime(2026, 3, 22, 9, 0, 0)
+    # =====================================================================
+    # 12. Malware outbreak (8 infected hosts, 24-hour spread)
+    # =====================================================================
+    mal_base = datetime(2026, 3, 22, 9, 0, 0)
     rows = []
     infected = [f"10.10.{random.randint(1,3)}.{random.randint(100,200)}" for _ in range(8)]
-    malware_templates = [t for t in MALICIOUS_TEMPLATES if t["rule_group"] in ("malware", "c2")]
+    malware = [t for t in MALICIOUS if t["rule_group"] in ("malware", "c2")]
     for _ in range(280):
-        t = random.choice(malware_templates)
-        rows.append({"timestamp": _rand_ts(base, span_minutes=1440), "rule_level": random.randint(10, 16), **t, "agent_ip": random.choice(infected), "is_malicious": 1})
+        t = random.choice(malware)
+        rows.append(_row(mal_base, t, random.randint(10, 15), random.choice(infected), 1))
     for _ in range(120):
-        t = random.choice(BENIGN_TEMPLATES)
-        rows.append({"timestamp": _rand_ts(base, span_minutes=1440), "rule_level": random.randint(1, 4), **t, "agent_ip": _benign_ip(), "is_malicious": 0})
-    rows.sort(key=lambda r: r["timestamp"])
-    _write_csv(os.path.join(out_dir, "test_malware_outbreak.csv"), rows)
+        t = random.choice(BENIGN)
+        rows.append(_row(mal_base, t, random.randint(1, 4), _int_ip(), 0))
+    rows.sort(key=lambda r: r[0])
+    _write(os.path.join(d, "test_malware_outbreak.csv"), HEADERS_CLEAN, rows)
 
-def gen_recon_scan(out_dir: str) -> None:
-    base = datetime(2026, 3, 21, 0, 0, 0)
+    # =====================================================================
+    # 13. Recon scan (single scanner, 2-hour burst)
+    # =====================================================================
+    recon_base = datetime(2026, 3, 21, 0, 0, 0)
     rows = []
-    scanner_ip = "185.220.101.34"
-    recon = [t for t in MALICIOUS_TEMPLATES if t["rule_group"] in ("reconnaissance", "dos")]
+    scanner = "185.220.101.34"
+    recon = [t for t in MALICIOUS if t["rule_group"] in ("reconnaissance", "dos")]
     for _ in range(250):
         t = random.choice(recon)
-        rows.append({"timestamp": _rand_ts(base, span_minutes=120), "rule_level": random.randint(8, 14), **t, "agent_ip": scanner_ip, "is_malicious": 1})
+        rows.append(_row(recon_base, t, random.randint(8, 14), scanner, 1))
     for _ in range(100):
-        t = random.choice(BENIGN_TEMPLATES)
-        rows.append({"timestamp": _rand_ts(base, span_minutes=120), "rule_level": random.randint(1, 4), **t, "agent_ip": _benign_ip(), "is_malicious": 0})
-    rows.sort(key=lambda r: r["timestamp"])
-    _write_csv(os.path.join(out_dir, "test_recon_scan.csv"), rows)
+        t = random.choice(BENIGN)
+        rows.append(_row(recon_base, t, random.randint(1, 4), _int_ip(), 0))
+    rows.sort(key=lambda r: r[0])
+    _write(os.path.join(d, "test_recon_scan.csv"), HEADERS_CLEAN, rows)
 
-def gen_large_stress(out_dir: str, n: int = 10000) -> None:
-    base = datetime(2026, 3, 1, 0, 0, 0)
+    # =====================================================================
+    # 14. Stress test (10K rows, realistic 70/30 split)
+    # =====================================================================
     rows = []
-    n_benign = int(n * 0.7)
-    for _ in range(n_benign):
-        t = random.choice(BENIGN_TEMPLATES)
-        rows.append({"timestamp": _rand_ts(base, span_minutes=43200), "rule_level": random.randint(1, 4), **t, "agent_ip": _benign_ip(), "is_malicious": 0})
-    for _ in range(n - n_benign):
-        t = random.choice(MALICIOUS_TEMPLATES + EDGE_CASE_TEMPLATES)
-        rows.append({"timestamp": _rand_ts(base, span_minutes=43200), "rule_level": random.randint(7, 16), **t, "agent_ip": _malicious_ip(), "is_malicious": 1})
+    stress_base = datetime(2026, 3, 1, 0, 0, 0)
+    for _ in range(7000):
+        t = random.choice(BENIGN)
+        rows.append(_row(stress_base, t, random.randint(1, 4), _int_ip(), 0))
+    for _ in range(3000):
+        t = random.choice(MALICIOUS)
+        rows.append(_row(stress_base, t, random.randint(7, 15), _ext_ip(), 1))
     random.shuffle(rows)
-    _write_csv(os.path.join(out_dir, "test_large_stress.csv"), rows)
+    _write(os.path.join(d, "test_large_stress.csv"), HEADERS_CLEAN, rows)
 
+    # =====================================================================
+    # 15. Pentest simulation — authorized scanning labeled benign
+    # =====================================================================
+    rows = []
+    pentest_ip = "192.168.1.100"
+    for _ in range(200):
+        t = random.choice(MALICIOUS)
+        rows.append(_row(base, t, random.randint(8, 12), pentest_ip, 0))  # authorized, labeled benign
+    for _ in range(100):
+        t = random.choice(MALICIOUS)
+        rows.append(_row(base, t, random.randint(10, 15), _ext_ip(), 1))  # real attack
+    for _ in range(200):
+        t = random.choice(BENIGN)
+        rows.append(_row(base, t, random.randint(1, 4), _int_ip(), 0))
+    random.shuffle(rows)
+    _write(os.path.join(d, "test_pentest_simulation.csv"), HEADERS_CLEAN, rows)
 
-def main() -> None:
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    os.makedirs(script_dir, exist_ok=True)
-    random.seed(42)
-
-    print("\nGenerating SWIFT Wazuh test case CSVs...\n")
-
-    gen_all_benign(script_dir)
-    gen_all_malicious(script_dir)
-    gen_mixed_balanced(script_dir)
-    gen_realistic_skewed(script_dir)
-    gen_brute_force_burst(script_dir)
-    gen_sqli_xss_campaign(script_dir)
-    gen_lateral_movement(script_dir)
-    gen_edge_cases(script_dir)
-    gen_malware_outbreak(script_dir)
-    gen_recon_scan(script_dir)
-    gen_large_stress(script_dir)
-
-    print("\n[DONE] All test case files generated in:", script_dir)
+    print(f"\n[DONE] All test cases generated in: {d}")
 
 
 if __name__ == "__main__":

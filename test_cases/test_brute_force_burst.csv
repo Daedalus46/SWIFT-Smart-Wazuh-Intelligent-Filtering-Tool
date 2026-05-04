@@ -1,301 +1,301 @@
 timestamp,rule_level,decoder_name,rule_description,rule_group,mitre_id,agent_ip,is_malicious
-2026-03-25T14:00:00.000000Z,3,syscheck,File integrity check passed,ossec,None,192.168.1.163,0
-2026-03-25T14:00:00.000000Z,1,syscheck,File integrity check passed,ossec,None,192.168.1.50,0
 2026-03-25T14:00:01.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:00:01.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:00:01.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:00:07.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:00:07.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
 2026-03-25T14:00:17.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:00:19.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:00:21.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:00:33.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:00:35.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:00:26.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:00:29.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:00:35.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:00:35.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:00:40.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
 2026-03-25T14:00:42.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:00:59.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:01:00.000000Z,2,iptables,Firewall accepted connection,firewall,None,192.168.1.182,0
-2026-03-25T14:01:13.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:01:22.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:00:44.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:00:46.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:01:03.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:01:20.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
 2026-03-25T14:01:27.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:01:29.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:01:35.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:01:36.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:01:54.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:01:56.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:01:33.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:01:34.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
 2026-03-25T14:01:59.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:02:11.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:02:18.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:02:26.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:02:44.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:02:51.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:02:51.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:02:53.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:03:00.000000Z,1,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.91,0
-2026-03-25T14:03:06.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:03:13.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:03:18.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:03:24.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:03:32.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:03:39.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:02:05.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:02:07.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:02:07.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:02:08.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:03:04.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:03:14.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:03:17.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:03:18.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:03:28.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:03:33.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:03:38.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
 2026-03-25T14:03:44.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:03:51.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:03:59.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:04:03.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:04:24.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:04:33.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:04:34.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:04:50.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:04:51.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:05:01.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:05:03.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:05:06.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:05:09.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:05:10.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:05:13.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:05:15.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:05:22.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:05:27.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:05:34.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:05:34.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:05:49.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:05:52.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:05:53.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:05:54.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:06:00.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:06:00.000000Z,2,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.133,0
+2026-03-25T14:03:47.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:03:48.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:03:50.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:03:59.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:04:02.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:04:39.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:04:43.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:04:45.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:04:48.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:04:52.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:05:12.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:05:31.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:05:34.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:05:35.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:05:35.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:05:41.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:05:42.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:05:50.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:06:02.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
 2026-03-25T14:06:03.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:06:03.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:06:04.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
 2026-03-25T14:06:06.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:06:08.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:06:09.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:06:28.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:06:06.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:06:28.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:06:29.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:06:32.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
 2026-03-25T14:06:35.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:06:39.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:06:47.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:06:54.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:06:59.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:07:00.000000Z,1,windows,System event 4624,windows_auth,None,192.168.1.16,0
-2026-03-25T14:07:00.000000Z,4,iptables,Firewall accepted connection,firewall,None,192.168.1.237,0
-2026-03-25T14:07:08.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:07:21.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:07:27.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:07:29.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:07:31.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:07:41.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:07:45.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:07:50.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:08:00.000000Z,3,syscheck,File integrity check passed,ossec,None,192.168.1.116,0
-2026-03-25T14:08:02.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:08:20.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:08:30.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:08:35.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:08:39.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:08:41.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:08:41.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:08:47.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:08:50.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:09:00.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:09:08.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:09:14.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:09:14.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:09:29.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:09:37.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:09:56.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:09:59.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:10:00.000000Z,3,cron,Cron job executed successfully,system,None,192.168.1.138,0
-2026-03-25T14:10:00.000000Z,1,sudo,User executed allowed sudo command,privilege,None,192.168.1.17,0
-2026-03-25T14:10:00.000000Z,1,sudo,User executed allowed sudo command,privilege,None,192.168.1.164,0
-2026-03-25T14:10:02.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:10:06.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:10:06.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:06:36.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:06:51.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:07:02.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:07:03.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:07:19.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:07:24.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:07:25.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:07:29.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:07:37.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:08:19.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:08:26.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:08:27.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:08:38.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:08:42.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:08:54.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:08:56.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:09:03.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:09:09.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:09:13.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:09:18.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:09:24.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:09:28.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:09:36.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:09:37.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:09:42.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:09:51.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:09:59.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
 2026-03-25T14:10:24.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:10:30.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
 2026-03-25T14:10:33.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:10:48.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:10:50.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:10:57.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:11:00.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:10:47.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:11:06.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:11:08.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
 2026-03-25T14:11:09.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:11:16.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:11:17.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:11:26.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:11:32.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:11:42.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:11:49.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:11:51.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:11:55.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:12:00.000000Z,4,postfix,Mail delivery successful,mail,None,192.168.1.50,0
-2026-03-25T14:12:06.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:12:18.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:12:27.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:12:38.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:12:42.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:12:44.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:12:52.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:12:53.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:13:00.000000Z,4,windows,System event 4624,windows_auth,None,192.168.1.106,0
-2026-03-25T14:13:03.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:13:11.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:13:14.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:13:14.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:13:27.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:13:33.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:11:09.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:11:15.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:11:43.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:11:52.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:11:55.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:11:56.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:12:00.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:12:01.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:12:07.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:12:08.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:12:14.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:12:51.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:13:13.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:13:31.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:13:31.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:13:39.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
 2026-03-25T14:13:42.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:13:42.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:13:43.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:14:07.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:14:07.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:14:08.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:14:51.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:14:52.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:14:56.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:14:59.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:15:00.000000Z,1,cron,Cron job executed successfully,system,None,192.168.1.161,0
-2026-03-25T14:15:05.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:15:06.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:15:17.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:15:18.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:15:24.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:15:26.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:15:30.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:15:30.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:15:38.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:15:47.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:15:48.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:15:59.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:16:00.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:16:11.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:16:34.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:16:51.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:17:02.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:13:51.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:13:54.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:14:03.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:14:11.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:14:15.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:14:18.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:14:24.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:14:25.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:14:35.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:14:44.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:15:05.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:15:10.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:15:14.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:15:15.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:15:17.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:15:23.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:15:31.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:15:36.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:15:44.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:15:46.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:15:56.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:16:23.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:16:49.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
 2026-03-25T14:17:09.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:17:15.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:17:31.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:17:33.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:17:09.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:17:10.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:17:15.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:17:18.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:17:22.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:17:26.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:17:27.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:17:32.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:17:42.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
 2026-03-25T14:17:46.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:17:54.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:17:50.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:18:02.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:18:04.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
 2026-03-25T14:18:07.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:18:13.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:18:13.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:18:13.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:18:14.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
 2026-03-25T14:18:17.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:18:18.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
 2026-03-25T14:18:22.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:18:26.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:18:24.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:18:28.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:18:28.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
 2026-03-25T14:18:32.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:18:48.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:18:52.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:18:58.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:18:46.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:18:48.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:18:50.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:18:52.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:18:53.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
 2026-03-25T14:18:59.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:19:00.000000Z,1,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.13,0
-2026-03-25T14:19:21.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:19:32.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:19:34.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:19:18.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:19:26.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:19:33.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
 2026-03-25T14:19:35.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:20:00.000000Z,2,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.71,0
-2026-03-25T14:20:00.000000Z,1,mysql,Standard DB query execution,database,None,192.168.1.105,0
-2026-03-25T14:20:10.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:20:13.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:20:25.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:20:27.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:20:48.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:20:50.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:20:57.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:20:57.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:21:08.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:21:14.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:21:24.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:21:39.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:21:50.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:21:55.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:22:00.000000Z,4,cron,Cron job executed successfully,system,None,192.168.1.47,0
-2026-03-25T14:22:02.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:22:03.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:22:19.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:22:20.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:22:32.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:22:37.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:22:40.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:22:51.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:22:52.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:23:10.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:23:21.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:23:23.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:23:35.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:23:37.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:23:37.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:23:55.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:23:57.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:24:00.000000Z,3,iptables,Firewall accepted connection,firewall,None,192.168.1.180,0
-2026-03-25T14:24:02.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:19:37.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:20:04.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:20:08.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:20:16.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:20:20.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:20:48.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:20:52.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:21:07.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:21:12.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:21:26.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:21:32.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:21:32.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:21:33.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:21:40.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:21:40.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:21:46.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:21:57.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:22:18.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:22:28.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:22:39.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:22:58.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:22:58.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:23:24.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:23:28.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:23:31.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:23:33.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:23:34.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:23:45.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:23:56.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:24:06.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
 2026-03-25T14:24:16.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:24:24.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:24:29.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:24:34.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:24:40.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:24:44.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:24:54.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:25:00.000000Z,4,mysql,Standard DB query execution,database,None,192.168.1.43,0
-2026-03-25T14:25:04.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:25:05.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:25:07.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:25:17.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:24:26.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:24:28.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:24:34.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:24:36.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:24:43.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:24:51.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:24:57.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:25:01.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:25:09.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:25:11.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:25:31.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
 2026-03-25T14:25:33.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
 2026-03-25T14:25:36.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:25:51.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:25:57.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:26:00.000000Z,2,sudo,User executed allowed sudo command,privilege,None,192.168.1.140,0
+2026-03-25T14:25:48.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:25:56.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
 2026-03-25T14:26:03.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:26:08.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:26:15.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:26:27.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:26:29.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:26:29.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:26:41.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:26:41.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:26:44.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:27:00.000000Z,3,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.213,0
-2026-03-25T14:27:02.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:27:04.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:27:06.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:27:07.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:27:07.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:27:12.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:27:12.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:27:17.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:27:33.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:26:04.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:26:04.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:26:11.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:26:22.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:26:27.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:26:29.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:26:31.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:26:41.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:27:00.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:27:02.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:27:22.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:27:23.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:27:31.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
 2026-03-25T14:27:36.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:27:37.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:27:37.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:27:51.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:27:52.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:28:23.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:28:34.000000Z,15,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:28:41.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:29:00.000000Z,1,iptables,Firewall accepted connection,firewall,None,192.168.1.65,0
-2026-03-25T14:29:00.000000Z,1,pam,Successful SSH login,authentication,None,192.168.1.137,0
-2026-03-25T14:29:00.000000Z,4,pam,Successful SSH login,authentication,None,192.168.1.246,0
-2026-03-25T14:29:01.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:29:04.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:29:25.000000Z,11,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:29:27.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:27:41.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:28:10.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:28:10.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:28:23.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:28:34.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:28:40.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:28:54.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:28:59.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:29:02.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:29:07.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:29:13.000000Z,12,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:29:24.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:29:26.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:29:40.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
 2026-03-25T14:29:41.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:29:42.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:29:46.000000Z,13,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:29:57.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:29:57.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
-2026-03-25T14:31:00.000000Z,4,mysql,Standard DB query execution,database,None,192.168.1.26,0
-2026-03-25T14:32:00.000000Z,3,syscheck,File integrity check passed,ossec,None,192.168.1.164,0
-2026-03-25T14:33:00.000000Z,1,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.221,0
-2026-03-25T14:34:00.000000Z,4,iptables,Firewall accepted connection,firewall,None,192.168.1.197,0
-2026-03-25T14:35:00.000000Z,3,iptables,Firewall accepted connection,firewall,None,192.168.1.249,0
-2026-03-25T14:37:00.000000Z,3,iptables,Firewall accepted connection,firewall,None,192.168.1.149,0
-2026-03-25T14:39:00.000000Z,4,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.174,0
-2026-03-25T14:39:00.000000Z,3,pam,Successful SSH login,authentication,None,192.168.1.149,0
-2026-03-25T14:42:00.000000Z,2,pam,Successful SSH login,authentication,None,192.168.1.53,0
-2026-03-25T14:44:00.000000Z,1,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.92,0
-2026-03-25T14:45:00.000000Z,2,windows,System event 4624,windows_auth,None,192.168.1.27,0
-2026-03-25T14:45:00.000000Z,2,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.181,0
-2026-03-25T14:47:00.000000Z,2,windows,System event 4624,windows_auth,None,192.168.1.140,0
-2026-03-25T14:48:00.000000Z,4,mysql,Standard DB query execution,database,None,192.168.1.240,0
-2026-03-25T14:50:00.000000Z,1,windows,System event 4624,windows_auth,None,192.168.1.74,0
-2026-03-25T14:54:00.000000Z,2,windows,System event 4624,windows_auth,None,192.168.1.47,0
-2026-03-25T14:54:00.000000Z,2,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.91,0
-2026-03-25T14:55:00.000000Z,4,mysql,Standard DB query execution,database,None,192.168.1.41,0
-2026-03-25T14:56:00.000000Z,4,windows,System event 4624,windows_auth,None,192.168.1.110,0
-2026-03-25T14:56:00.000000Z,2,windows,System event 4624,windows_auth,None,192.168.1.142,0
-2026-03-25T14:56:00.000000Z,2,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.227,0
-2026-03-25T14:56:00.000000Z,4,syscheck,File integrity check passed,ossec,None,192.168.1.47,0
-2026-03-25T14:59:00.000000Z,3,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.143,0
-2026-03-25T14:59:00.000000Z,4,pam,Successful SSH login,authentication,None,192.168.1.217,0
-2026-03-25T15:00:00.000000Z,1,mysql,Standard DB query execution,database,None,192.168.1.25,0
+2026-03-25T14:29:47.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:29:53.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:29:56.000000Z,14,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-25T14:29:58.000000Z,10,sshd,Multiple SSH authentication failures (Brute Force),authentication_failed,T1110,103.45.67.89,1
+2026-03-26T22:06:00.000000Z,3,windows,System event 4624,windows_auth,None,192.168.1.114,0
+2026-03-27T06:53:00.000000Z,2,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.111,0
+2026-03-27T08:10:00.000000Z,3,pam,Successful SSH login,authentication,None,192.168.1.242,0
+2026-03-27T23:02:00.000000Z,3,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.236,0
+2026-03-28T14:42:00.000000Z,1,sudo,User executed allowed sudo command,privilege,None,192.168.1.116,0
+2026-03-29T07:23:00.000000Z,1,postfix,Mail delivery successful,mail,None,192.168.1.127,0
+2026-03-29T08:49:00.000000Z,2,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.109,0
+2026-03-31T06:19:00.000000Z,2,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.51,0
+2026-03-31T07:40:00.000000Z,2,iptables,Firewall accepted connection,firewall,None,192.168.1.203,0
+2026-04-02T08:28:00.000000Z,4,sudo,User executed allowed sudo command,privilege,None,192.168.1.85,0
+2026-04-02T12:09:00.000000Z,1,pam,Successful SSH login,authentication,None,192.168.1.92,0
+2026-04-02T19:28:00.000000Z,2,pam,Successful SSH login,authentication,None,192.168.1.242,0
+2026-04-02T19:38:00.000000Z,3,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.45,0
+2026-04-02T23:53:00.000000Z,2,iptables,Firewall accepted connection,firewall,None,192.168.1.170,0
+2026-04-04T08:38:00.000000Z,3,windows,System event 4624,windows_auth,None,192.168.1.165,0
+2026-04-04T17:23:00.000000Z,3,postfix,Mail delivery successful,mail,None,192.168.1.154,0
+2026-04-04T20:00:00.000000Z,2,syscheck,File integrity check passed,ossec,None,192.168.1.138,0
+2026-04-05T07:40:00.000000Z,1,syscheck,File integrity check passed,ossec,None,192.168.1.86,0
+2026-04-05T22:07:00.000000Z,1,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.191,0
+2026-04-06T09:56:00.000000Z,4,sudo,User executed allowed sudo command,privilege,None,192.168.1.53,0
+2026-04-06T21:40:00.000000Z,2,mysql,Standard DB query execution,database,None,192.168.1.110,0
+2026-04-07T17:11:00.000000Z,3,iptables,Firewall accepted connection,firewall,None,192.168.1.140,0
+2026-04-08T00:54:00.000000Z,2,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.71,0
+2026-04-08T05:59:00.000000Z,3,syscheck,File integrity check passed,ossec,None,192.168.1.150,0
+2026-04-08T14:58:00.000000Z,1,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.94,0
+2026-04-09T04:52:00.000000Z,3,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.184,0
+2026-04-09T18:07:00.000000Z,2,cron,Cron job executed successfully,system,None,192.168.1.11,0
+2026-04-10T05:57:00.000000Z,3,syscheck,File integrity check passed,ossec,None,192.168.1.235,0
+2026-04-10T08:13:00.000000Z,3,sudo,User executed allowed sudo command,privilege,None,192.168.1.45,0
+2026-04-10T08:28:00.000000Z,2,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.160,0
+2026-04-10T09:46:00.000000Z,3,pam,Successful SSH login,authentication,None,192.168.1.87,0
+2026-04-11T08:13:00.000000Z,3,syscheck,File integrity check passed,ossec,None,192.168.1.127,0
+2026-04-11T14:45:00.000000Z,4,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.211,0
+2026-04-13T01:32:00.000000Z,3,pam,Successful SSH login,authentication,None,192.168.1.27,0
+2026-04-13T18:52:00.000000Z,3,cron,Cron job executed successfully,system,None,192.168.1.246,0
+2026-04-13T22:43:00.000000Z,3,pam,Successful SSH login,authentication,None,192.168.1.240,0
+2026-04-14T12:48:00.000000Z,2,postfix,Mail delivery successful,mail,None,192.168.1.78,0
+2026-04-14T23:35:00.000000Z,1,sudo,User executed allowed sudo command,privilege,None,192.168.1.68,0
+2026-04-15T13:48:00.000000Z,3,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.30,0
+2026-04-15T16:03:00.000000Z,2,windows,System event 4624,windows_auth,None,192.168.1.164,0
+2026-04-16T01:07:00.000000Z,3,mysql,Standard DB query execution,database,None,192.168.1.70,0
+2026-04-16T01:52:00.000000Z,1,syscheck,File integrity check passed,ossec,None,192.168.1.239,0
+2026-04-16T07:45:00.000000Z,4,sudo,User executed allowed sudo command,privilege,None,192.168.1.225,0
+2026-04-16T10:43:00.000000Z,4,cron,Cron job executed successfully,system,None,192.168.1.80,0
+2026-04-16T14:36:00.000000Z,1,sudo,User executed allowed sudo command,privilege,None,192.168.1.102,0
+2026-04-18T21:36:00.000000Z,4,windows,System event 4624,windows_auth,None,192.168.1.132,0
+2026-04-18T22:18:00.000000Z,4,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.131,0
+2026-04-21T16:55:00.000000Z,1,windows,System event 4624,windows_auth,None,192.168.1.44,0
+2026-04-21T22:56:00.000000Z,3,cron,Cron job executed successfully,system,None,192.168.1.35,0
+2026-04-23T21:45:00.000000Z,2,syscheck,File integrity check passed,ossec,None,192.168.1.63,0

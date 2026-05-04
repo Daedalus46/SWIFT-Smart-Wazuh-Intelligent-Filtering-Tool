@@ -1,401 +1,401 @@
 timestamp,rule_level,decoder_name,rule_description,rule_group,mitre_id,agent_ip,is_malicious
-2026-03-24T14:46:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T08:37:00.000000Z,4,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.251,0
-2026-03-24T08:30:00.000000Z,16,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T12:24:00.000000Z,16,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T14:01:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T18:58:00.000000Z,1,cron,Cron job executed successfully,system,None,192.168.1.198,0
-2026-03-24T18:16:00.000000Z,2,mysql,Standard DB query execution,database,None,192.168.1.58,0
-2026-03-24T10:18:00.000000Z,16,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T09:54:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T15:54:00.000000Z,2,pam,Successful SSH login,authentication,None,192.168.1.2,0
-2026-03-24T09:24:00.000000Z,2,cron,Cron job executed successfully,system,None,192.168.1.65,0
-2026-03-24T14:54:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T14:52:00.000000Z,16,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T17:06:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T10:04:00.000000Z,12,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T15:08:00.000000Z,16,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T19:33:00.000000Z,3,postfix,Mail delivery successful,mail,None,192.168.1.130,0
-2026-03-24T19:50:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T15:41:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T16:01:00.000000Z,2,sudo,User executed allowed sudo command,privilege,None,192.168.1.35,0
-2026-03-24T16:23:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T19:35:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T18:36:00.000000Z,4,syscheck,File integrity check passed,ossec,None,192.168.1.228,0
-2026-03-24T19:06:00.000000Z,3,pam,Successful SSH login,authentication,None,192.168.1.173,0
-2026-03-24T17:55:00.000000Z,16,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T09:10:00.000000Z,3,iptables,Firewall accepted connection,firewall,None,192.168.1.24,0
-2026-03-24T15:12:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T13:19:00.000000Z,4,cron,Cron job executed successfully,system,None,192.168.1.187,0
-2026-03-24T09:59:00.000000Z,2,mysql,Standard DB query execution,database,None,192.168.1.29,0
-2026-03-24T09:43:00.000000Z,4,syscheck,File integrity check passed,ossec,None,192.168.1.200,0
-2026-03-24T18:26:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T16:53:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T09:54:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T18:45:00.000000Z,4,syscheck,File integrity check passed,ossec,None,192.168.1.228,0
-2026-03-24T14:19:00.000000Z,3,pam,Successful SSH login,authentication,None,192.168.1.52,0
-2026-03-24T10:55:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T08:34:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T08:01:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T17:43:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T13:12:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T19:33:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T08:54:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T15:24:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T12:04:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T09:47:00.000000Z,4,windows,System event 4624,windows_auth,None,192.168.1.142,0
-2026-03-24T13:23:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T13:39:00.000000Z,12,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T12:37:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T15:30:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T17:48:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T14:39:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T18:53:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T13:51:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T08:56:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T08:13:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T16:45:00.000000Z,16,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T11:37:00.000000Z,16,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T10:28:00.000000Z,12,modsecurity,SQL Injection attempt detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T19:16:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T16:36:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T13:54:00.000000Z,1,postfix,Mail delivery successful,mail,None,192.168.1.75,0
-2026-03-24T16:28:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T15:56:00.000000Z,16,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T16:28:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T12:42:00.000000Z,1,syscheck,File integrity check passed,ossec,None,192.168.1.242,0
-2026-03-24T12:02:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T15:20:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T16:27:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T17:57:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T17:33:00.000000Z,1,iptables,Firewall accepted connection,firewall,None,192.168.1.232,0
-2026-03-24T09:11:00.000000Z,14,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T12:12:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T11:33:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T10:52:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T18:21:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T09:48:00.000000Z,4,iptables,Firewall accepted connection,firewall,None,192.168.1.9,0
-2026-03-24T09:22:00.000000Z,2,mysql,Standard DB query execution,database,None,192.168.1.150,0
-2026-03-24T12:22:00.000000Z,2,postfix,Mail delivery successful,mail,None,192.168.1.6,0
-2026-03-24T19:40:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T09:58:00.000000Z,4,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.242,0
-2026-03-24T08:28:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T13:05:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T19:55:00.000000Z,4,postfix,Mail delivery successful,mail,None,192.168.1.245,0
-2026-03-24T18:02:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T14:25:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T12:43:00.000000Z,4,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.139,0
-2026-03-24T08:23:00.000000Z,4,syscheck,File integrity check passed,ossec,None,192.168.1.238,0
-2026-03-24T17:29:00.000000Z,12,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T13:27:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T17:26:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T16:06:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T16:41:00.000000Z,16,modsecurity,SQL Injection attempt detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T08:17:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T13:35:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T16:43:00.000000Z,12,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T16:26:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T14:33:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T17:16:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T10:08:00.000000Z,2,pam,Successful SSH login,authentication,None,192.168.1.82,0
-2026-03-24T13:36:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T19:00:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T15:35:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T12:22:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T08:30:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T08:51:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T13:31:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T08:18:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T14:59:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T11:01:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T13:08:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T16:14:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T17:29:00.000000Z,14,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T18:52:00.000000Z,4,postfix,Mail delivery successful,mail,None,192.168.1.217,0
-2026-03-24T16:14:00.000000Z,3,sudo,User executed allowed sudo command,privilege,None,192.168.1.251,0
-2026-03-24T08:07:00.000000Z,3,windows,System event 4624,windows_auth,None,192.168.1.129,0
-2026-03-24T11:39:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T17:07:00.000000Z,2,iptables,Firewall accepted connection,firewall,None,192.168.1.43,0
-2026-03-24T19:45:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T18:37:00.000000Z,1,sudo,User executed allowed sudo command,privilege,None,192.168.1.22,0
-2026-03-24T18:13:00.000000Z,1,mysql,Standard DB query execution,database,None,192.168.1.185,0
-2026-03-24T10:14:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T08:14:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T10:43:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T08:10:00.000000Z,12,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T13:20:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T18:33:00.000000Z,16,modsecurity,SQL Injection attempt detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T13:10:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T11:30:00.000000Z,16,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T17:58:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T16:02:00.000000Z,2,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.201,0
-2026-03-24T15:36:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T08:35:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T14:07:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T15:28:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T09:43:00.000000Z,2,postfix,Mail delivery successful,mail,None,192.168.1.213,0
-2026-03-24T13:51:00.000000Z,12,modsecurity,SQL Injection attempt detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T10:17:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T12:09:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T13:19:00.000000Z,16,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T19:48:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T14:54:00.000000Z,4,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.68,0
-2026-03-24T18:52:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T09:57:00.000000Z,1,iptables,Firewall accepted connection,firewall,None,192.168.1.17,0
-2026-03-24T15:33:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T19:46:00.000000Z,1,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.201,0
-2026-03-24T17:58:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T15:04:00.000000Z,1,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.201,0
-2026-03-24T11:34:00.000000Z,3,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.237,0
-2026-03-24T15:56:00.000000Z,1,postfix,Mail delivery successful,mail,None,192.168.1.5,0
-2026-03-24T19:01:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T13:57:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T18:17:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T10:13:00.000000Z,3,pam,Successful SSH login,authentication,None,192.168.1.253,0
-2026-03-24T12:54:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T17:55:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T12:29:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T19:29:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T18:06:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T16:42:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T16:05:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T17:38:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T18:54:00.000000Z,2,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.94,0
-2026-03-24T09:10:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T19:09:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T11:58:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T18:24:00.000000Z,16,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T10:47:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T11:30:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T13:34:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T11:08:00.000000Z,14,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T10:43:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T10:55:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T12:41:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T11:18:00.000000Z,2,cron,Cron job executed successfully,system,None,192.168.1.56,0
-2026-03-24T10:09:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T16:11:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T11:34:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T18:06:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T18:37:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T16:28:00.000000Z,2,windows,System event 4624,windows_auth,None,192.168.1.27,0
-2026-03-24T16:34:00.000000Z,16,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T17:27:00.000000Z,14,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T16:52:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T18:34:00.000000Z,16,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T09:23:00.000000Z,16,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T15:53:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T17:54:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T14:37:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T16:41:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T11:34:00.000000Z,3,cron,Cron job executed successfully,system,None,192.168.1.15,0
-2026-03-24T17:54:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T14:34:00.000000Z,1,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.254,0
-2026-03-24T17:13:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T11:29:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T12:32:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T16:11:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T09:24:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T10:27:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T10:23:00.000000Z,14,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T11:21:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T10:09:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T11:59:00.000000Z,3,iptables,Firewall accepted connection,firewall,None,192.168.1.59,0
-2026-03-24T14:42:00.000000Z,16,modsecurity,SQL Injection attempt detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T16:42:00.000000Z,3,syscheck,File integrity check passed,ossec,None,192.168.1.130,0
-2026-03-24T18:43:00.000000Z,2,syscheck,File integrity check passed,ossec,None,192.168.1.203,0
-2026-03-24T08:30:00.000000Z,1,syscheck,File integrity check passed,ossec,None,192.168.1.187,0
-2026-03-24T10:57:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T09:00:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T11:06:00.000000Z,3,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.142,0
-2026-03-24T16:38:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T13:16:00.000000Z,4,windows,System event 4624,windows_auth,None,192.168.1.218,0
-2026-03-24T11:24:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T14:48:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T12:02:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T19:24:00.000000Z,2,mysql,Standard DB query execution,database,None,192.168.1.102,0
-2026-03-24T17:38:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T11:10:00.000000Z,2,iptables,Firewall accepted connection,firewall,None,192.168.1.250,0
-2026-03-24T18:49:00.000000Z,3,windows,System event 4624,windows_auth,None,192.168.1.100,0
-2026-03-24T10:01:00.000000Z,4,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.15,0
-2026-03-24T19:46:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T13:50:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T08:02:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T09:10:00.000000Z,12,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T15:59:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T17:26:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T16:20:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T18:25:00.000000Z,4,cron,Cron job executed successfully,system,None,192.168.1.3,0
-2026-03-24T13:07:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T19:51:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T11:33:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T14:43:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T19:41:00.000000Z,16,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T12:33:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T16:34:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T08:23:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T12:30:00.000000Z,4,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.106,0
-2026-03-24T12:25:00.000000Z,2,pam,Successful SSH login,authentication,None,192.168.1.91,0
-2026-03-24T09:58:00.000000Z,14,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T13:12:00.000000Z,2,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.230,0
-2026-03-24T08:53:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T11:12:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T14:36:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T15:25:00.000000Z,3,iptables,Firewall accepted connection,firewall,None,192.168.1.59,0
-2026-03-24T08:12:00.000000Z,14,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T09:11:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T13:23:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T14:21:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T20:00:00.000000Z,4,iptables,Firewall accepted connection,firewall,None,192.168.1.241,0
-2026-03-24T16:16:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T08:14:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T19:15:00.000000Z,3,iptables,Firewall accepted connection,firewall,None,192.168.1.207,0
-2026-03-24T19:18:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T14:04:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T17:21:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T15:11:00.000000Z,1,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.127,0
-2026-03-24T19:48:00.000000Z,14,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T08:02:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T08:26:00.000000Z,16,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T11:34:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T11:58:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T08:25:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T16:22:00.000000Z,1,mysql,Standard DB query execution,database,None,192.168.1.139,0
-2026-03-24T19:15:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T08:37:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T14:55:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T14:40:00.000000Z,1,syscheck,File integrity check passed,ossec,None,192.168.1.204,0
-2026-03-24T09:41:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T15:17:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T16:01:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T08:03:00.000000Z,4,mysql,Standard DB query execution,database,None,192.168.1.218,0
-2026-03-24T09:07:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T10:43:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T17:24:00.000000Z,3,pam,Successful SSH login,authentication,None,192.168.1.29,0
-2026-03-24T16:44:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T10:19:00.000000Z,16,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T11:25:00.000000Z,2,pam,Successful SSH login,authentication,None,192.168.1.147,0
-2026-03-24T15:22:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T14:42:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T19:08:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T08:30:00.000000Z,3,pam,Successful SSH login,authentication,None,192.168.1.244,0
-2026-03-24T18:29:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T13:14:00.000000Z,16,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T14:23:00.000000Z,1,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.129,0
-2026-03-24T09:27:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T09:35:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T08:48:00.000000Z,12,modsecurity,SQL Injection attempt detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T13:25:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T18:19:00.000000Z,3,cron,Cron job executed successfully,system,None,192.168.1.43,0
-2026-03-24T13:41:00.000000Z,14,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T09:41:00.000000Z,4,mysql,Standard DB query execution,database,None,192.168.1.197,0
-2026-03-24T12:36:00.000000Z,14,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T19:29:00.000000Z,3,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.202,0
-2026-03-24T11:46:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T19:33:00.000000Z,4,windows,System event 4624,windows_auth,None,192.168.1.66,0
-2026-03-24T12:30:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T17:08:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T18:38:00.000000Z,3,cron,Cron job executed successfully,system,None,192.168.1.123,0
-2026-03-24T17:47:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T16:22:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T16:42:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T15:28:00.000000Z,3,windows,System event 4624,windows_auth,None,192.168.1.59,0
-2026-03-24T12:09:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T11:55:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T15:30:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T18:43:00.000000Z,1,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.21,0
-2026-03-24T12:21:00.000000Z,14,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T15:44:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T19:27:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T11:05:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T13:22:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T09:49:00.000000Z,1,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.87,0
-2026-03-24T09:18:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T11:42:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T17:49:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T16:55:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T13:36:00.000000Z,3,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.237,0
-2026-03-24T09:41:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T17:41:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T11:27:00.000000Z,2,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.17,0
-2026-03-24T17:47:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T08:44:00.000000Z,2,syscheck,File integrity check passed,ossec,None,192.168.1.25,0
-2026-03-24T17:13:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T19:46:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T10:45:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T12:28:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T17:14:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T09:54:00.000000Z,16,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T14:03:00.000000Z,1,pam,Successful SSH login,authentication,None,192.168.1.186,0
-2026-03-24T16:28:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T10:07:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T17:26:00.000000Z,16,modsecurity,SQL Injection attempt detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T15:17:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T08:55:00.000000Z,1,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.34,0
-2026-03-24T09:31:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T17:07:00.000000Z,12,modsecurity,SQL Injection attempt detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T19:05:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T09:04:00.000000Z,16,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T16:51:00.000000Z,14,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T17:11:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T17:31:00.000000Z,4,pam,Successful SSH login,authentication,None,192.168.1.135,0
-2026-03-24T08:40:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T09:58:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T10:01:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T14:35:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T14:11:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T18:51:00.000000Z,4,cron,Cron job executed successfully,system,None,192.168.1.212,0
-2026-03-24T17:01:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T08:41:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T17:02:00.000000Z,2,postfix,Mail delivery successful,mail,None,192.168.1.182,0
-2026-03-24T10:50:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T16:22:00.000000Z,14,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T08:07:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T10:07:00.000000Z,12,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T08:41:00.000000Z,4,windows,System event 4624,windows_auth,None,192.168.1.226,0
-2026-03-24T10:04:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T17:18:00.000000Z,4,iptables,Firewall accepted connection,firewall,None,192.168.1.132,0
-2026-03-24T13:37:00.000000Z,16,modsecurity,SQL Injection attempt detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T12:24:00.000000Z,1,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.150,0
-2026-03-24T17:04:00.000000Z,12,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T09:13:00.000000Z,16,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T10:26:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T17:29:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T15:35:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T08:31:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T08:28:00.000000Z,16,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T13:04:00.000000Z,16,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T16:02:00.000000Z,16,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T15:39:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T09:33:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T08:47:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T11:33:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T18:25:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T12:35:00.000000Z,16,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T13:55:00.000000Z,1,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.211,0
-2026-03-24T17:18:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T10:19:00.000000Z,16,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T10:31:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T12:02:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T11:03:00.000000Z,1,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.137,0
-2026-03-24T15:30:00.000000Z,4,pam,Successful SSH login,authentication,None,192.168.1.254,0
-2026-03-24T14:57:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T15:22:00.000000Z,16,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T15:40:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T15:59:00.000000Z,1,windows,System event 4624,windows_auth,None,192.168.1.244,0
-2026-03-24T17:19:00.000000Z,1,windows,System event 4624,windows_auth,None,192.168.1.137,0
-2026-03-24T13:13:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T12:21:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,51.222.95.16,1
-2026-03-24T18:22:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T09:48:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,51.161.65.163,1
-2026-03-24T15:09:00.000000Z,4,cron,Cron job executed successfully,system,None,192.168.1.142,0
-2026-03-24T10:56:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T17:47:00.000000Z,16,modsecurity,SQL Injection attempt detected,owasp_10,T1190,77.105.160.156,1
-2026-03-24T16:05:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
-2026-03-24T16:44:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T11:13:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
-2026-03-24T17:24:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,8.222.243.165,1
-2026-03-24T16:16:00.000000Z,3,windows,System event 4624,windows_auth,None,192.168.1.216,0
-2026-03-24T09:53:00.000000Z,2,pam,Successful SSH login,authentication,None,192.168.1.24,0
-2026-03-24T12:08:00.000000Z,2,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.119,0
-2026-03-24T18:30:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,8.222.243.165,1
+2026-03-28T02:39:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,47.237.24.132,1
+2026-03-27T12:06:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,23.129.64.15,1
+2026-03-30T13:35:00.000000Z,2,sudo,User executed allowed sudo command,privilege,None,192.168.1.149,0
+2026-04-13T10:16:00.000000Z,3,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.18,0
+2026-03-30T21:46:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,185.220.101.34,1
+2026-03-24T09:13:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
+2026-04-15T05:30:00.000000Z,4,sudo,User executed allowed sudo command,privilege,None,192.168.1.66,0
+2026-04-19T19:40:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,23.129.64.15,1
+2026-04-12T07:03:00.000000Z,1,cron,Cron job executed successfully,system,None,192.168.1.116,0
+2026-03-27T09:50:00.000000Z,4,pam,Successful SSH login,authentication,None,192.168.1.244,0
+2026-04-11T18:32:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,47.237.24.132,1
+2026-04-20T20:52:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,47.237.24.132,1
+2026-04-12T16:42:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
+2026-03-28T10:41:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,23.129.64.15,1
+2026-03-30T12:29:00.000000Z,14,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
+2026-04-13T18:28:00.000000Z,1,pam,Successful SSH login,authentication,None,192.168.1.233,0
+2026-04-01T15:28:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,185.220.101.34,1
+2026-04-05T00:05:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
+2026-03-29T04:57:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,47.237.24.132,1
+2026-04-09T18:58:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
+2026-03-25T01:25:00.000000Z,2,cron,Cron job executed successfully,system,None,192.168.1.137,0
+2026-03-30T03:30:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,103.45.67.89,1
+2026-04-21T04:58:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,185.220.101.34,1
+2026-04-03T13:05:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
+2026-04-20T22:48:00.000000Z,14,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,185.220.101.34,1
+2026-04-16T12:23:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,47.237.24.132,1
+2026-04-10T17:42:00.000000Z,4,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.156,0
+2026-04-13T15:14:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,185.220.101.34,1
+2026-04-18T08:41:00.000000Z,2,postfix,Mail delivery successful,mail,None,192.168.1.81,0
+2026-04-10T16:43:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
+2026-04-06T13:18:00.000000Z,14,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,103.45.67.89,1
+2026-03-27T02:50:00.000000Z,2,mysql,Standard DB query execution,database,None,192.168.1.125,0
+2026-03-31T09:48:00.000000Z,4,mysql,Standard DB query execution,database,None,192.168.1.68,0
+2026-04-22T07:59:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
+2026-04-06T23:15:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,185.220.101.34,1
+2026-04-21T09:57:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,23.129.64.15,1
+2026-03-25T16:21:00.000000Z,12,modsecurity,SQL Injection attempt detected,owasp_10,T1190,47.237.24.132,1
+2026-03-30T13:09:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,23.129.64.15,1
+2026-03-28T04:49:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,185.220.101.34,1
+2026-04-15T15:30:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
+2026-04-06T07:52:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,185.220.101.34,1
+2026-04-21T12:55:00.000000Z,1,postfix,Mail delivery successful,mail,None,192.168.1.113,0
+2026-04-08T08:08:00.000000Z,14,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
+2026-04-12T23:31:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
+2026-04-19T11:03:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
+2026-03-24T19:14:00.000000Z,3,iptables,Firewall accepted connection,firewall,None,192.168.1.36,0
+2026-04-20T06:52:00.000000Z,4,syscheck,File integrity check passed,ossec,None,192.168.1.142,0
+2026-04-17T01:10:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,103.45.67.89,1
+2026-03-26T10:14:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,23.129.64.15,1
+2026-03-31T06:43:00.000000Z,14,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,23.129.64.15,1
+2026-04-02T14:21:00.000000Z,1,syscheck,File integrity check passed,ossec,None,192.168.1.119,0
+2026-03-24T18:17:00.000000Z,3,postfix,Mail delivery successful,mail,None,192.168.1.237,0
+2026-04-09T12:57:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,185.220.101.34,1
+2026-04-07T01:21:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
+2026-03-28T22:23:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,103.45.67.89,1
+2026-04-15T07:58:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,103.45.67.89,1
+2026-04-14T22:04:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,103.45.67.89,1
+2026-04-09T04:51:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
+2026-03-30T02:04:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,103.45.67.89,1
+2026-04-14T15:09:00.000000Z,2,mysql,Standard DB query execution,database,None,192.168.1.201,0
+2026-04-20T20:23:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
+2026-04-15T20:23:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,185.220.101.34,1
+2026-03-24T12:49:00.000000Z,4,pam,Successful SSH login,authentication,None,192.168.1.20,0
+2026-03-26T02:40:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,23.129.64.15,1
+2026-04-03T20:00:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,185.220.101.34,1
+2026-03-31T01:06:00.000000Z,4,iptables,Firewall accepted connection,firewall,None,192.168.1.253,0
+2026-04-02T06:43:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
+2026-04-09T14:00:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
+2026-04-17T03:20:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
+2026-04-18T02:57:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
+2026-04-13T10:46:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,103.45.67.89,1
+2026-04-23T00:24:00.000000Z,4,syscheck,File integrity check passed,ossec,None,192.168.1.197,0
+2026-04-05T08:54:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,47.237.24.132,1
+2026-04-04T05:29:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,23.129.64.15,1
+2026-04-01T08:59:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,185.220.101.34,1
+2026-04-09T19:01:00.000000Z,4,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.33,0
+2026-04-18T02:47:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
+2026-03-29T12:58:00.000000Z,14,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,23.129.64.15,1
+2026-03-24T15:28:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
+2026-04-16T10:08:00.000000Z,1,sudo,User executed allowed sudo command,privilege,None,192.168.1.186,0
+2026-04-21T08:21:00.000000Z,1,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.201,0
+2026-04-02T15:37:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,185.220.101.34,1
+2026-04-07T19:47:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,185.220.101.34,1
+2026-04-09T06:57:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
+2026-04-16T05:10:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,103.45.67.89,1
+2026-04-09T05:59:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
+2026-03-31T09:02:00.000000Z,3,postfix,Mail delivery successful,mail,None,192.168.1.68,0
+2026-04-14T19:43:00.000000Z,4,cron,Cron job executed successfully,system,None,192.168.1.172,0
+2026-04-19T07:42:00.000000Z,14,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,185.220.101.34,1
+2026-04-20T05:08:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
+2026-03-28T16:37:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,47.237.24.132,1
+2026-04-01T22:20:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,47.237.24.132,1
+2026-03-25T07:14:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
+2026-04-05T21:54:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,23.129.64.15,1
+2026-04-13T19:54:00.000000Z,14,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
+2026-03-30T16:45:00.000000Z,12,modsecurity,SQL Injection attempt detected,owasp_10,T1190,23.129.64.15,1
+2026-04-10T18:43:00.000000Z,2,mysql,Standard DB query execution,database,None,192.168.1.60,0
+2026-04-11T06:58:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,185.220.101.34,1
+2026-03-30T21:38:00.000000Z,14,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
+2026-04-01T11:15:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,103.45.67.89,1
+2026-03-26T06:48:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
+2026-04-18T16:36:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
+2026-04-20T19:52:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,47.237.24.132,1
+2026-03-31T14:30:00.000000Z,12,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
+2026-04-06T16:31:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,103.45.67.89,1
+2026-03-24T18:37:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,185.220.101.34,1
+2026-04-20T17:07:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,23.129.64.15,1
+2026-04-15T21:20:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,23.129.64.15,1
+2026-04-10T13:06:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,185.220.101.34,1
+2026-04-17T09:49:00.000000Z,2,postfix,Mail delivery successful,mail,None,192.168.1.57,0
+2026-04-05T00:28:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
+2026-03-28T09:43:00.000000Z,1,sudo,User executed allowed sudo command,privilege,None,192.168.1.22,0
+2026-04-15T07:15:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,103.45.67.89,1
+2026-04-22T19:48:00.000000Z,1,cron,Cron job executed successfully,system,None,192.168.1.150,0
+2026-03-26T16:55:00.000000Z,4,iptables,Firewall accepted connection,firewall,None,192.168.1.157,0
+2026-04-16T19:49:00.000000Z,2,mysql,Standard DB query execution,database,None,192.168.1.144,0
+2026-04-21T07:09:00.000000Z,2,iptables,Firewall accepted connection,firewall,None,192.168.1.61,0
+2026-04-04T02:15:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
+2026-03-29T22:39:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,23.129.64.15,1
+2026-03-25T20:47:00.000000Z,12,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
+2026-04-10T15:47:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,103.45.67.89,1
+2026-04-05T09:28:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,47.237.24.132,1
+2026-04-12T16:27:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,103.45.67.89,1
+2026-04-06T15:43:00.000000Z,2,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.77,0
+2026-04-21T07:49:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,185.220.101.34,1
+2026-03-24T15:59:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
+2026-04-15T21:44:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,47.237.24.132,1
+2026-04-10T07:37:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
+2026-04-22T20:38:00.000000Z,1,postfix,Mail delivery successful,mail,None,192.168.1.252,0
+2026-04-15T21:58:00.000000Z,14,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,103.45.67.89,1
+2026-04-14T11:33:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,185.220.101.34,1
+2026-04-05T13:50:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,103.45.67.89,1
+2026-03-25T03:00:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,23.129.64.15,1
+2026-04-10T04:34:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,47.237.24.132,1
+2026-04-10T02:16:00.000000Z,2,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.27,0
+2026-03-24T09:37:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
+2026-04-08T01:49:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
+2026-03-27T15:37:00.000000Z,4,pam,Successful SSH login,authentication,None,192.168.1.77,0
+2026-04-18T09:19:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,47.237.24.132,1
+2026-04-08T05:58:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
+2026-04-19T07:59:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,23.129.64.15,1
+2026-04-11T16:31:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
+2026-04-06T18:00:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,185.220.101.34,1
+2026-04-23T05:36:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,185.220.101.34,1
+2026-03-28T01:47:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,103.45.67.89,1
+2026-03-25T21:48:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
+2026-03-28T14:09:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
+2026-03-26T07:46:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,47.237.24.132,1
+2026-03-26T16:04:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,103.45.67.89,1
+2026-04-03T00:19:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
+2026-04-11T20:37:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
+2026-04-12T21:41:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,185.220.101.34,1
+2026-04-17T22:21:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,23.129.64.15,1
+2026-04-18T15:18:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,23.129.64.15,1
+2026-04-12T09:54:00.000000Z,4,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.226,0
+2026-03-27T08:02:00.000000Z,3,cron,Cron job executed successfully,system,None,192.168.1.130,0
+2026-04-14T01:57:00.000000Z,3,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.218,0
+2026-04-17T06:00:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,103.45.67.89,1
+2026-04-01T16:36:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
+2026-04-15T17:11:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
+2026-04-03T02:14:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
+2026-04-10T16:40:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,185.220.101.34,1
+2026-03-30T18:23:00.000000Z,4,iptables,Firewall accepted connection,firewall,None,192.168.1.121,0
+2026-03-27T04:22:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
+2026-04-10T14:22:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,23.129.64.15,1
+2026-04-02T17:57:00.000000Z,4,mysql,Standard DB query execution,database,None,192.168.1.176,0
+2026-04-14T10:22:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
+2026-03-30T06:35:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
+2026-04-08T03:55:00.000000Z,1,syscheck,File integrity check passed,ossec,None,192.168.1.2,0
+2026-04-18T05:38:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
+2026-03-27T01:55:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,103.45.67.89,1
+2026-04-03T02:56:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,103.45.67.89,1
+2026-04-15T22:10:00.000000Z,2,syscheck,File integrity check passed,ossec,None,192.168.1.29,0
+2026-04-12T05:50:00.000000Z,1,mysql,Standard DB query execution,database,None,192.168.1.244,0
+2026-04-12T20:37:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,185.220.101.34,1
+2026-04-01T14:28:00.000000Z,12,modsecurity,SQL Injection attempt detected,owasp_10,T1190,23.129.64.15,1
+2026-04-09T22:22:00.000000Z,4,syscheck,File integrity check passed,ossec,None,192.168.1.123,0
+2026-04-13T18:02:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,23.129.64.15,1
+2026-03-28T19:34:00.000000Z,3,mysql,Standard DB query execution,database,None,192.168.1.208,0
+2026-04-12T09:48:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,185.220.101.34,1
+2026-04-13T14:22:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,47.237.24.132,1
+2026-03-29T02:38:00.000000Z,4,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.13,0
+2026-04-08T21:54:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
+2026-04-05T18:33:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,103.45.67.89,1
+2026-04-09T05:19:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,47.237.24.132,1
+2026-04-01T01:22:00.000000Z,1,mysql,Standard DB query execution,database,None,192.168.1.5,0
+2026-04-12T12:10:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,103.45.67.89,1
+2026-04-22T07:57:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
+2026-03-29T21:33:00.000000Z,4,mysql,Standard DB query execution,database,None,192.168.1.221,0
+2026-03-24T21:08:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,185.220.101.34,1
+2026-04-02T16:30:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,23.129.64.15,1
+2026-03-25T01:30:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,185.220.101.34,1
+2026-04-16T10:56:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
+2026-03-31T14:22:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,47.237.24.132,1
+2026-04-05T14:46:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,103.45.67.89,1
+2026-03-26T19:59:00.000000Z,1,pam,Successful SSH login,authentication,None,192.168.1.84,0
+2026-04-21T10:46:00.000000Z,14,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,185.220.101.34,1
+2026-04-06T02:02:00.000000Z,3,iptables,Firewall accepted connection,firewall,None,192.168.1.199,0
+2026-04-02T08:13:00.000000Z,1,mysql,Standard DB query execution,database,None,192.168.1.139,0
+2026-03-25T18:03:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,103.45.67.89,1
+2026-04-18T11:30:00.000000Z,4,syscheck,File integrity check passed,ossec,None,192.168.1.9,0
+2026-04-13T06:27:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
+2026-04-21T14:44:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,47.237.24.132,1
+2026-04-03T09:24:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
+2026-04-04T06:21:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
+2026-04-08T04:07:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
+2026-04-22T06:35:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
+2026-04-19T19:05:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,103.45.67.89,1
+2026-04-05T08:54:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
+2026-03-28T20:00:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
+2026-04-17T11:01:00.000000Z,2,postfix,Mail delivery successful,mail,None,192.168.1.88,0
+2026-04-10T06:26:00.000000Z,2,pam,Successful SSH login,authentication,None,192.168.1.153,0
+2026-04-18T16:55:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,185.220.101.34,1
+2026-03-24T15:37:00.000000Z,1,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.232,0
+2026-04-14T20:13:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,103.45.67.89,1
+2026-04-19T12:01:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,47.237.24.132,1
+2026-04-13T09:48:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,47.237.24.132,1
+2026-04-12T01:02:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,23.129.64.15,1
+2026-03-24T21:06:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,23.129.64.15,1
+2026-03-25T09:16:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,47.237.24.132,1
+2026-03-25T11:15:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,47.237.24.132,1
+2026-04-05T02:41:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,23.129.64.15,1
+2026-04-06T01:06:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,185.220.101.34,1
+2026-04-09T03:21:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,47.237.24.132,1
+2026-03-30T11:24:00.000000Z,3,cron,Cron job executed successfully,system,None,192.168.1.51,0
+2026-04-18T05:08:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
+2026-03-25T00:18:00.000000Z,3,pam,Successful SSH login,authentication,None,192.168.1.142,0
+2026-04-12T02:14:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,185.220.101.34,1
+2026-04-21T19:01:00.000000Z,12,modsecurity,SQL Injection attempt detected,owasp_10,T1190,103.45.67.89,1
+2026-04-22T04:30:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
+2026-04-14T20:08:00.000000Z,1,pam,Successful SSH login,authentication,None,192.168.1.7,0
+2026-03-31T17:35:00.000000Z,14,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,23.129.64.15,1
+2026-03-30T16:21:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,103.45.67.89,1
+2026-04-07T16:13:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,185.220.101.34,1
+2026-04-10T17:52:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
+2026-04-13T14:14:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,47.237.24.132,1
+2026-03-25T22:23:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
+2026-04-21T21:00:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,103.45.67.89,1
+2026-04-17T04:13:00.000000Z,4,cron,Cron job executed successfully,system,None,192.168.1.212,0
+2026-04-10T23:10:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,23.129.64.15,1
+2026-03-28T14:59:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
+2026-04-02T09:41:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
+2026-04-04T01:00:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
+2026-03-30T12:02:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,23.129.64.15,1
+2026-04-17T20:28:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,23.129.64.15,1
+2026-04-13T18:58:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,23.129.64.15,1
+2026-04-04T05:50:00.000000Z,4,sudo,User executed allowed sudo command,privilege,None,192.168.1.3,0
+2026-04-17T03:40:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,47.237.24.132,1
+2026-04-21T01:24:00.000000Z,14,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,103.45.67.89,1
+2026-04-13T05:55:00.000000Z,1,syscheck,File integrity check passed,ossec,None,192.168.1.54,0
+2026-04-12T17:57:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
+2026-04-02T12:14:00.000000Z,2,windows,System event 4624,windows_auth,None,192.168.1.17,0
+2026-04-11T15:14:00.000000Z,12,modsecurity,SQL Injection attempt detected,owasp_10,T1190,23.129.64.15,1
+2026-04-08T13:09:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,185.220.101.34,1
+2026-04-12T21:00:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,23.129.64.15,1
+2026-04-18T02:10:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
+2026-04-17T09:39:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,47.237.24.132,1
+2026-04-03T11:01:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,185.220.101.34,1
+2026-03-29T23:08:00.000000Z,14,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,47.237.24.132,1
+2026-03-25T16:00:00.000000Z,2,syscheck,File integrity check passed,ossec,None,192.168.1.65,0
+2026-04-08T16:29:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
+2026-04-04T03:00:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,185.220.101.34,1
+2026-04-08T12:18:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
+2026-04-10T05:18:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
+2026-04-15T02:30:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,23.129.64.15,1
+2026-04-05T15:17:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
+2026-04-16T18:04:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,185.220.101.34,1
+2026-04-10T09:40:00.000000Z,12,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
+2026-04-14T00:15:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,103.45.67.89,1
+2026-04-18T07:09:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,47.237.24.132,1
+2026-04-19T13:37:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
+2026-04-09T16:16:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,185.220.101.34,1
+2026-04-07T11:01:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,47.237.24.132,1
+2026-03-24T11:46:00.000000Z,4,pam,Successful SSH login,authentication,None,192.168.1.135,0
+2026-04-03T17:43:00.000000Z,3,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.221,0
+2026-04-22T09:04:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
+2026-04-21T01:50:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,47.237.24.132,1
+2026-04-09T11:30:00.000000Z,2,iptables,Firewall accepted connection,firewall,None,192.168.1.196,0
+2026-04-08T06:26:00.000000Z,12,modsecurity,SQL Injection attempt detected,owasp_10,T1190,47.237.24.132,1
+2026-04-09T22:19:00.000000Z,2,syscheck,File integrity check passed,ossec,None,192.168.1.149,0
+2026-04-01T07:59:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,185.220.101.34,1
+2026-03-29T09:25:00.000000Z,3,postfix,Mail delivery successful,mail,None,192.168.1.192,0
+2026-03-24T10:09:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
+2026-04-02T22:55:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
+2026-03-28T20:52:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,23.129.64.15,1
+2026-04-17T20:08:00.000000Z,14,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,103.45.67.89,1
+2026-04-15T03:24:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,185.220.101.34,1
+2026-04-02T20:48:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
+2026-03-30T15:40:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
+2026-04-03T15:36:00.000000Z,3,mysql,Standard DB query execution,database,None,192.168.1.216,0
+2026-04-18T07:05:00.000000Z,3,windows,System event 4624,windows_auth,None,192.168.1.55,0
+2026-04-19T12:11:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,23.129.64.15,1
+2026-03-30T10:42:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,23.129.64.15,1
+2026-04-10T19:09:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,47.237.24.132,1
+2026-04-05T21:36:00.000000Z,1,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.227,0
+2026-03-25T09:11:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,47.237.24.132,1
+2026-04-19T22:25:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
+2026-04-02T13:30:00.000000Z,2,mysql,Standard DB query execution,database,None,192.168.1.35,0
+2026-04-07T00:31:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,23.129.64.15,1
+2026-04-08T19:47:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
+2026-04-05T03:30:00.000000Z,2,sudo,User executed allowed sudo command,privilege,None,192.168.1.87,0
+2026-03-29T08:39:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
+2026-03-28T19:32:00.000000Z,4,sudo,User executed allowed sudo command,privilege,None,192.168.1.131,0
+2026-04-06T13:37:00.000000Z,4,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.180,0
+2026-04-12T09:57:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
+2026-03-26T16:22:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,103.45.67.89,1
+2026-04-14T23:41:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,23.129.64.15,1
+2026-04-17T12:07:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,47.237.24.132,1
+2026-04-21T12:53:00.000000Z,12,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
+2026-03-29T06:53:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,23.129.64.15,1
+2026-04-04T16:22:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
+2026-04-03T04:08:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,23.129.64.15,1
+2026-03-27T17:28:00.000000Z,4,syscheck,File integrity check passed,ossec,None,192.168.1.155,0
+2026-04-21T16:58:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,47.237.24.132,1
+2026-04-11T00:21:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
+2026-04-03T15:36:00.000000Z,1,sudo,User executed allowed sudo command,privilege,None,192.168.1.185,0
+2026-04-04T08:39:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,103.45.67.89,1
+2026-04-02T23:45:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
+2026-04-14T22:39:00.000000Z,3,windows,System event 4624,windows_auth,None,192.168.1.237,0
+2026-04-04T16:01:00.000000Z,14,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
+2026-03-26T18:44:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,47.237.24.132,1
+2026-04-07T19:23:00.000000Z,1,windows,System event 4624,windows_auth,None,192.168.1.126,0
+2026-03-29T10:53:00.000000Z,2,cron,Cron job executed successfully,system,None,192.168.1.181,0
+2026-04-17T17:51:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,23.129.64.15,1
+2026-04-17T13:46:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
+2026-03-29T20:45:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,185.220.101.34,1
+2026-03-25T03:33:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,103.45.67.89,1
+2026-04-19T23:03:00.000000Z,1,pam,Successful SSH login,authentication,None,192.168.1.102,0
+2026-04-03T01:44:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,23.129.64.15,1
+2026-03-31T16:56:00.000000Z,4,pam,Successful SSH login,authentication,None,192.168.1.14,0
+2026-04-13T21:32:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,103.45.67.89,1
+2026-04-01T19:24:00.000000Z,4,windows,System event 4624,windows_auth,None,192.168.1.248,0
+2026-04-18T19:36:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,103.45.67.89,1
+2026-03-28T12:03:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,103.45.67.89,1
+2026-04-02T20:16:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
+2026-03-29T09:29:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,103.45.67.89,1
+2026-03-25T22:21:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,185.220.101.34,1
+2026-03-29T14:54:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,103.45.67.89,1
+2026-04-05T03:04:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,185.220.101.34,1
+2026-04-11T05:08:00.000000Z,11,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
+2026-04-23T00:31:00.000000Z,3,iptables,Firewall accepted connection,firewall,None,192.168.1.195,0
+2026-04-01T16:10:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,23.129.64.15,1
+2026-03-27T08:24:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
+2026-04-18T13:13:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,103.45.67.89,1
+2026-04-06T00:42:00.000000Z,2,cron,Cron job executed successfully,system,None,192.168.1.170,0
+2026-04-19T15:27:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,47.237.24.132,1
+2026-04-07T09:33:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,103.45.67.89,1
+2026-03-28T01:47:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,103.45.67.89,1
+2026-04-18T17:30:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,103.45.67.89,1
+2026-04-09T16:13:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,185.220.101.34,1
+2026-04-22T23:39:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,47.237.24.132,1
+2026-03-28T09:50:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,20.121.25.154,1
+2026-04-15T22:43:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,47.237.24.132,1
+2026-04-22T13:04:00.000000Z,2,mysql,Standard DB query execution,database,None,192.168.1.27,0
+2026-04-05T08:53:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,185.220.101.34,1
+2026-04-20T13:47:00.000000Z,1,iptables,Firewall accepted connection,firewall,None,192.168.1.197,0
+2026-04-14T05:22:00.000000Z,3,cron,Cron job executed successfully,system,None,192.168.1.182,0
+2026-04-18T10:43:00.000000Z,4,postfix,Mail delivery successful,mail,None,192.168.1.65,0
+2026-04-21T21:41:00.000000Z,12,modsecurity,SQL Injection attempt detected,owasp_10,T1190,103.45.67.89,1
+2026-04-22T19:43:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,47.237.24.132,1
+2026-04-09T08:21:00.000000Z,3,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.202,0
+2026-04-02T07:51:00.000000Z,1,mysql,Standard DB query execution,database,None,192.168.1.57,0
+2026-04-01T05:06:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
+2026-04-14T00:44:00.000000Z,12,modsecurity,SQL Injection attempt detected,owasp_10,T1190,47.237.24.132,1
+2026-04-19T00:36:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,103.45.67.89,1
+2026-04-11T01:44:00.000000Z,10,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,185.220.101.34,1
+2026-04-04T10:51:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,47.237.24.132,1
+2026-03-31T01:57:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,23.129.64.15,1
+2026-03-26T23:50:00.000000Z,4,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.15,0
+2026-03-25T02:35:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,185.220.101.34,1
+2026-04-21T10:08:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,47.237.24.132,1
+2026-04-17T23:45:00.000000Z,12,modsecurity,SQL Injection attempt detected,owasp_10,T1190,47.237.24.132,1
+2026-04-05T22:48:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,103.45.67.89,1
+2026-04-13T23:32:00.000000Z,13,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,185.220.101.34,1
+2026-03-31T14:11:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,47.237.24.132,1
+2026-03-28T22:36:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,47.237.24.132,1
+2026-03-24T22:25:00.000000Z,1,cron,Cron job executed successfully,system,None,192.168.1.242,0
+2026-03-28T22:55:00.000000Z,10,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
+2026-03-31T10:59:00.000000Z,3,nginx,Normal asset load (JS/CSS),web_traffic,None,192.168.1.230,0
+2026-03-29T10:30:00.000000Z,14,modsecurity,SQL Injection attempt detected,owasp_10,T1190,47.237.24.132,1
+2026-03-26T00:28:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,23.129.64.15,1
+2026-04-15T07:09:00.000000Z,14,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
+2026-04-11T20:24:00.000000Z,15,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,103.45.67.89,1
+2026-03-28T04:50:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
+2026-04-19T08:39:00.000000Z,13,modsecurity,SQL Injection attempt detected,owasp_10,T1190,47.237.24.132,1
+2026-04-09T09:42:00.000000Z,14,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,185.220.101.34,1
+2026-03-30T15:07:00.000000Z,4,iptables,Firewall accepted connection,firewall,None,192.168.1.108,0
+2026-04-06T22:50:00.000000Z,15,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
+2026-04-15T11:30:00.000000Z,11,modsecurity,SQL Injection attempt detected,owasp_10,T1190,85.203.23.153,1
+2026-03-27T10:04:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
+2026-04-06T21:42:00.000000Z,4,syscheck,File integrity check passed,ossec,None,192.168.1.231,0
+2026-04-07T11:38:00.000000Z,4,syscheck,File integrity check passed,ossec,None,192.168.1.15,0
+2026-03-31T02:04:00.000000Z,14,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,185.220.101.34,1
+2026-04-11T23:38:00.000000Z,9,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,23.129.64.15,1
+2026-04-21T19:40:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,185.220.101.34,1
+2026-03-30T21:27:00.000000Z,12,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1
+2026-04-19T14:43:00.000000Z,12,modsecurity,Cross Site Scripting (XSS) detected,owasp_10,T1190,85.203.23.153,1
+2026-04-07T01:14:00.000000Z,1,windows,System event 4624,windows_auth,None,192.168.1.4,0
+2026-04-13T11:18:00.000000Z,4,web-accesslog,Normal GET request to /index.html,web_traffic,None,192.168.1.207,0
+2026-03-29T18:06:00.000000Z,9,modsecurity,SQL Injection attempt detected,owasp_10,T1190,20.121.25.154,1

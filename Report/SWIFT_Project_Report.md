@@ -74,12 +74,30 @@ This combination satisfies the CT-361 CLO 2 requirement: *"Identify and apply ap
 
 ### 4.1 Datasets Used & Preprocessing
 
-Due to confidentiality standards regarding live enterprise logs, a robust synthetic dataset was programmatically generated specifically for training the Machine Learning module of this CCP project:
-- **Data Origin:** Created via the internal Python engine to accurately mimic raw Wazuh SIEM telemetry.
-- **Volume:** Over 30,000 specific log iterations designed exclusively for this platform.
-- **Distribution:** A realistic 70/30 class imbalance. 70% of logs represent Benign noise (e.g., successful SSH authentications, rule updates) and 30% represent Malicious threats (e.g., SQL injections, Brute Force attacks).
-- **Feature Engineering:** Utilized Mathematical Frequency Encoding to process high-cardinality string features (like `decoder_name` and `rule_description`) which allowed the XGBoost model to process enormous dictionaries without triggering memory-explosive One-Hot schemas.
-- **OSINT Enrichment:** Dynamically cross-matched target IP addresses against the community-validated FireHOL Level 2 intelligence blocklist to append the `is_known_bad_actor` flag.
+To simulate a realistic enterprise SOC environment, we developed a two-stage data generation and cleaning pipeline instead of relying on perfectly clean synthetic data.
+
+**1. Chaotic Data Generation (`wazuh_logs_raw.csv`)**
+A raw dataset of ~30,000 logs was programmatically generated to mimic messy, real-world Wazuh/Kibana exports. This dataset deliberately introduced:
+- **Broken Headers:** Simulating various export formats (e.g., dot-notation `agent.ip`, space-separated `Rule Level`).
+- **Missing Values:** ~8% NaN injection across non-label columns and partial columns.
+- **Class Overlap & Ambiguity:** Injecting "Grey Area" logs where high-severity compliance alerts (Level 10-12) were labeled benign, and subtle low-severity anomalies (Level 3-5) were labeled malicious. This prevents the model from relying solely on rule levels.
+- **Signal Contradiction:** Simulating compromised internal IPs (malicious) and known bad IPs performing benign actions (noise).
+
+**2. Data Cleaning & Restoration (`wazuh_logs.csv`)**
+A robust cleaning pipeline (`swift_cleaner.py`) was implemented to process the chaotic data into a model-ready state:
+- **Universal Header Normalization:** Automatically lowercases and replaces dots/spaces with underscores to standardize incoming CSV formats.
+- **Imputation:** Filled missing numeric values with the median, timestamps with current UTC, and string columns with "unknown".
+- **Deduplication:** Removed injected duplicate rows to prevent training bias.
+
+![Screenshot of Data Cleaning Pipeline Terminal Output]([Insert_Screenshot_Here])
+
+**3. Exploratory Data Analysis (EDA)**
+*(Insert your EDA analysis, observations, and class overlap distributions here)*
+
+![EDA Rule Level Overlap Screenshot]([Insert_Screenshot_Here])
+
+**4. Feature Engineering**
+Utilized Mathematical Frequency Encoding to process high-cardinality string features (like `decoder_name` and `rule_description`). This allowed the XGBoost model to process enormous dictionaries without triggering memory-explosive One-Hot encoding schemas. Dynamically cross-matched target IP addresses against the community-validated FireHOL Level 2 intelligence blocklist to append the `is_known_bad_actor` flag.
 
 ### 4.2 Background
 
@@ -171,16 +189,32 @@ Due to confidentiality standards regarding live enterprise logs, a robust synthe
 
 ### 5.1 XGBoost Classification Model
 
-**Training Pipeline (`train_model.py`):**
-- Dataset: ~30,000 synthetic Wazuh logs generated via `data_prep.py`
-- Features: `rule_level`, `hour`, `is_known_bad_actor`, `decoder_name_freq`, `rule_description_freq`, `rule_group_freq`, `mitre_id_freq`
-- Label: Binary (0 = benign, 1 = malicious)
-- Frequency encoding used instead of one-hot to handle high-cardinality categorical features
+**Why XGBoost?**
+Extreme Gradient Boosting (XGBoost) was selected as the core classification algorithm because tree-based models natively excel at handling tabular data, non-linear relationships, and complex feature interactions. In a SOC environment, XGBoost is highly resilient to noisy data, computationally efficient for rapid training, and easily regularized to prevent memorization of synthetic logs.
 
-**Results:**
-- Training accuracy: ~97-99%
-- Live inference confidence: typically 95-99.99% for clearly malicious events
-- Model file size: ~75 KB (`swift_xgboost.pkl`)
+**Implementation & Two-Dataset Strategy (`train_swift.py`):**
+By explicitly separating the raw, noisy dataset (`wazuh_logs_raw.csv`) from the cleaned, normalized dataset (`wazuh_logs.csv`), the system mimics a true production pipeline. The model learns to generalize from realistic data ambiguity rather than memorizing a perfect, synthetic 100% accuracy dataset.
+- **Features:** `rule_level`, `hour`, `is_known_bad_actor`, `decoder_name_freq`, `rule_description_freq`, `rule_group_freq`, `mitre_id_freq`
+- **Label:** Binary (0 = benign, 1 = malicious)
+- **Regularization:** Hyperparameters like `max_depth=3`, aggressive row/feature sampling (`subsample=0.7`), and L1/L2 regularization were strictly enforced so the AI acts as a generalizable threat detector rather than a simple lookup table.
+
+**Model Performance Metrics:**
+Instead of achieving an unrealistic 100% accuracy, the model was deliberately constrained to a realistic SOC target range (90-95%) to account for inevitable false positives (alert fatigue) and false negatives (stealthy threats).
+
+- **Accuracy (Overall Correctness):** 0.9465 (94.65%)
+- **F1-Score (Balance P/R):** 0.9124
+- **ROC-AUC (Separation Ability):** 0.9860
+- **Mean Absolute Error (MAE):** 0.0969
+- **R-Squared (Variance Explained):** 0.7935
+
+**Confusion Matrix Breakdown:**
+- **True Negatives:** 5997 | **False Positives:** 282 (AI was cautious/paranoid)
+- **False Negatives:** 198 | **True Positives:** 2500
+
+![XGBoost Model Training & Evaluation Screenshot]([Insert_Screenshot_Here])
+
+**Deployment:**
+- The resulting model file (`swift_xgboost.pkl`) is highly lightweight (~160 KB), allowing for ultra-fast live inference confidence scoring (typically 90-99.9% for clearly malicious events).
 
 ### 5.2 Expert System (`expert_system.py`)
 

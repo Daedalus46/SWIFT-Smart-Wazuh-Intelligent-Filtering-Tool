@@ -13,26 +13,6 @@ export default function App() {
   const [isBatch, setIsBatch] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleAnalyze = async (payload: any) => {
-    setIsLoading(true);
-    setReport(null);
-    setIsBatch(false);
-    try {
-      const response = await axios.post(`${API_BASE}/analyze`, payload);
-      setReport(response.data);
-    } catch (e: any) {
-      console.error(e);
-      const backendMsg = e?.response?.data?.detail;
-      if (e.response && e.response.status === 422) {
-        alert("Invalid JSON Schema! Require: timestamp, rule_level, decoder_name, rule_description, agent_ip.");
-      } else {
-        alert(backendMsg || "Analysis failed. Backend might be offline.");
-      }
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
   const handleAnalyzeCSV = async (file: File) => {
     setIsLoading(true);
     setReport(null);
@@ -60,7 +40,6 @@ export default function App() {
         <div className="max-w-7xl mx-auto flex flex-col space-y-6 h-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6" style={{ minHeight: '500px' }}>
             <IngestionModule
-              onAnalyze={handleAnalyze}
               onAnalyzeCSV={handleAnalyzeCSV}
               isLoading={isLoading}
             />
