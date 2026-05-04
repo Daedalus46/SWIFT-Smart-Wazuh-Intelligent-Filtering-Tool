@@ -22,10 +22,11 @@ export default function App() {
       setReport(response.data);
     } catch (e: any) {
       console.error(e);
+      const backendMsg = e?.response?.data?.detail;
       if (e.response && e.response.status === 422) {
         alert("Invalid JSON Schema! Require: timestamp, rule_level, decoder_name, rule_description, agent_ip.");
       } else {
-        alert("Analysis failed. Backend might be offline or caching previous version. Restart Uvicorn.");
+        alert(backendMsg || "Analysis failed. Backend might be offline.");
       }
     } finally {
       setIsLoading(false);
@@ -42,9 +43,10 @@ export default function App() {
 
       const response = await axios.post(`${API_BASE}/analyze_csv`, formData);
       setReport(response.data);
-    } catch (e) {
+    } catch (e: any) {
       console.error(e);
-      alert("CSV Bulk Analysis failed. Check logs.");
+      const backendMsg = e?.response?.data?.detail;
+      alert(backendMsg || "CSV Bulk Analysis failed. Backend might be offline.");
     } finally {
       setIsLoading(false);
     }

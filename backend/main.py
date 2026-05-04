@@ -373,31 +373,47 @@ async def analyze_csv(file: UploadFile = File(...)):
         content = await file.read()
         df = pd.read_csv(io.BytesIO(content))
         
-        # Validate required columns before processing
-        required_cols = {'timestamp', 'rule_level', 'decoder_name', 'rule_description', 'agent_ip'}
-        if not required_cols.issubset(df.columns):
-            missing = required_cols - set(df.columns)
-            raise HTTPException(status_code=400, detail=f"CSV missing required columns: {missing}")
-            
-        # We must align the csv dataframe with the expected features
-        # First, engineer the exact same features as live logs
+        # --- Column Normalization ---
+        # Map dot-notation columns from OpenSearch/Kibana exports to underscores
+        col_rename_map = {
+            'rule.level': 'rule_level',
+            'rule.description': 'rule_description',
+            'rule.groups': 'rule_group',
+            'rule.mitre.id': 'mitre_id',
+            'agent.ip': 'agent_ip',
+            'decoder.name': 'decoder_name',
+        }
+        df.rename(columns=col_rename_map, inplace=True)
+        
+        # Default UTC timestamp for rows with no timestamp column at all
+        default_ts = datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.000Z")
+        
+        # Engineer the exact same features as the training pipeline
         processed_rows = []
         for index, row in df.iterrows():
-            agent_ip = str(row.get('agent_ip', '0.0.0.0'))
+            # --- Safe fallbacks for every field ---
+            agent_ip = str(row.get('agent_ip', '0.0.0.0')) if 'agent_ip' in df.columns else '0.0.0.0'
             is_known_bad = 1 if agent_ip in blocklist_ips else 0
             
             try:
-                hour = pd.to_datetime(row.get('timestamp')).hour
+                ts_val = row.get('timestamp', default_ts) if 'timestamp' in df.columns else default_ts
+                hour = pd.to_datetime(ts_val).hour
             except Exception:
                 hour = 0
                 
-            dec_freq = freq_decoders.get(row.get('decoder_name', ''), 0.0)
-            rule_freq = freq_rules.get(row.get('rule_description', ''), 0.0)
-            group_freq = freq_groups.get(row.get('rule_group', 'None'), 0.0)
-            mitre_freq = freq_mitre.get(row.get('mitre_id', 'None'), 0.0)
+            decoder_name = str(row.get('decoder_name', 'unknown')) if 'decoder_name' in df.columns else 'unknown'
+            rule_desc = str(row.get('rule_description', 'unknown')) if 'rule_description' in df.columns else 'unknown'
+            rule_group = str(row.get('rule_group', 'unknown')) if 'rule_group' in df.columns else 'unknown'
+            mitre_id = str(row.get('mitre_id', 'unknown')) if 'mitre_id' in df.columns else 'unknown'
+            rule_level = row.get('rule_level', 0) if 'rule_level' in df.columns else 0
+            
+            dec_freq = freq_decoders.get(decoder_name, 0.0)
+            rule_freq = freq_rules.get(rule_desc, 0.0)
+            group_freq = freq_groups.get(rule_group, 0.0)
+            mitre_freq = freq_mitre.get(mitre_id, 0.0)
             
             processed_rows.append({
-                'rule_level': row.get('rule_level', 0),
+                'rule_level': rule_level,
                 'hour': hour,
                 'is_known_bad_actor': is_known_bad,
                 'decoder_name_freq': dec_freq,
@@ -421,11 +437,15 @@ async def analyze_csv(file: UploadFile = File(...)):
         for i, pred_class in enumerate(pred_classes):
             confidence = float(max(probs[i])) * 100.0
             
+            # Safe metadata extraction with fallbacks for response building
+            raw_desc = str(df.iloc[i].get('rule_description', 'unknown')) if 'rule_description' in df.columns else 'unknown'
+            mitre_val = str(df.iloc[i].get('mitre_id', 'None')) if 'mitre_id' in df.columns else 'None'
+            owasp_val = str(df.iloc[i].get('rule_group', 'None')) if 'rule_group' in df.columns else 'None'
+            agent_ip_raw = str(df.iloc[i].get('agent_ip', '0.0.0.0')) if 'agent_ip' in df.columns else '0.0.0.0'
+            ts_raw = str(df.iloc[i].get('timestamp', '')) if 'timestamp' in df.columns else ''
+            
             if pred_class == 1:
                 malicious_cnt = malicious_cnt + 1
-                raw_desc = str(df.iloc[i].get('rule_description', ''))
-                mitre_val = str(df.iloc[i].get('mitre_id', 'None'))
-                owasp_val = str(df.iloc[i].get('rule_group', 'None'))
                 
                 expert_advice = analyze_threat(raw_desc, pred_class, mitre_val, owasp_val)
                 tactic_response = expert_advice["tactic"]
@@ -451,11 +471,11 @@ async def analyze_csv(file: UploadFile = File(...)):
                     
                 # Full fidelity raw logs for CSV/PDF export
                 raw_malicious.append(MaliciousLogEntry(
-                    timestamp=str(df.iloc[i].get('timestamp', '')),
+                    timestamp=ts_raw,
                     rule_description=raw_desc,
                     mitre_id=tactic_response,
                     owasp_cat=owasp_response,
-                    agent_ip=anonymize_ip(str(df.iloc[i].get('agent_ip', '0.0.0.0'))),
+                    agent_ip=anonymize_ip(agent_ip_raw),
                     mitigation_steps=expert_advice["mitigation"]
                 ))
             else:
@@ -467,7 +487,7 @@ async def analyze_csv(file: UploadFile = File(...)):
         # Compute real severity breakdown from actual rule_level values
         sev = {"low": 0, "medium": 0, "high": 0, "critical": 0}
         for _, row in df.iterrows():
-            rl = int(row.get('rule_level', 0))
+            rl = int(row.get('rule_level', 0)) if 'rule_level' in df.columns else 0
             if rl <= 4:
                 sev["low"] += 1
             elif rl <= 8:
@@ -503,6 +523,8 @@ async def analyze_csv(file: UploadFile = File(...)):
             threat_categories=categories
         )
         
+    except HTTPException:
+        raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"CSV Processing Error: {str(e)}")
 
