@@ -1,21 +1,6 @@
 from pydantic import BaseModel
 from typing import Dict, Any, Optional
 
-class LogPayload(BaseModel):
-    timestamp: str
-    rule_level: int
-    decoder_name: str
-    rule_description: str
-    agent_ip: str
-    rule_group: Optional[str] = None
-    mitre_id: Optional[str] = None
-
-class AnalyzeResponse(BaseModel):
-    ai_confidence_score: float
-    threat_classification: str
-    mitre_tactic: str
-    owasp_category: str
-    mitigation_steps: list[str]
 
 class UniqueThreatReport(BaseModel):
     threat_classification: str

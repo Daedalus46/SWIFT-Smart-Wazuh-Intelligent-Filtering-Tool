@@ -5,7 +5,7 @@ from slowapi.errors import RateLimitExceeded
 from fastapi.responses import JSONResponse, FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from backend.schemas import (
-    LogPayload, AnalyzeResponse, BatchAnalyzeResponse, UniqueThreatReport,
+    BatchAnalyzeResponse, UniqueThreatReport,
     MaliciousLogEntry, PDFExportRequest, NLPReportRequest, NLPReportResponse,
     SeverityBreakdown, ThreatCategory, RiskAssessment, TopThreatVector, 
     NLPThreatCategory, NLPReportStats
@@ -84,10 +84,10 @@ def align_wazuh_logs(live_df: pd.DataFrame, expected_features: list) -> pd.DataF
 
 def preprocess_live_wazuh_log(raw_json_list: list[dict]) -> pd.DataFrame:
     """
-    Bridge between raw Wazuh JSON alerts and the XGBoost model's expected input.
+    Bridge between Wazuh  and the XGBoost model's expected input.
 
-    Takes a list of raw, nested Wazuh JSON objects (as they arrive from the
-    Wazuh API or webhook) and produces a model-ready DataFrame with the exact
+    Takes a list of raw, nested Wazuh  objects (as they arrive from the
+    Wazuh webhook) and produces a model-ready DataFrame with the exact
     7 columns the classifier was trained on, in the correct order.
 
     Feature engineering replicates the training pipeline in train_model.py:
@@ -96,7 +96,7 @@ def preprocess_live_wazuh_log(raw_json_list: list[dict]) -> pd.DataFrame:
       - frequency-encoded categoricals via the globally-loaded label_encoders.pkl
 
     Args:
-        raw_json_list: List of raw Wazuh alert dicts with nested keys such as
+        raw__list: List of raw Wazuh alert dicts with nested keys such as
                        agent.ip, rule.level, decoder.name, rule.groups, rule.mitre.id.
 
     Returns:
@@ -113,7 +113,7 @@ def preprocess_live_wazuh_log(raw_json_list: list[dict]) -> pd.DataFrame:
 
     rows = []
     for alert in raw_json_list:
-        # --- Flatten nested Wazuh JSON with safe .get() ---
+        # --- Flatten nested Wazuh logs with safe .get() ---
         agent_ip      = alert.get("agent", {}).get("ip", "0.0.0.0")
         timestamp_str = alert.get("timestamp", "")
         rule_obj      = alert.get("rule", {})
@@ -176,65 +176,7 @@ async def startup_event():
 def health_check():
     return {"status": "Healthy", "message": "SWIFT API is running!"}
 
-@app.post("/analyze", response_model=AnalyzeResponse)
-async def analyze_log(payload: LogPayload):
-    try:
-        if not xgb_clf:
-            raise HTTPException(status_code=503, detail="AI engine offline or models missing.")
-            
-        is_known_bad = 1 if payload.agent_ip in blocklist_ips else 0
-        
-        try:
-            timestamp = pd.to_datetime(payload.timestamp)
-            hour = timestamp.hour
-        except Exception:
-            hour = 0
-            
-        dec_freq = freq_decoders.get(payload.decoder_name, 0.0)
-        rule_freq = freq_rules.get(payload.rule_description, 0.0)
-        
-        # In dummy logs, rule.group and rule.mitre.id might implicitly map if missing in input
-        # If payload schema doesn't force them, we assign default safe fallbacks
-        rule_group = getattr(payload, 'rule_group', "None")
-        mitre_id = getattr(payload, 'mitre_id', "None")
-        
-        group_freq = freq_groups.get(rule_group, 0.0)
-        mitre_freq = freq_mitre.get(mitre_id, 0.0)
-        
-        live_df = pd.DataFrame([{
-            'rule_level': payload.rule_level,
-            'hour': hour,
-            'is_known_bad_actor': is_known_bad,
-            'decoder_name_freq': dec_freq,
-            'rule_description_freq': rule_freq,
-            'rule_group_freq': group_freq,
-            'mitre_id_freq': mitre_freq
-        }])
-        
-        # Enforce aligned input
-        X_infer = align_wazuh_logs(live_df, training_columns)
-        
-        pred_class = xgb_clf.predict(X_infer)[0]
-        probs = xgb_clf.predict_proba(X_infer)[0]
-        confidence = float(max(probs)) * 100.0
-        
-        classification = "Malicious Threat" if pred_class == 1 else "Benign Noise"
-        expert_advice = analyze_threat(payload.rule_description, pred_class, rule_level=payload.rule_level)
-        
-        tactic_response = expert_advice["tactic"] if expert_advice["tactic"] != "Unknown Threat" else (mitre_id if mitre_id != "None" else "Unknown Threat")
-        
-        return AnalyzeResponse(
-            ai_confidence_score=float(round(float(confidence), 2)),
-            threat_classification=classification,
-            mitre_tactic=tactic_response,
-            owasp_category=expert_advice.get("owasp", "None"),
-            mitigation_steps=expert_advice["mitigation"]
-        )
-        
-    except HTTPException:
-        raise
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Internal Analysis Error: {str(e)}")
+
 
 
 @app.post("/analyze_live", response_model=BatchAnalyzeResponse)

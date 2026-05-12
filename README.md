@@ -20,7 +20,7 @@ pinned: false
 
 Security Operations Centers (SOCs) are overwhelmed by thousands of daily log events. Manual triage is slow, error-prone, and fatiguing. **SWIFT** automates this process using a multi-layered AI pipeline:
 
-1. **XGBoost ML Classifier** — Identifies malicious anomalies from benign noise with ~99% confidence
+1. **XGBoost ML Classifier** — Identifies malicious anomalies from benign noise with ~95% accuracy (F1: 0.91)
 2. **Expert System** — Maps threats to **MITRE ATT&CK** tactics and **OWASP Top 10** categories with automated mitigation
 3. **NLP Report Engine** — Google Flan-T5 transformer generates structured executive-level incident reports
 4. **OSINT Enrichment** — Correlates IPs against FireHOL Level 2 blocklist for known-bad-actor detection
@@ -32,7 +32,6 @@ Security Operations Centers (SOCs) are overwhelmed by thousands of daily log eve
 
 | Feature | Description |
 |---------|-------------|
-| 🎯 **Single Log Analysis** | Paste a JSON log → instant AI classification with confidence score |
 | 📊 **CSV Batch Analysis** | Upload thousands of Wazuh logs → deduplicated threat report |
 | 🧠 **NLP Incident Reports** | AI-generated executive summary, risk scoring, priority actions |
 | 📄 **PDF Export** | One-click security report download via `fpdf2` |
@@ -81,12 +80,11 @@ cd SWIFT-Smart-Wazuh-Intelligent-Filtering-Tool
 pip install -r requirements.txt
 ```
 
-### 2. Generate Data & Train Model
+### 2. Train Model
 ```bash
-python data_prep.py
-python train_model.py
+python train_swift.py
 ```
-This generates `wazuh_logs.csv`, `swift_xgboost.pkl`, `label_encoders.pkl`, and `training_columns.json`.
+This trains the model and updates the necessary artifacts.
 
 ### 3. Start the FastAPI Backend
 ```bash
@@ -120,7 +118,6 @@ VITE_API_BASE=https://daedalus26-swift-soc-backend.hf.space
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | `GET` | `/` | Health check |
-| `POST` | `/analyze` | Single JSON log analysis |
 | `POST` | `/analyze_csv` | Batch CSV file analysis |
 | `POST` | `/generate_pdf` | PDF security report export |
 | `POST` | `/generate_nlp_report` | AI-powered NLP incident report (rate-limited: 3/min) |
@@ -132,7 +129,7 @@ VITE_API_BASE=https://daedalus26-swift-soc-backend.hf.space
 ```
 SWIFT/
 ├── backend/
-│   ├── main.py              # FastAPI endpoints (analyze, batch CSV, NLP, PDF)
+│   ├── main.py              # FastAPI endpoints (batch CSV, live wazuh, NLP, PDF)
 │   ├── schemas.py           # Pydantic models (request/response schemas)
 │   ├── expert_system.py     # MITRE ATT&CK + OWASP mapping engine
 │   └── nlp_engine.py        # NLP report generation (Flan-T5, structured output)
@@ -143,12 +140,11 @@ SWIFT/
 │       ├── App.tsx           # Main app with routing and state management
 │       └── components/
 │           ├── Header.tsx                # Navigation header with live clock
-│           ├── IngestionModule.tsx       # Log input + CSV upload (with ARIA)
+│           ├── IngestionModule.tsx       # CSV upload (with ARIA)
 │           ├── IntelligenceReadout.tsx   # Threat analysis + NLP report + PDF/CSV export
 │           └── TelemetryDashboard.tsx    # Charts (severity, MITRE, top threats)
 ├── test_cases/              # 11 pre-built CSV test scenarios
-├── data_prep.py             # Synthetic Wazuh log generator
-├── train_model.py           # XGBoost training pipeline
+├── train_swift.py           # XGBoost training pipeline
 ├── swift_xgboost.pkl        # Trained XGBoost model
 ├── label_encoders.pkl       # Feature encoders
 ├── training_columns.json    # Feature alignment schema

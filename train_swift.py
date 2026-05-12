@@ -1,15 +1,3 @@
-"""
-SWIFT SOC — Training & Performance Validation Pipeline
-========================================================
-Trains an XGBoost classifier on the cleaned wazuh_logs.csv and validates
-that accuracy falls between 90% and 95%.
-
-Features:
-  - EDA visualization of rule_level overlap between classes
-  - max_depth=3 to prevent memorization
-  - Confusion matrix with visible FP/FN
-  - Full classification report
-"""
 import pandas as pd
 import numpy as np
 import hashlib
@@ -159,14 +147,19 @@ def train():
 
     y_pred = xgb_clf.predict(X_test)
     y_proba = xgb_clf.predict_proba(X_test)[:, 1]
+    
+    y_pred_train = xgb_clf.predict(X_train)
 
-    accuracy = accuracy_score(y_test, y_pred)
+    accuracy_test = accuracy_score(y_test, y_pred)
+    accuracy_training = accuracy_score(y_train, y_pred_train)
+    
     f1 = f1_score(y_test, y_pred)
     roc_auc = roc_auc_score(y_test, y_proba)
     mae = mean_absolute_error(y_test, y_proba)
     r2 = r2_score(y_test, y_proba)
 
-    print(f"Accuracy (Overall Correctness):   {accuracy:.4f}")
+    print(f"Training Accuracy:                {accuracy_training:.4f}")
+    print(f"Testing Accuracy (Overall):       {accuracy_test:.4f}")
     print(f"F1-Score (Balance P/R):           {f1:.4f}")
     print(f"ROC-AUC (Separation Ability):     {roc_auc:.4f}")
     print(f"Mean Absolute Error (MAE):        {mae:.4f}")
@@ -186,7 +179,7 @@ def train():
     fig, ax = plt.subplots(figsize=(6, 5))
     disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=["Benign", "Malicious"])
     disp.plot(ax=ax, cmap='Blues', values_format='d')
-    ax.set_title(f'SWIFT Confusion Matrix — Accuracy: {accuracy:.2%}', fontsize=13, fontweight='bold')
+    ax.set_title(f'SWIFT Confusion Matrix — Accuracy: {accuracy_test:.2%}', fontsize=13, fontweight='bold')
     plt.tight_layout()
     plt.savefig(cm_plot_path, dpi=150)
     plt.close()
