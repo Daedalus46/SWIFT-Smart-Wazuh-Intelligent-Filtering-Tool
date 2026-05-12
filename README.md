@@ -178,7 +178,3 @@ SWIFT/
 3. Model caches after first NLP request
 
 ---
-
-## License
-
-This project was developed as part of the **CT-361 Artificial Intelligence & Expert System** course (Complex Computing Problem).
